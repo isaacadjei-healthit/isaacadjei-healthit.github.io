@@ -90,8 +90,19 @@
 
     section {
       padding: 70px 20px;
+    }
+
+    .section-inner {
       max-width: 1100px;
       margin: auto;
+    }
+
+    .section-light {
+      background-color: #f4f7fa;
+    }
+
+    .section-white {
+      background-color: #ffffff;
     }
 
     h2 {
@@ -109,11 +120,12 @@
       margin-top: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
     }
 
     .project-grid {
@@ -121,6 +133,30 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 25px;
       margin-top: 20px;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      background: #e5e7eb;
+      border: 1px solid #d1d5db;
+    }
+
+    .project-placeholder {
+      height: 180px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, #dbeafe, #e5e7eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e3a8a;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
     }
 
     .project-link {
@@ -139,19 +175,31 @@
       background: #0f172a;
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .skill-category h3 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+      font-size: 1.25rem;
+    }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 20px;
     }
 
     .skill {
       background: #1e3a8a;
       color: white;
-      padding: 10px 16px;
+      padding: 9px 14px;
       border-radius: 25px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .buttons {
@@ -174,12 +222,24 @@
       background: #dbeafe;
     }
 
+    .github-stats {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .github-stats img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-top: 15px;
+    }
+
     footer {
       background: #111827;
       color: white;
       text-align: center;
       padding: 25px;
-      margin-top: 40px;
+      margin-top: 0;
     }
 
     @media (max-width: 768px) {
@@ -201,7 +261,8 @@
         font-size: 1rem;
       }
 
-      .project-grid {
+      .project-grid,
+      .skills-grid {
         grid-template-columns: 1fr;
       }
 
@@ -238,7 +299,7 @@
         <div class="buttons">
           <a href="https://github.com/isaacadjei-healthit" target="_blank">GitHub</a>
           <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-          <a href="#">Download Resume</a>
+          <a href="docs/Isaac-K-Adjei-Resume.pdf" target="_blank">Download Resume</a>
         </div>
       </div>
 
@@ -249,115 +310,170 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#github">GitHub Stats</a>
     <a href="#experience">Experience</a>
   </nav>
 
-  <section id="about">
-    <h2>About Me</h2>
+  <section id="about" class="section-light">
+    <div class="section-inner">
+      <h2>About Me</h2>
 
-    <div class="card">
-      <p>
-        I am a Health IT professional with experience in healthcare analytics,
-        project management, health informatics, database systems, and operational leadership.
-        My background combines clinical systems knowledge, data analytics, and military leadership
-        experience to support healthcare technology initiatives and operational improvement projects.
-      </p>
+      <div class="card">
+        <p>
+          I am a Health IT professional with experience in healthcare analytics,
+          project management, health informatics, database systems, and operational leadership.
+          My background combines clinical systems knowledge, data analytics, and military leadership
+          experience to support healthcare technology initiatives and operational improvement projects.
+        </p>
 
-      <br>
+        <br>
 
-      <p>
-        I hold an MSc in Applied Health Informatics, an MPS in Employment Relations,
-        and professional certification as a Certified Associate in Project Management (CAPM).
-        I am currently expanding my expertise in Management Information Systems, healthcare databases,
-        analytics, and enterprise technology strategy.
-      </p>
+        <p>
+          I hold an MSc in Applied Health Informatics, an MPS in Employment Relations,
+          and professional certification as a Certified Associate in Project Management (CAPM).
+          I am currently expanding my expertise in Management Information Systems, healthcare databases,
+          analytics, and enterprise technology strategy.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
+  <section id="projects" class="section-white">
+    <div class="section-inner">
+      <h2>Featured Projects</h2>
 
-    <div class="project-grid">
+      <div class="project-grid">
 
-      <div class="card">
-        <h3>Healthcare Database for Patient Flow Optimization</h3>
-        <p>
-          Designed and implemented a healthcare database system focused on patient flow optimization,
-          resource utilization, and operational analytics using SQL, database normalization,
-          and healthcare informatics principles.
-        </p>
+        <div class="card">
+          <div class="project-placeholder">Project Screenshot Coming Soon</div>
 
-        <a 
-          href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization"
-          target="_blank"
-          class="project-link">
-          View Project on GitHub
-        </a>
+          <h3>Healthcare Database for Patient Flow Optimization</h3>
+          <p>
+            Designed and implemented a healthcare database system focused on patient flow optimization,
+            resource utilization, and operational analytics using SQL, database normalization,
+            and healthcare informatics principles.
+          </p>
+
+          <a 
+            href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization"
+            target="_blank"
+            class="project-link">
+            View Project on GitHub
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="project-placeholder">Dashboard Screenshot Coming Soon</div>
+
+          <h3>Patient Movement Tracker Dashboard</h3>
+          <p>
+            Developed a patient movement tracking system and dashboard for operational reporting,
+            case monitoring, and leadership visibility using Excel analytics and structured data management.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="project-placeholder">Dashboard Screenshot Coming Soon</div>
+
+          <h3>Military Water Consumption Dashboard</h3>
+          <p>
+            Built a leadership planning dashboard to calculate water requirements for military operations
+            based on personnel counts, environmental conditions, and sustainment planning metrics.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="project-placeholder">Strategy Project Screenshot Coming Soon</div>
+
+          <h3>IT Governance & Strategy Analysis</h3>
+          <p>
+            Conducted organizational IT governance and strategic analysis projects focused on
+            enterprise technology alignment, risk management, and operational effectiveness.
+          </p>
+        </div>
+
       </div>
-
-      <div class="card">
-        <h3>Patient Movement Tracker Dashboard</h3>
-        <p>
-          Developed a patient movement tracking system and dashboard for operational reporting,
-          case monitoring, and leadership visibility using Excel analytics and structured data management.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Military Water Consumption Dashboard</h3>
-        <p>
-          Built a leadership planning dashboard to calculate water requirements for military operations
-          based on personnel counts, environmental conditions, and sustainment planning metrics.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>IT Governance & Strategy Analysis</h3>
-        <p>
-          Conducted organizational IT governance and strategic analysis projects focused on
-          enterprise technology alignment, risk management, and operational effectiveness.
-        </p>
-      </div>
-
     </div>
   </section>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
+  <section id="skills" class="section-light">
+    <div class="section-inner">
+      <h2>Skills & Competencies</h2>
 
-    <div class="skills">
-      <div class="skill">SQL</div>
-      <div class="skill">Power BI</div>
-      <div class="skill">Healthcare Analytics</div>
-      <div class="skill">Project Management</div>
-      <div class="skill">Health Informatics</div>
-      <div class="skill">Database Management</div>
-      <div class="skill">Excel Analytics</div>
-      <div class="skill">Data Visualization</div>
-      <div class="skill">EHR Systems</div>
-      <div class="skill">Healthcare IT</div>
-      <div class="skill">Leadership</div>
-      <div class="skill">Clinical Systems</div>
+      <div class="skills-grid">
+
+        <div class="card skill-category">
+          <h3>🏥 Health IT</h3>
+          <div class="skills">
+            <div class="skill">Health Informatics</div>
+            <div class="skill">EHR Systems</div>
+            <div class="skill">Clinical Systems</div>
+            <div class="skill">Healthcare IT</div>
+          </div>
+        </div>
+
+        <div class="card skill-category">
+          <h3>📊 Analytics & Data</h3>
+          <div class="skills">
+            <div class="skill">SQL</div>
+            <div class="skill">Power BI</div>
+            <div class="skill">Excel Analytics</div>
+            <div class="skill">Data Visualization</div>
+            <div class="skill">Database Management</div>
+          </div>
+        </div>
+
+        <div class="card skill-category">
+          <h3>🧭 Leadership & PM</h3>
+          <div class="skills">
+            <div class="skill">Project Management</div>
+            <div class="skill">CAPM</div>
+            <div class="skill">Leadership</div>
+            <div class="skill">Operations Planning</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
+  <section id="github" class="section-white">
+    <div class="section-inner">
+      <h2>GitHub Stats</h2>
 
-    <div class="card">
-      <h3>U.S. Army National Guard Officer</h3>
-      <p>
-        Serving as a Health Services Administration Officer with operational leadership
-        experience supporting healthcare operations, sustainment planning, and personnel management.
-      </p>
+      <div class="card github-stats">
+        <p>
+          My GitHub portfolio highlights healthcare analytics, database management,
+          health informatics, and project-based technology work.
+        </p>
+
+        <img 
+          src="https://github-readme-stats.vercel.app/api?username=isaacadjei-healthit&show_icons=true&theme=default"
+          alt="Isaac K. Adjei GitHub Stats"
+        />
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Healthcare & IT Project Experience</h3>
-      <p>
-        Experience supporting healthcare operations, project coordination, data analytics,
-        IT support, and informatics initiatives within healthcare and enterprise environments.
-      </p>
+  <section id="experience" class="section-light">
+    <div class="section-inner">
+      <h2>Professional Experience</h2>
+
+      <div class="card">
+        <h3>U.S. Army National Guard Officer</h3>
+        <p>
+          Serving as a Health Services Administration Officer with operational leadership
+          experience supporting healthcare operations, sustainment planning, and personnel management.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Healthcare & IT Project Experience</h3>
+        <p>
+          Experience supporting healthcare operations, project coordination, data analytics,
+          IT support, and informatics initiatives within healthcare and enterprise environments.
+        </p>
+      </div>
     </div>
   </section>
 
