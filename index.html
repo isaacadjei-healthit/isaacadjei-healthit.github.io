@@ -7,15 +7,16 @@
 
   <style>
     :root {
-      --navy: #071A2F;
-      --deep-navy: #04111F;
-      --royal-blue: #1E5AA8;
-      --slate: #5F6F82;
-      --light-slate: #E8EEF4;
-      --white: #FFFFFF;
-      --muted-teal: #4FA3A5;
-      --burgundy: #8A3A4A;
-      --soft-bg: #F7F9FC;
+      --deep-navy: #04111f;
+      --navy: #071a2f;
+      --royal-blue: #1e5aa8;
+      --slate: #5f6f82;
+      --light-slate: #e8eef4;
+      --soft-bg: #f7f9fc;
+      --white: #ffffff;
+      --muted-teal: #4fa3a5;
+      --burgundy: #8a3a4a;
+      --shadow: rgba(7, 26, 47, 0.08);
     }
 
     * {
@@ -34,7 +35,7 @@
     header {
       background: linear-gradient(135deg, var(--deep-navy), var(--navy));
       color: var(--white);
-      padding: 90px 8% 80px;
+      padding: 90px 8% 85px;
       text-align: center;
     }
 
@@ -42,21 +43,21 @@
       font-size: 3rem;
       font-weight: 800;
       letter-spacing: -1px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     header h2 {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 500;
-      color: #D9E8F6;
+      color: #d9e8f6;
       margin-bottom: 24px;
     }
 
     .tagline {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto 34px;
+      color: #c8d6e5;
       font-size: 1.08rem;
-      color: #C8D6E5;
     }
 
     .cta-group {
@@ -90,7 +91,7 @@
     }
 
     section {
-      padding: 70px 8%;
+      padding: 72px 8%;
     }
 
     .section-title {
@@ -98,10 +99,11 @@
       font-weight: 800;
       margin-bottom: 14px;
       color: var(--navy);
+      letter-spacing: -0.4px;
     }
 
     .section-intro {
-      max-width: 850px;
+      max-width: 900px;
       color: var(--slate);
       margin-bottom: 38px;
       font-size: 1.02rem;
@@ -112,13 +114,13 @@
     .impact-card {
       background: var(--white);
       border-radius: 18px;
-      padding: 34px;
-      box-shadow: 0 10px 30px rgba(7, 26, 47, 0.08);
-      border-top: 5px solid var(--muted-teal);
+      box-shadow: 0 10px 30px var(--shadow);
     }
 
     .about-card {
-      max-width: 1050px;
+      padding: 36px;
+      border-top: 5px solid var(--muted-teal);
+      max-width: 1100px;
     }
 
     .highlight {
@@ -126,90 +128,155 @@
       font-weight: 700;
     }
 
-    .projects-grid,
-    .impact-grid {
+    .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 28px;
+      grid-template-columns: 1fr;
+      gap: 34px;
     }
 
     .project-card {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      padding: 36px;
+      border-top: 5px solid var(--muted-teal);
     }
 
     .project-card h3 {
-      font-size: 1.45rem;
+      font-size: 1.65rem;
       color: var(--navy);
+      margin-bottom: 22px;
       line-height: 1.3;
+      letter-spacing: -0.3px;
+    }
+
+    .project-story {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .project-block {
+      background: #fbfcfe;
+      border: 1px solid var(--light-slate);
+      border-radius: 14px;
+      padding: 20px;
     }
 
     .project-label {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 800;
       color: var(--burgundy);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
     .project-block p,
     .project-block li {
       color: var(--slate);
-      font-size: 0.97rem;
+      font-size: 0.96rem;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 18px;
     }
 
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 6px;
+      margin: 8px 0 28px;
     }
 
     .pill {
       background: var(--light-slate);
       color: var(--navy);
-      padding: 7px 11px;
+      padding: 7px 12px;
       border-radius: 999px;
       font-size: 0.82rem;
       font-weight: 700;
     }
 
+    .screenshots-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin: 18px 0 16px;
+      color: var(--navy);
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .screenshot-card {
+      background: var(--white);
+      border: 1px solid var(--light-slate);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(7, 26, 47, 0.06);
+      transition: 0.25s ease;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(7, 26, 47, 0.1);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      display: block;
+      height: 210px;
+      object-fit: cover;
+      object-position: top;
+      background: var(--light-slate);
+    }
+
+    .screenshot-card p {
+      padding: 14px 16px;
+      color: var(--slate);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
     .project-links {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-top: auto;
     }
 
     .project-links a {
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--royal-blue);
     }
 
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
     .impact-card {
-      border-top-color: var(--burgundy);
+      padding: 28px;
+      border-top: 5px solid var(--burgundy);
     }
 
     .impact-card h3 {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       margin-bottom: 10px;
       color: var(--navy);
     }
 
     .impact-card p {
       color: var(--slate);
+      font-size: 0.96rem;
     }
 
     footer {
       background: var(--deep-navy);
-      color: #C8D6E5;
+      color: #c8d6e5;
       text-align: center;
       padding: 38px 8%;
       font-size: 0.95rem;
@@ -223,15 +290,19 @@
 
     @media (max-width: 700px) {
       header h1 {
-        font-size: 2.2rem;
+        font-size: 2.25rem;
       }
 
       header h2 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
       }
 
       section {
         padding: 55px 6%;
+      }
+
+      .project-card {
+        padding: 26px;
       }
     }
   </style>
@@ -242,8 +313,9 @@
   <header>
     <h1>Isaac K. Adjei</h1>
     <h2>Health IT | Clinical Informatics | Healthcare Analytics | Project Management</h2>
+
     <p class="tagline">
-      I design practical Health IT and healthcare analytics solutions that turn fragmented operational data into clearer workflows, stronger decision-making, and measurable leadership value.
+      I build practical Health IT and healthcare analytics solutions that transform operational data into clearer workflows, stronger decision-making, and measurable leadership value.
     </p>
 
     <div class="cta-group">
@@ -257,16 +329,16 @@
   <section id="about">
     <h2 class="section-title">Professional Focus</h2>
     <p class="section-intro">
-      My portfolio reflects the intersection of healthcare operations, information systems, data analytics, and project execution.
+      My portfolio sits at the intersection of healthcare operations, clinical systems, data analytics, information systems, and project execution.
     </p>
 
     <div class="about-card">
       <p>
-        I am a Health IT professional with a background in <span class="highlight">health informatics, project management, clinical systems, healthcare analytics, and military healthcare leadership</span>. My work focuses on using structured data, dashboards, databases, and workflow analysis to solve operational problems in healthcare and mission-driven environments.
+        I am a Health IT professional with experience in <span class="highlight">health informatics, project management, clinical systems, healthcare analytics, and military healthcare leadership</span>. My work focuses on using structured data, dashboards, databases, and workflow analysis to solve practical operational problems.
       </p>
       <br />
       <p>
-        This portfolio demonstrates my ability to identify a problem, explain why it matters, design a practical technical solution, build a workflow, and communicate measurable outcomes to leaders and stakeholders.
+        This portfolio demonstrates how I approach real problems: define the issue, explain why it matters, design a practical solution, build the workflow, measure outcomes, and communicate the leadership or business impact.
       </p>
     </div>
   </section>
@@ -274,7 +346,7 @@
   <section id="projects">
     <h2 class="section-title">Featured Health IT Projects</h2>
     <p class="section-intro">
-      Each project is presented through a professional problem-solving structure: the problem, why it mattered, the solution, workflow, outcomes, and leadership or business impact.
+      These projects show technical execution, operational thinking, and leadership-focused communication across healthcare, analytics, and mission-support environments.
     </p>
 
     <div class="projects-grid">
@@ -282,39 +354,41 @@
       <div class="project-card">
         <h3>Healthcare Database for Patient Flow Optimization</h3>
 
-        <div class="project-block">
-          <div class="project-label">The Problem</div>
-          <p>Hospitals often struggle with fragmented patient flow data, making it difficult to evaluate length of stay, staff workload, resource usage, and visit patterns.</p>
-        </div>
+        <div class="project-story">
+          <div class="project-block">
+            <div class="project-label">The Problem</div>
+            <p>Hospitals often struggle with fragmented patient flow data, making it harder to evaluate length of stay, staff workload, resource usage, and visit patterns.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Why It Mattered</div>
-          <p>Without structured data, leaders may lack timely visibility into bottlenecks that affect efficiency, patient throughput, and operational planning.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Why It Mattered</div>
+            <p>Without structured data, leaders may lack timely visibility into operational bottlenecks that affect throughput, staffing, and patient care efficiency.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">The Solution</div>
-          <p>Designed a relational healthcare database using normalized tables, primary and foreign keys, SQL queries, and analytics-ready reporting outputs.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Solution</div>
+            <p>Designed a relational healthcare database with normalized tables, primary and foreign keys, SQL queries, and analytics-ready reporting outputs.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Workflow</div>
-          <ul>
-            <li>Created ERD and database schema</li>
-            <li>Built patient, visit, staff, and resource tables</li>
-            <li>Wrote SQL queries for operational analytics</li>
-            <li>Generated screenshots for portfolio documentation</li>
-          </ul>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Workflow</div>
+            <ul>
+              <li>Created ERD and database schema</li>
+              <li>Built patient, visit, staff, and resource tables</li>
+              <li>Wrote SQL queries for operational analysis</li>
+              <li>Generated visual outputs for portfolio documentation</li>
+            </ul>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Measurable Outcomes</div>
-          <p>Produced query outputs showing average length of stay, staff workload distribution, visit summaries, and resource utilization patterns.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Measurable Outcomes</div>
+            <p>Produced outputs showing average length of stay, staff workload distribution, visit summaries, and resource utilization duration.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Leadership / Business Impact</div>
-          <p>Demonstrates how database design and SQL analytics can support hospital operations, staffing decisions, and process improvement.</p>
+          <div class="project-block">
+            <div class="project-label">Leadership / Business Impact</div>
+            <p>Shows how database design and SQL analytics can support hospital operations, staffing decisions, workflow improvement, and executive reporting.</p>
+          </div>
         </div>
 
         <div class="tech-stack">
@@ -322,6 +396,36 @@
           <span class="pill">Database Design</span>
           <span class="pill">ERD</span>
           <span class="pill">Healthcare Analytics</span>
+          <span class="pill">Patient Flow</span>
+        </div>
+
+        <div class="screenshots-title">Project Screenshots</div>
+
+        <div class="screenshot-grid">
+          <a class="screenshot-card" href="images/avg-los-by-visit-type.png" target="_blank">
+            <img src="images/avg-los-by-visit-type.png" alt="Average length of stay by visit type">
+            <p>Average length of stay by visit type</p>
+          </a>
+
+          <a class="screenshot-card" href="images/staff-workload.png" target="_blank">
+            <img src="images/staff-workload.png" alt="Staff workload analytics screenshot">
+            <p>Staff workload analytics</p>
+          </a>
+
+          <a class="screenshot-card" href="images/resource-utilization-duration.png" target="_blank">
+            <img src="images/resource-utilization-duration.png" alt="Resource utilization duration screenshot">
+            <p>Resource utilization duration</p>
+          </a>
+
+          <a class="screenshot-card" href="images/combined-patient-flow-view.png" target="_blank">
+            <img src="images/combined-patient-flow-view.png" alt="Combined patient flow view screenshot">
+            <p>Combined patient flow view</p>
+          </a>
+
+          <a class="screenshot-card" href="images/patient-visit-summary-query.png" target="_blank">
+            <img src="images/patient-visit-summary-query.png" alt="Patient visit summary SQL query screenshot">
+            <p>Patient visit summary query</p>
+          </a>
         </div>
 
         <div class="project-links">
@@ -332,39 +436,41 @@
       <div class="project-card">
         <h3>Patient Movement Tracker Dashboard</h3>
 
-        <div class="project-block">
-          <div class="project-label">The Problem</div>
-          <p>Patient movement and medical tracking can become difficult to manage when information is spread across manual logs, inconsistent formats, or disconnected summaries.</p>
-        </div>
+        <div class="project-story">
+          <div class="project-block">
+            <div class="project-label">The Problem</div>
+            <p>Patient movement and medical tracking can become difficult when information is spread across manual logs, inconsistent formats, or disconnected summaries.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Why It Mattered</div>
-          <p>Leaders need fast, clear visibility into patient counts, case trends, severity levels, outcomes, and unit-level medical activity without exposing sensitive information.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Why It Mattered</div>
+            <p>Leaders need clear visibility into patient counts, case trends, severity levels, outcomes, and unit-level medical activity while protecting sensitive information.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">The Solution</div>
-          <p>Built a structured tracking dashboard using sanitized operational data and visual summaries for leadership decision-making.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Solution</div>
+            <p>Built a structured tracking dashboard using sanitized operational data and visual summaries for leadership decision-making.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Workflow</div>
-          <ul>
-            <li>Organized case-level data into a tracker format</li>
-            <li>Created severity and outcome categories</li>
-            <li>Built pivot-table summaries and dashboard visuals</li>
-            <li>Exported screenshots for professional presentation</li>
-          </ul>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Workflow</div>
+            <ul>
+              <li>Organized case-level data into a tracker format</li>
+              <li>Created severity and outcome categories</li>
+              <li>Built dashboard visuals and trend summaries</li>
+              <li>Prepared screenshots for professional presentation</li>
+            </ul>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Measurable Outcomes</div>
-          <p>Produced visual summaries by unit, condition, event type, severity, and movement trends.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Measurable Outcomes</div>
+            <p>Produced summaries by unit, condition, event type, severity, and patient movement trends.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Leadership / Business Impact</div>
-          <p>Shows how operational health data can be transformed into a leadership-ready dashboard while maintaining privacy awareness.</p>
+          <div class="project-block">
+            <div class="project-label">Leadership / Business Impact</div>
+            <p>Demonstrates how operational health data can be translated into leadership-ready reporting while maintaining privacy awareness.</p>
+          </div>
         </div>
 
         <div class="tech-stack">
@@ -372,49 +478,76 @@
           <span class="pill">Dashboarding</span>
           <span class="pill">Pivot Tables</span>
           <span class="pill">Operational Reporting</span>
+          <span class="pill">Leadership Analytics</span>
+        </div>
+
+        <div class="screenshots-title">Project Screenshots</div>
+
+        <div class="screenshot-grid">
+          <a class="screenshot-card" href="images/cases-by-unit.png" target="_blank">
+            <img src="images/cases-by-unit.png" alt="Cases by unit dashboard screenshot">
+            <p>Cases by unit</p>
+          </a>
+
+          <a class="screenshot-card" href="images/condition-severity-distribution.png" target="_blank">
+            <img src="images/condition-severity-distribution.png" alt="Condition severity distribution dashboard screenshot">
+            <p>Condition severity distribution</p>
+          </a>
+
+          <a class="screenshot-card" href="images/conditions-by-event-type.png" target="_blank">
+            <img src="images/conditions-by-event-type.png" alt="Conditions by event type dashboard screenshot">
+            <p>Conditions by event type</p>
+          </a>
+
+          <a class="screenshot-card" href="images/patient-movement-trends.png" target="_blank">
+            <img src="images/patient-movement-trends.png" alt="Patient movement trends dashboard screenshot">
+            <p>Patient movement trends</p>
+          </a>
         </div>
 
         <div class="project-links">
-          <a href="#">View Project Screenshots →</a>
+          <a href="https://github.com/isaacadjei-healthit">View GitHub Profile →</a>
         </div>
       </div>
 
       <div class="project-card">
         <h3>Military Water Consumption Dashboard</h3>
 
-        <div class="project-block">
-          <div class="project-label">The Problem</div>
-          <p>Field operations require accurate water planning, but estimates can be inconsistent when based on rough calculations or informal notes.</p>
-        </div>
+        <div class="project-story">
+          <div class="project-block">
+            <div class="project-label">The Problem</div>
+            <p>Field operations require accurate water planning, but estimates can become inconsistent when based on rough calculations or informal notes.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Why It Mattered</div>
-          <p>Water planning affects soldier safety, logistics, sustainment, and command-level readiness during training or operational missions.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Why It Mattered</div>
+            <p>Water planning affects soldier safety, logistics, sustainment, readiness, and command-level decision-making during field operations.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">The Solution</div>
-          <p>Created a planning model to estimate water requirements based on soldier count, duration, and temperature conditions.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Solution</div>
+            <p>Created a planning model to estimate water requirements based on soldier count, mission duration, and temperature conditions.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Workflow</div>
-          <ul>
-            <li>Built consumption assumptions by weather category</li>
-            <li>Calculated liters and gallons required</li>
-            <li>Structured the data for leadership reporting</li>
-            <li>Developed a reusable planning framework</li>
-          </ul>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Workflow</div>
+            <ul>
+              <li>Built consumption assumptions by weather category</li>
+              <li>Calculated liters and gallons required</li>
+              <li>Structured the data for leadership reporting</li>
+              <li>Developed a reusable planning framework</li>
+            </ul>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Measurable Outcomes</div>
-          <p>Supported planning scenarios for hundreds of soldiers across multiple days and environmental conditions.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Measurable Outcomes</div>
+            <p>Supported planning scenarios for hundreds of soldiers across multiple days and different environmental conditions.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Leadership / Business Impact</div>
-          <p>Demonstrates logistics planning, data-informed leadership, and the ability to convert operational requirements into clear decision-support tools.</p>
+          <div class="project-block">
+            <div class="project-label">Leadership / Business Impact</div>
+            <p>Demonstrates logistics planning, data-informed leadership, and the ability to convert field requirements into decision-support tools.</p>
+          </div>
         </div>
 
         <div class="tech-stack">
@@ -425,46 +558,48 @@
         </div>
 
         <div class="project-links">
-          <a href="#">View Project Summary →</a>
+          <a href="https://github.com/isaacadjei-healthit">View GitHub Profile →</a>
         </div>
       </div>
 
       <div class="project-card">
         <h3>IT Strategy & Governance Analysis</h3>
 
-        <div class="project-block">
-          <div class="project-label">The Problem</div>
-          <p>Healthcare organizations need IT initiatives that align with governance, risk management, compliance, operational value, and stakeholder needs.</p>
-        </div>
+        <div class="project-story">
+          <div class="project-block">
+            <div class="project-label">The Problem</div>
+            <p>Healthcare organizations need IT initiatives that align with governance, compliance, risk management, stakeholder needs, and measurable business value.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Why It Mattered</div>
-          <p>Technology projects fail when they are disconnected from business strategy, governance structure, or measurable organizational outcomes.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Why It Mattered</div>
+            <p>Technology projects can fail when they are disconnected from organizational strategy, governance structure, or operational outcomes.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">The Solution</div>
-          <p>Developed a strategy-focused analysis connecting IT governance principles to healthcare information systems and organizational decision-making.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Solution</div>
+            <p>Developed a strategy-focused analysis connecting IT governance principles to healthcare information systems and organizational decision-making.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Workflow</div>
-          <ul>
-            <li>Analyzed governance and IT alignment concepts</li>
-            <li>Connected information systems to business value</li>
-            <li>Evaluated risks, stakeholders, and implementation considerations</li>
-            <li>Presented recommendations in a structured format</li>
-          </ul>
-        </div>
+          <div class="project-block">
+            <div class="project-label">The Workflow</div>
+            <ul>
+              <li>Analyzed governance and IT alignment concepts</li>
+              <li>Connected information systems to business value</li>
+              <li>Evaluated risk and stakeholder considerations</li>
+              <li>Presented structured recommendations</li>
+            </ul>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Measurable Outcomes</div>
-          <p>Produced a professional analysis demonstrating IT-business alignment, governance awareness, and healthcare technology planning.</p>
-        </div>
+          <div class="project-block">
+            <div class="project-label">Measurable Outcomes</div>
+            <p>Produced a professional analysis demonstrating IT-business alignment, governance awareness, and healthcare technology planning.</p>
+          </div>
 
-        <div class="project-block">
-          <div class="project-label">Leadership / Business Impact</div>
-          <p>Strengthens the portfolio by showing strategic thinking beyond technical execution.</p>
+          <div class="project-block">
+            <div class="project-label">Leadership / Business Impact</div>
+            <p>Strengthens the portfolio by showing strategic thinking beyond technical execution.</p>
+          </div>
         </div>
 
         <div class="tech-stack">
@@ -475,7 +610,7 @@
         </div>
 
         <div class="project-links">
-          <a href="#">View Analysis →</a>
+          <a href="https://github.com/isaacadjei-healthit">View GitHub Profile →</a>
         </div>
       </div>
 
@@ -485,7 +620,7 @@
   <section id="impact">
     <h2 class="section-title">What This Portfolio Demonstrates</h2>
     <p class="section-intro">
-      The goal is not just to show projects. The goal is to show how I think, build, communicate, and create value.
+      This portfolio is designed to show more than completed projects. It shows how I define problems, build solutions, communicate outcomes, and connect technical work to leadership value.
     </p>
 
     <div class="impact-grid">
@@ -506,7 +641,7 @@
 
       <div class="impact-card">
         <h3>Leadership Value</h3>
-        <p>Connects technical work to operational decision-making, resource planning, process improvement, and executive communication.</p>
+        <p>Connects technical work to decision-making, planning, process improvement, reporting, and stakeholder communication.</p>
       </div>
     </div>
   </section>
