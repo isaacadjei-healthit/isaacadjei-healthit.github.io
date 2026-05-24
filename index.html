@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Isaac K. Adjei | Health IT Portfolio</title>
 
   <style>
@@ -10,478 +10,287 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
       color: #1f2937;
-      background: #f8fafc;
-    }
-
-    a {
-      color: #0f766e;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #0f172a, #0f766e);
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
       color: white;
-      padding: 70px 20px;
+      padding: 80px 20px;
       text-align: center;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      margin-bottom: 25px;
     }
 
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
 
-    header h2 {
-      font-size: 1.25rem;
-      font-weight: 400;
-      margin-bottom: 20px;
-      color: #d1fae5;
-    }
-
     header p {
-      max-width: 780px;
-      margin: 0 auto 28px;
-      font-size: 1.05rem;
-    }
-
-    .button-group {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 999px;
-      background: white;
-      color: #0f172a;
-      font-weight: bold;
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid white;
-    }
-
-    .project-btn {
-      margin-top: 18px;
+      font-size: 1.2rem;
+      max-width: 900px;
+      margin: auto;
     }
 
     nav {
-      background: white;
-      padding: 14px 20px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+      background: #111827;
+      padding: 15px;
+      text-align: center;
       position: sticky;
       top: 0;
-      z-index: 10;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
+      z-index: 999;
     }
 
     nav a {
-      color: #0f172a;
-      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #93c5fd;
     }
 
     section {
+      padding: 70px 20px;
       max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 20px;
+      margin: auto;
     }
 
-    .section-title {
+    h2 {
       font-size: 2rem;
-      color: #0f172a;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 34px;
-      color: #475569;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: start;
+      margin-bottom: 20px;
+      color: #1e3a8a;
+      border-bottom: 3px solid #1e3a8a;
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
     .card {
       background: white;
-      border-radius: 18px;
-      padding: 26px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e2e8f0;
+      padding: 25px;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
     }
 
-    .card h3 {
-      color: #0f172a;
-      margin-bottom: 12px;
+    .card:hover {
+      transform: translateY(-5px);
     }
 
-    .card ul {
-      padding-left: 20px;
-    }
-
-    .card li {
-      margin-bottom: 8px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .project-card {
-      background: white;
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-      border-top: 5px solid #0f766e;
-    }
-
-    .project-card h3 {
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-
-    .tag-list {
-      margin-top: 16px;
+    .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
+      margin-top: 20px;
     }
 
-    .tag {
-      background: #ccfbf1;
-      color: #115e59;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .focus-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 22px;
-    }
-
-    .focus-item {
-      background: white;
-      padding: 18px;
-      border-radius: 14px;
-      border-left: 5px solid #0f766e;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
-      font-weight: 600;
-    }
-
-    .contact-box {
-      text-align: center;
-      background: #0f172a;
+    .skill {
+      background: #1e3a8a;
       color: white;
-      border-radius: 20px;
-      padding: 40px 24px;
+      padding: 10px 16px;
+      border-radius: 25px;
+      font-size: 0.95rem;
     }
 
-    .contact-box h2 {
-      margin-bottom: 12px;
+    .buttons {
+      margin-top: 30px;
     }
 
-    .contact-box p {
-      margin-bottom: 22px;
-      color: #cbd5e1;
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 22px;
+      background: #1e3a8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .buttons a:hover {
+      background: #0f172a;
     }
 
     footer {
+      background: #111827;
+      color: white;
       text-align: center;
-      padding: 24px 20px;
-      color: #64748b;
-      background: white;
+      padding: 25px;
+      margin-top: 40px;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
       header h1 {
         font-size: 2.2rem;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
+      header p {
+        font-size: 1rem;
       }
 
-      nav ul {
-        gap: 16px;
+      nav a {
+        display: inline-block;
+        margin: 8px;
       }
     }
   </style>
 </head>
 
 <body>
+
   <header>
+
+    <!-- PROFILE PICTURE -->
+    <img src="images/isaac-profile.jpg" 
+         alt="Isaac K. Adjei"
+         class="profile-img">
+
     <h1>Isaac K. Adjei</h1>
-    <h2>Health IT Professional | Clinical Informatics | Project Management | Healthcare Analytics</h2>
+
     <p>
-      I build healthcare technology, informatics, and analytics solutions that improve clinical operations,
-      strengthen decision-making, and support better organizational performance.
+      Health IT Professional | CAPM Certified | Health Informatics | 
+      Healthcare Analytics | EHR Implementation | U.S. Army National Guard Officer
     </p>
 
-    <div class="button-group">
-      <a class="btn" href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank">View LinkedIn</a>
-      <a class="btn secondary" href="https://github.com/isaacadjei-healthit" target="_blank">View GitHub</a>
+    <div class="buttons">
+      <a href="https://github.com/isaacadjei-healthit" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      <a href="#">Download Resume</a>
     </div>
+
   </header>
 
   <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#focus">Focus</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
   </nav>
 
   <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-subtitle">
-      A Health IT and healthcare analytics professional with graduate-level training, project management experience,
-      and leadership experience in healthcare and military operational environments.
-    </p>
+    <h2>About Me</h2>
 
-    <div class="about-grid">
-      <div class="card">
-        <h3>Professional Summary</h3>
-        <p>
-          I combine healthcare operations, clinical informatics, project management, and data analytics to support
-          technology-driven improvements in healthcare systems. My background includes healthcare project coordination,
-          Health IT, database design, analytics reporting, and military medical leadership as a U.S. Army National Guard Officer.
-        </p>
-      </div>
+    <div class="card">
+      <p>
+        I am a Health IT professional with experience in healthcare analytics, 
+        project management, health informatics, database systems, and operational leadership. 
+        My background combines clinical systems knowledge, data analytics, and military leadership 
+        experience to support healthcare technology initiatives and operational improvement projects.
+      </p>
 
-      <div class="card">
-        <h3>Credentials</h3>
-        <ul>
-          <li>MSc in Applied Health Informatics</li>
-          <li>Master of Professional Studies in Employment Relations</li>
-          <li>MMIS Candidate — Georgia College & State University</li>
-          <li>Certified Associate in Project Management (CAPM)</li>
-          <li>U.S. Army National Guard Officer — 70B Health Services Administration</li>
-        </ul>
-      </div>
+      <br>
+
+      <p>
+        I hold an MSc in Applied Health Informatics, an MPS in Employment Relations, 
+        and professional certification as a Certified Associate in Project Management (CAPM). 
+        I am currently expanding my expertise in Management Information Systems, healthcare databases, 
+        analytics, and enterprise technology strategy.
+      </p>
     </div>
   </section>
 
   <section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-subtitle">
-      A focused collection of Health IT, healthcare analytics, operational planning, and technology strategy projects.
-    </p>
+    <h2>Featured Projects</h2>
 
-    <div class="project-grid">
+    <div class="card">
+      <h3>Healthcare Database for Patient Flow Optimization</h3>
+      <p>
+        Designed and implemented a healthcare database system focused on patient flow optimization, 
+        resource utilization, and operational analytics using SQL, database normalization, 
+        and healthcare informatics principles.
+      </p>
+    </div>
 
-      <div class="project-card">
-        <h3>Healthcare Database for Patient Flow Optimization</h3>
-        <p>
-          Designed a healthcare database management system focused on improving patient flow, healthcare resource utilization,
-          operational efficiency, and data integrity through structured database architecture and healthcare analytics.
-        </p>
+    <div class="card">
+      <h3>Patient Movement Tracker Dashboard</h3>
+      <p>
+        Developed a patient movement tracking system and dashboard for operational reporting, 
+        case monitoring, and leadership visibility using Excel analytics and structured data management.
+      </p>
+    </div>
 
-        <div class="tag-list">
-          <span class="tag">SQL</span>
-          <span class="tag">Database Design</span>
-          <span class="tag">ERD</span>
-          <span class="tag">Healthcare Analytics</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Azure Data Studio</span>
-          <span class="tag">Healthcare Operations</span>
-        </div>
+    <div class="card">
+      <h3>Military Water Consumption Dashboard</h3>
+      <p>
+        Built a leadership planning dashboard to calculate water requirements for military operations 
+        based on personnel counts, environmental conditions, and sustainment planning metrics.
+      </p>
+    </div>
 
-        <div class="project-btn">
-          <a class="btn" href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization" target="_blank">
-            View Project on GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Patient Movement Tracker Dashboard</h3>
-        <p>
-          Created a leadership-focused patient movement dashboard designed to improve visibility,
-          operational reporting, case tracking, and decision support while maintaining awareness of healthcare data sensitivity.
-        </p>
-
-        <div class="tag-list">
-          <span class="tag">Excel</span>
-          <span class="tag">Dashboarding</span>
-          <span class="tag">Healthcare Operations</span>
-          <span class="tag">Reporting</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Military Water Consumption Dashboard</h3>
-        <p>
-          Built a decision-support dashboard used to estimate water consumption requirements for large military operations,
-          supporting leadership planning, readiness, and logistics recommendations.
-        </p>
-
-        <div class="tag-list">
-          <span class="tag">Excel Analytics</span>
-          <span class="tag">Operational Planning</span>
-          <span class="tag">Leadership Reporting</span>
-          <span class="tag">Logistics</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>IT Strategy & Governance Project</h3>
-        <p>
-          Developed an organizational IT strategy and governance framework focused on business alignment,
-          technology planning, stakeholder needs, risk awareness, and operational effectiveness.
-        </p>
-
-        <div class="tag-list">
-          <span class="tag">IT Governance</span>
-          <span class="tag">Strategic Planning</span>
-          <span class="tag">Business Analysis</span>
-          <span class="tag">Technology Alignment</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Health IT Portfolio Website</h3>
-        <p>
-          Designed a professional portfolio platform to showcase healthcare technology, informatics, analytics,
-          project management, and leadership experience for Health IT career opportunities.
-        </p>
-
-        <div class="tag-list">
-          <span class="tag">HTML</span>
-          <span class="tag">GitHub Pages</span>
-          <span class="tag">Portfolio Development</span>
-          <span class="tag">Professional Branding</span>
-        </div>
-
-        <div class="project-btn">
-          <a class="btn" href="https://isaacadjei-healthit.github.io" target="_blank">
-            View Portfolio Website
-          </a>
-        </div>
-      </div>
-
+    <div class="card">
+      <h3>IT Governance & Strategy Analysis</h3>
+      <p>
+        Conducted organizational IT governance and strategic analysis projects focused on 
+        enterprise technology alignment, risk management, and operational effectiveness.
+      </p>
     </div>
   </section>
 
   <section id="skills">
-    <h2 class="section-title">Technical Skills</h2>
-    <p class="section-subtitle">
-      Skills aligned with Health IT, clinical informatics, healthcare analytics, and project management roles.
-    </p>
+    <h2>Technical Skills</h2>
 
-    <div class="skills-grid">
-      <div class="card">
-        <h3>Health IT</h3>
-        <ul>
-          <li>Electronic Health Records (EHR)</li>
-          <li>Clinical Informatics</li>
-          <li>Healthcare Analytics</li>
-          <li>Healthcare Information Systems</li>
-          <li>Health Information Management</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Technical</h3>
-        <ul>
-          <li>SQL</li>
-          <li>Power BI</li>
-          <li>Python</li>
-          <li>Database Design</li>
-          <li>Data Modeling</li>
-          <li>Azure Data Studio</li>
-          <li>Microsoft Excel Analytics</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Project Management</h3>
-        <ul>
-          <li>CAPM</li>
-          <li>Agile Methodologies</li>
-          <li>PMO Support</li>
-          <li>Stakeholder Management</li>
-          <li>Process Improvement</li>
-          <li>Project Coordination</li>
-        </ul>
-      </div>
+    <div class="skills">
+      <div class="skill">SQL</div>
+      <div class="skill">Power BI</div>
+      <div class="skill">Healthcare Analytics</div>
+      <div class="skill">Project Management</div>
+      <div class="skill">Health Informatics</div>
+      <div class="skill">Database Management</div>
+      <div class="skill">Excel Analytics</div>
+      <div class="skill">Data Visualization</div>
+      <div class="skill">EHR Systems</div>
+      <div class="skill">Healthcare IT</div>
+      <div class="skill">Leadership</div>
+      <div class="skill">Clinical Systems</div>
     </div>
   </section>
 
-  <section id="focus">
-    <h2 class="section-title">Professional Focus</h2>
-    <p class="section-subtitle">
-      My work combines healthcare operations, informatics, analytics, and technology to improve decision-making and organizational performance.
-    </p>
+  <section id="experience">
+    <h2>Professional Experience</h2>
 
-    <div class="focus-list">
-      <div class="focus-item">Health IT & Clinical Informatics</div>
-      <div class="focus-item">Healthcare Analytics & Reporting</div>
-      <div class="focus-item">SQL & Database Management</div>
-      <div class="focus-item">Business Intelligence & Data Visualization</div>
-      <div class="focus-item">EHR Systems Implementation Support</div>
-      <div class="focus-item">Project Management & PMO Operations</div>
-      <div class="focus-item">Leadership & Operational Planning</div>
-      <div class="focus-item">Process Improvement & System Performance</div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="contact-box">
-      <h2>Let's Connect</h2>
+    <div class="card">
+      <h3>U.S. Army National Guard Officer</h3>
       <p>
-        I am focused on Health IT, clinical informatics, healthcare analytics, project management,
-        and technology-enabled healthcare improvement.
+        Serving as a Health Services Administration Officer with operational leadership 
+        experience supporting healthcare operations, sustainment planning, and personnel management.
       </p>
+    </div>
 
-      <div class="button-group">
-        <a class="btn" href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank">LinkedIn</a>
-        <a class="btn" href="https://github.com/isaacadjei-healthit" target="_blank">GitHub</a>
-      </div>
+    <div class="card">
+      <h3>Healthcare & IT Project Experience</h3>
+      <p>
+        Experience supporting healthcare operations, project coordination, data analytics, 
+        IT support, and informatics initiatives within healthcare and enterprise environments.
+      </p>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 Isaac K. Adjei. Using technology, data, and leadership to improve healthcare systems.</p>
+    <p>
+      © 2026 Isaac K. Adjei | Health IT Portfolio
+    </p>
   </footer>
+
 </body>
 </html>
