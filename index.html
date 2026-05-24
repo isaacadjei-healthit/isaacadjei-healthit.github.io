@@ -41,9 +41,9 @@
     .hero-content {
       display: flex;
       align-items: center;
-      gap: 42px;
-      max-width: 1200px;
-      margin: 0 auto;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
     }
 
     .profile-pic {
@@ -310,10 +310,12 @@
 
     @media (max-width: 900px) {
       .hero-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
 
       .hero-text {
         text-align: left;
@@ -706,3 +708,14 @@
 
 </body>
 </html>
+
+    @media (max-width: 768px) {
+      .profile-image {
+        width: 240px;
+        height: 240px;
+      }
+
+      .hero-content {
+        gap: 30px;
+      }
+    }
