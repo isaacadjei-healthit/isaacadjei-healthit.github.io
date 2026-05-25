@@ -100,21 +100,24 @@
       border-radius: 10px;
       font-weight: 700;
       transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--royal-blue);
+      border: 1px solid rgba(79,163,165,0.9);
       color: var(--white);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
     }
 
+    .btn-primary,
     .btn-secondary {
-      border: 1px solid var(--muted-teal);
+      border: 1px solid rgba(79,163,165,0.9);
       color: var(--white);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      opacity: 0.92;
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(79,163,165,1);
     }
 
     section {
