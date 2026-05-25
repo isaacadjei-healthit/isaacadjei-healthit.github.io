@@ -33,7 +33,12 @@
     }
 
     header {
-      background: linear-gradient(135deg, var(--deep-navy), var(--navy));
+      background:
+        linear-gradient(rgba(4,17,31,0.72), rgba(4,17,31,0.78)),
+        url("images/cover-page-portfolio.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: var(--white);
       padding: 55px 8% 60px;
     }
@@ -41,18 +46,20 @@
     .hero-content {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 60px;
+      justify-content: flex-start;
+      gap: 34px;
+      max-width: 1200px;
+      margin: 0 auto;
       flex-wrap: wrap;
     }
 
     .profile-pic {
-      width: 125px;
-      height: 125px;
+      width: 155px;
+      height: 155px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid rgba(255,255,255,0.18);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+      border: 3px solid rgba(255,255,255,0.25);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
       flex-shrink: 0;
     }
 
@@ -93,21 +100,24 @@
       border-radius: 10px;
       font-weight: 700;
       transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--royal-blue);
+      border: 1px solid rgba(79,163,165,0.9);
       color: var(--white);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
     }
 
+    .btn-primary,
     .btn-secondary {
-      border: 1px solid var(--muted-teal);
+      border: 1px solid rgba(79,163,165,0.9);
       color: var(--white);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      opacity: 0.92;
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(79,163,165,1);
     }
 
     section {
@@ -310,15 +320,13 @@
 
     @media (max-width: 900px) {
       .hero-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
+        align-items: flex-start;
+        gap: 28px;
+      }
 
-      .hero-text {
-        text-align: left;
+      .profile-pic {
+        width: 135px;
+        height: 135px;
       }
 
       header h1 {
@@ -332,8 +340,8 @@
       }
 
       .profile-pic {
-        width: 105px;
-        height: 105px;
+        width: 115px;
+        height: 115px;
       }
 
       header h1 {
@@ -708,14 +716,3 @@
 
 </body>
 </html>
-
-    @media (max-width: 768px) {
-      .profile-image {
-        width: 240px;
-        height: 240px;
-      }
-
-      .hero-content {
-        gap: 30px;
-      }
-    }
