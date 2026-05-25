@@ -33,60 +33,49 @@
     }
 
     header {
-      position: relative;
-      color: var(--white);
-      padding: 78px 8% 84px;
       background:
-        linear-gradient(90deg, rgba(4, 17, 31, 0.94) 0%, rgba(7, 26, 47, 0.82) 48%, rgba(7, 26, 47, 0.55) 100%),
-        url("images/cover-page-portfolio.jpeg") center center / cover no-repeat;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 20% 20%, rgba(79, 163, 165, 0.22), transparent 32%);
-      pointer-events: none;
+        linear-gradient(rgba(4,17,31,0.72), rgba(4,17,31,0.78)),
+        url("images/cover-page-portfolio.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--white);
+      padding: 55px 8% 60px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 1180px;
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      gap: 48px;
+      gap: 34px;
+      max-width: 1200px;
+      margin: 0 auto;
       flex-wrap: wrap;
     }
 
     .profile-pic {
-      width: 220px;
-      height: 220px;
+      width: 155px;
+      height: 155px;
       object-fit: cover;
       border-radius: 50%;
-      border: 5px solid rgba(255,255,255,0.34);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.34);
+      border: 3px solid rgba(255,255,255,0.25);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
       flex-shrink: 0;
-      background: rgba(255,255,255,0.12);
     }
 
     .hero-text {
       text-align: left;
-      max-width: 780px;
     }
 
     header h1 {
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-size: 2.6rem;
       font-weight: 800;
       letter-spacing: -0.8px;
       margin-bottom: 8px;
     }
 
     header h2 {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: 1.08rem;
       font-weight: 500;
       color: #d9e8f6;
       margin-bottom: 18px;
@@ -94,9 +83,9 @@
 
     .tagline {
       max-width: 760px;
-      margin-bottom: 26px;
-      color: #d7e4f1;
-      font-size: 1.04rem;
+      margin-bottom: 24px;
+      color: #c8d6e5;
+      font-size: 1rem;
     }
 
     .cta-group {
@@ -111,25 +100,28 @@
       border-radius: 10px;
       font-weight: 700;
       transition: 0.25s ease;
-    }
-
-    .btn-primary {
-      background: var(--royal-blue);
+      border: 1px solid rgba(79,163,165,0.9);
       color: var(--white);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
     }
 
+    .btn-primary,
     .btn-secondary {
-      border: 1px solid var(--muted-teal);
+      border: 1px solid rgba(79,163,165,0.9);
       color: var(--white);
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      opacity: 0.92;
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(79,163,165,1);
     }
 
     section {
-      padding: 64px 8%;
+      padding: 52px 8%;
     }
 
     .section-title {
@@ -143,7 +135,7 @@
     .section-intro {
       max-width: 900px;
       color: var(--slate);
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       font-size: 1.02rem;
     }
 
@@ -173,7 +165,7 @@
     }
 
     .project-card {
-      padding: 40px;
+      padding: 36px;
       border-top: 5px solid var(--muted-teal);
     }
 
@@ -328,16 +320,13 @@
 
     @media (max-width: 900px) {
       .hero-content {
-        gap: 34px;
-      }
-
-      .hero-text {
-        text-align: left;
+        align-items: flex-start;
+        gap: 28px;
       }
 
       .profile-pic {
-        width: 190px;
-        height: 190px;
+        width: 135px;
+        height: 135px;
       }
 
       header h1 {
@@ -351,8 +340,8 @@
       }
 
       .profile-pic {
-        width: 170px;
-        height: 170px;
+        width: 115px;
+        height: 115px;
       }
 
       header h1 {
@@ -392,7 +381,7 @@
           <a href="#projects" class="btn btn-primary">View Portfolio Projects</a>
           <a href="Isaac-Adjei-Resume.pdf" class="btn btn-secondary">View Resume</a>
           <a href="https://github.com/isaacadjei-healthit" class="btn btn-secondary">GitHub</a>
-          <a href="https://www.linkedin.com/in/isaacadjei-healthit/" class="btn btn-secondary">LinkedIn</a>
+          <a href="https://www.linkedin.com/" class="btn btn-secondary">LinkedIn</a>
         </div>
       </div>
     </div>
