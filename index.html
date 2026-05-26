@@ -1658,6 +1658,272 @@
       .featured-card { grid-template-columns: 1fr; }
     }
 
+
+
+    /* Final hero profile-card alignment fix: places Portfolio Focus and Built for Recruiters directly under the profile photo. */
+    .profile-panel {
+      width: min(650px, 100%);
+      padding: 34px;
+    }
+
+    .profile-card-grid {
+      display: grid;
+      grid-template-columns: 235px 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .profile-left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .profile-right-column {
+      display: grid;
+      gap: 24px;
+      align-content: start;
+    }
+
+    .profile-card-grid .profile-pic-wrap {
+      width: 225px;
+      height: 225px;
+      margin: 0 auto;
+    }
+
+    .profile-card-grid .profile-title h2 {
+      font-size: clamp(2.3rem, 3vw, 3rem);
+      line-height: 1.04;
+      margin-bottom: 12px;
+    }
+
+    .profile-card-grid .profile-title p {
+      max-width: 330px;
+      color: #123385;
+      font-size: 1.22rem;
+      line-height: 1.45;
+      font-weight: 900;
+    }
+
+    .profile-card-grid .profile-metrics {
+      margin-left: 0 !important;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(125px, 1fr));
+      gap: 14px;
+    }
+
+    .profile-card-grid .profile-metric {
+      min-height: 132px;
+      padding: 22px;
+      border-radius: 18px;
+    }
+
+    .profile-card-grid .hero-callouts {
+      width: 100%;
+      margin: 0 !important;
+      transform: none !important;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .profile-card-grid .hero-callout {
+      min-height: 126px;
+      padding: 20px 22px;
+      border-radius: 18px;
+    }
+
+    .profile-card-grid .hero-callout strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .profile-card-grid .hero-callout small {
+      display: block;
+      color: #082970;
+      font-size: 0.92rem;
+      font-weight: 750;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 1120px) {
+      .profile-card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card-grid .profile-pic-wrap {
+        width: 190px;
+        height: 190px;
+        margin: 0;
+      }
+
+      .profile-card-grid .hero-callouts {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .profile-panel {
+        padding: 24px;
+      }
+
+      .profile-card-grid .profile-pic-wrap {
+        width: 165px;
+        height: 165px;
+      }
+
+      .profile-card-grid .profile-metrics,
+      .profile-card-grid .hero-callouts {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* FINAL PROFILE CARD FIX: photo left, callouts directly under photo, metrics to the right. */
+    .hero-visual {
+      min-height: 560px;
+      display: grid;
+      align-content: center;
+    }
+
+    .profile-panel {
+      width: min(650px, 100%) !important;
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 32px;
+      padding: 32px !important;
+      box-shadow: var(--shadow-md);
+    }
+
+    .final-profile-layout {
+      display: grid !important;
+      grid-template-columns: 225px 1fr !important;
+      grid-template-areas:
+        "photo title"
+        "callouts metrics" !important;
+      column-gap: 30px !important;
+      row-gap: 18px !important;
+      align-items: start !important;
+    }
+
+    .profile-photo-area {
+      grid-area: photo !important;
+      width: 225px !important;
+      height: 225px !important;
+      margin: 0 !important;
+    }
+
+    .profile-title-area {
+      grid-area: title !important;
+      align-self: center !important;
+    }
+
+    .profile-title-area h2 {
+      font-size: clamp(2.25rem, 3vw, 3rem) !important;
+      line-height: 1.03 !important;
+      margin-bottom: 12px !important;
+      color: var(--ink);
+      letter-spacing: -1px;
+    }
+
+    .profile-title-area p {
+      max-width: 340px;
+      color: #123385 !important;
+      font-size: 1.2rem !important;
+      line-height: 1.45 !important;
+      font-weight: 900 !important;
+    }
+
+    .profile-callouts-area {
+      grid-area: callouts !important;
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
+      margin: 0 !important;
+      transform: none !important;
+      align-self: start !important;
+    }
+
+    .profile-callouts-area .hero-callout {
+      min-height: 126px !important;
+      padding: 20px 22px !important;
+      border-radius: 18px !important;
+      background: rgba(255, 255, 255, 0.72) !important;
+      border: 1px solid rgba(255, 255, 255, 0.82) !important;
+      box-shadow: 0 12px 34px rgba(20, 33, 61, 0.10) !important;
+    }
+
+    .profile-callouts-area .hero-callout strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .profile-callouts-area .hero-callout small {
+      display: block;
+      color: #082970;
+      font-size: 0.92rem;
+      font-weight: 750;
+      line-height: 1.55;
+    }
+
+    .profile-metrics-area {
+      grid-area: metrics !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(125px, 1fr)) !important;
+      gap: 14px !important;
+      margin: 0 !important;
+      align-self: start !important;
+    }
+
+    .profile-metrics-area .profile-metric {
+      min-height: 132px !important;
+      padding: 22px !important;
+      border-radius: 18px !important;
+    }
+
+    @media (max-width: 1120px) {
+      .final-profile-layout {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+          "photo"
+          "title"
+          "metrics"
+          "callouts" !important;
+      }
+
+      .profile-photo-area {
+        width: 190px !important;
+        height: 190px !important;
+      }
+
+      .profile-callouts-area {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .profile-panel {
+        padding: 24px !important;
+      }
+
+      .profile-photo-area {
+        width: 165px !important;
+        height: 165px !important;
+      }
+
+      .profile-metrics-area,
+      .profile-callouts-area {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -1706,48 +1972,49 @@
 
         <div class="hero-visual fade-in delay-2">
           <div class="profile-panel">
-            <div class="profile-top">
-              <div class="profile-pic-wrap">
+            <div class="profile-card-grid final-profile-layout">
+              <div class="profile-pic-wrap profile-photo-area">
                 <img src="images/isaac-profile.jpg" alt="Isaac K. Adjei profile picture" class="profile-pic" />
               </div>
-              <div class="profile-title">
+
+              <div class="profile-title profile-title-area">
                 <h2>Isaac K. Adjei</h2>
                 <p>Health IT, Project Management &amp; Operational Analytics</p>
               </div>
-            </div>
 
-            <div class="profile-metrics">
-              <a href="#projects" class="profile-metric" aria-label="Go to featured projects">
-                <strong>4</strong>
-                <span>Featured Projects</span>
-              </a>
-              <a href="#interactive-tools" class="profile-metric" aria-label="Go to interactive tools">
-                <strong>3</strong>
-                <span>Interactive Tools</span>
-              </a>
-              <a href="#patient-flow-screenshots" class="profile-metric" aria-label="Go to portfolio visuals">
-                <strong>9+</strong>
-                <span>Portfolio Visuals</span>
-              </a>
-              <a href="#impact" class="profile-metric" aria-label="Go to operations and Health IT impact section">
-                <strong>360°</strong>
-                <span>Ops + Health IT View</span>
-              </a>
-            </div>
-          </div>
+              <div class="hero-callouts profile-callouts-area">
+                <div class="hero-callout">
+                  <strong>Portfolio Focus</strong>
+                  <small>Healthcare operations, patient flow, readiness tracking, and resource planning.</small>
+                </div>
+                <div class="hero-callout">
+                  <strong>Built for Recruiters</strong>
+                  <small>Case studies, screenshots, tools, outcomes, and business impact.</small>
+                </div>
+              </div>
 
-
-          <div class="hero-callouts">
-            <div class="hero-callout">
-              <strong>Portfolio Focus</strong>
-              <small>Healthcare operations, patient flow, readiness tracking, and resource planning.</small>
-            </div>
-            <div class="hero-callout">
-              <strong>Built for Recruiters</strong>
-              <small>Case studies, screenshots, tools, outcomes, and business impact.</small>
+              <div class="profile-metrics profile-metrics-area">
+                <a href="#projects" class="profile-metric" aria-label="Go to featured projects">
+                  <strong>4</strong>
+                  <span>Featured Projects</span>
+                </a>
+                <a href="#interactive-tools" class="profile-metric" aria-label="Go to interactive tools">
+                  <strong>3</strong>
+                  <span>Interactive Tools</span>
+                </a>
+                <a href="#patient-flow-screenshots" class="profile-metric" aria-label="Go to portfolio visuals">
+                  <strong>9+</strong>
+                  <span>Portfolio Visuals</span>
+                </a>
+                <a href="#impact" class="profile-metric" aria-label="Go to operations and Health IT impact section">
+                  <strong>360°</strong>
+                  <span>Ops + Health IT View</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </header>
 
