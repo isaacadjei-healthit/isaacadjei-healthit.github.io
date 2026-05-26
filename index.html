@@ -130,8 +130,8 @@
       max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 44px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 56px;
       align-items: center;
     }
 
@@ -151,7 +151,7 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
       line-height: 0.98;
       letter-spacing: -3px;
       margin-bottom: 18px;
@@ -198,9 +198,11 @@
       border: 1px solid transparent;
     }
 
-    .btn-primary {
-      background: var(--ink);
-      color: var(--white);
+    .btn-primary,
+    .btn-secondary {
+      background: var(--white);
+      color: var(--ink);
+      border-color: var(--line);
       box-shadow: var(--shadow-sm);
     }
 
@@ -208,13 +210,8 @@
     .btn-secondary:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
-    }
-
-    .btn-secondary {
-      background: var(--white);
-      color: var(--ink);
-      border-color: var(--line);
-      box-shadow: var(--shadow-sm);
+      border-color: rgba(37, 99, 235, 0.35);
+      color: var(--blue);
     }
 
     .hero-tags {
@@ -234,14 +231,14 @@
     }
 
     .hero-visual {
-      min-height: 460px;
+      min-height: 560px;
       display: grid;
-      gap: 16px;
+      gap: 18px;
       align-content: center;
     }
 
     .profile-panel {
-      width: min(420px, 100%);
+      width: min(560px, 100%);
       background: rgba(255, 255, 255, 0.92);
       border: 1px solid rgba(219, 228, 239, 0.9);
       border-radius: 32px;
@@ -252,30 +249,40 @@
     .profile-top {
       display: flex;
       align-items: center;
-      gap: 18px;
-      margin-bottom: 24px;
+      gap: 26px;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic-wrap {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 14px 34px rgba(20, 33, 61, 0.16);
+      flex-shrink: 0;
     }
 
     .profile-pic {
-      width: 118px;
-      height: 118px;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 26px;
-      border: 5px solid var(--white);
-      box-shadow: 0 12px 26px rgba(20, 33, 61, 0.16);
-      background: var(--line);
+      object-position: center;
+      border-radius: 50%;
+      transform: scale(1.14);
+      display: block;
     }
 
     .profile-title h2 {
-      font-size: 1.3rem;
+      font-size: 1.75rem;
       line-height: 1.2;
       margin-bottom: 5px;
     }
 
     .profile-title p {
       color: var(--slate);
-      font-weight: 700;
-      font-size: 0.92rem;
+      font-weight: 800;
+      font-size: 1.05rem;
     }
 
     .profile-metrics {
@@ -288,24 +295,25 @@
       background: #f8fbff;
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 16px;
+      padding: 22px;
+      min-height: 118px;
     }
 
     .profile-metric strong {
       display: block;
-      font-size: 1.55rem;
+      font-size: 2.1rem;
       color: var(--blue);
       letter-spacing: -0.8px;
     }
 
     .profile-metric span {
       color: var(--slate);
-      font-size: 0.82rem;
+      font-size: 0.95rem;
       font-weight: 800;
     }
 
     .hero-callouts {
-      width: min(420px, 100%);
+      width: min(560px, 100%);
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
@@ -316,7 +324,8 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       box-shadow: var(--shadow-sm);
-      padding: 16px;
+      padding: 20px;
+      min-height: 150px;
     }
 
     .hero-callout strong {
@@ -596,6 +605,22 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+    }
+
+    .project-actions .btn,
+    .cta-group .btn {
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .project-actions .btn:hover,
+    .cta-group .btn:hover {
+      color: var(--blue);
+      border-color: rgba(37, 99, 235, 0.35);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
 
     .project-visual {
@@ -1111,9 +1136,9 @@
         align-items: flex-start;
       }
 
-      .profile-pic {
-        width: 105px;
-        height: 105px;
+      .profile-pic-wrap {
+        width: 135px;
+        height: 135px;
       }
 
       .profile-metrics,
@@ -1197,7 +1222,9 @@
         <div class="hero-visual fade-in delay-2">
           <div class="profile-panel">
             <div class="profile-top">
-              <img src="images/isaac-profile.jpg" alt="Isaac K. Adjei profile picture" class="profile-pic" />
+              <div class="profile-pic-wrap">
+                <img src="images/isaac-profile.jpg" alt="Isaac K. Adjei profile picture" class="profile-pic" />
+              </div>
               <div class="profile-title">
                 <h2>Isaac K. Adjei</h2>
                 <p>Health IT & Operational Analytics</p>
