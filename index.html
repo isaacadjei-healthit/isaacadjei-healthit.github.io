@@ -158,6 +158,32 @@
       font-weight: 700;
     }
 
+
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      max-width: 1100px;
+    }
+
+    .competency-card {
+      background: var(--white);
+      border: 1px solid var(--light-slate);
+      border-radius: 14px;
+      padding: 18px 16px;
+      box-shadow: 0 8px 22px rgba(7, 26, 47, 0.05);
+      transition: 0.25s ease;
+      font-weight: 800;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .competency-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(7, 26, 47, 0.10);
+      border-color: rgba(79,163,165,0.45);
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -500,6 +526,24 @@
     </div>
   </section>
 
+
+  <section id="competencies">
+    <h2 class="section-title">Core Competencies</h2>
+    <p class="section-intro">
+      A focused blend of healthcare technology, analytics, operational reporting, and project execution capabilities.
+    </p>
+
+    <div class="competencies-grid">
+      <div class="competency-card">SQL</div>
+      <div class="competency-card">Power BI</div>
+      <div class="competency-card">Healthcare Informatics</div>
+      <div class="competency-card">Project Management</div>
+      <div class="competency-card">Data Visualization</div>
+      <div class="competency-card">Clinical Operations Analytics</div>
+      <div class="competency-card">HIPAA &amp; Data Governance</div>
+    </div>
+  </section>
+
   <section id="projects">
     <h2 class="section-title">Featured Health IT Projects</h2>
     <p class="section-intro">
@@ -524,7 +568,7 @@
 
           <div class="project-block">
             <div class="project-label">The Solution</div>
-            <p>Designed a relational healthcare database with normalized tables, primary and foreign keys, SQL queries, and analytics-ready reporting outputs.</p>
+            <p>Designed and implemented a healthcare database analytics system focused on patient flow optimization, resource utilization, and operational efficiency.</p>
           </div>
 
           <div class="project-block">
@@ -544,7 +588,7 @@
 
           <div class="project-block">
             <div class="project-label">Leadership / Business Impact</div>
-            <p>Shows how database design and SQL analytics can support hospital operations, staffing decisions, workflow improvement, and executive reporting.</p>
+            <p>Demonstrates how relational database design and SQL analytics can support hospital operations, staffing decisions, workflow improvement, and executive reporting.</p>
           </div>
         </div>
 
@@ -606,7 +650,7 @@
 
           <div class="project-block">
             <div class="project-label">The Solution</div>
-            <p>Built a structured tracking dashboard using sanitized operational data and visual summaries for leadership decision-making.</p>
+            <p>Developed an operational patient movement tracking dashboard to improve visibility of medical readiness, patient status, severity, outcomes, and movement trends.</p>
           </div>
 
           <div class="project-block">
@@ -626,7 +670,7 @@
 
           <div class="project-block">
             <div class="project-label">Leadership / Business Impact</div>
-            <p>Demonstrates how operational health data can be translated into leadership-ready reporting while maintaining privacy awareness.</p>
+            <p>Demonstrates how operational health data can be translated into leadership-ready reporting while maintaining HIPAA and privacy awareness.</p>
           </div>
         </div>
 
@@ -685,7 +729,7 @@
 
           <div class="project-block">
             <div class="project-label">The Solution</div>
-            <p>Created a planning model to estimate water requirements based on soldier count, mission duration, and temperature conditions.</p>
+            <p>Built an interactive operational water consumption dashboard to support logistics planning, hydration readiness assessments, and resource forecasting for large-scale personnel operations.</p>
           </div>
 
           <div class="project-block">
@@ -705,7 +749,7 @@
 
           <div class="project-block">
             <div class="project-label">Leadership / Business Impact</div>
-            <p>Demonstrates logistics planning, data-informed leadership, and the ability to convert field requirements into decision-support tools.</p>
+            <p>Demonstrates logistics planning, data-informed leadership, and the ability to convert field requirements into executive-ready decision-support tools.</p>
           </div>
         </div>
 
@@ -777,7 +821,7 @@
 
           <div class="project-block">
             <div class="project-label">The Solution</div>
-            <p>Developed a strategy-focused analysis connecting IT governance principles to healthcare information systems and organizational decision-making.</p>
+            <p>Conducted strategic IT governance and organizational analysis focused on operational alignment, technology oversight, risk management, and enterprise decision-making frameworks.</p>
           </div>
 
           <div class="project-block">
@@ -792,12 +836,12 @@
 
           <div class="project-block">
             <div class="project-label">Measurable Outcomes</div>
-            <p>Produced a professional analysis demonstrating IT-business alignment, governance awareness, and healthcare technology planning.</p>
+            <p>Produced an executive-style analysis demonstrating IT-business alignment, governance awareness, risk considerations, and healthcare technology planning.</p>
           </div>
 
           <div class="project-block">
             <div class="project-label">Leadership / Business Impact</div>
-            <p>Strengthens the portfolio by showing strategic thinking beyond technical execution.</p>
+            <p>Shows strategic thinking beyond technical execution by connecting technology decisions to governance, risk, stakeholders, and organizational value.</p>
           </div>
         </div>
 
@@ -809,7 +853,7 @@
         </div>
 
         <div class="project-links">
-          <a href="https://github.com/isaacadjei-healthit/it-strategy-governance-analysis">
+          <a href="https://github.com/isaacadjei-healthit">
             View Repository →
           </a>
         </div>
