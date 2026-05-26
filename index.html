@@ -159,21 +159,35 @@
     }
 
 
+    .competencies-section {
+      padding-top: 34px;
+      padding-bottom: 28px;
+    }
+
+    .competencies-section .section-intro {
+      margin-bottom: 18px;
+    }
+
     .competencies-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 14px;
-      max-width: 1100px;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 12px;
+      max-width: 1080px;
     }
 
     .competency-card {
       background: var(--white);
       border: 1px solid var(--light-slate);
-      border-radius: 14px;
-      padding: 18px 16px;
-      box-shadow: 0 8px 22px rgba(7, 26, 47, 0.05);
+      border-radius: 12px;
+      padding: 14px 12px;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(7, 26, 47, 0.04);
       transition: 0.25s ease;
       font-weight: 800;
+      line-height: 1.35;
       color: var(--navy);
       text-align: center;
     }
@@ -474,6 +488,16 @@
         padding: 55px 6%;
       }
 
+      .competencies-section {
+        padding-top: 28px;
+        padding-bottom: 24px;
+      }
+
+      .competency-card {
+        min-height: 64px;
+        padding: 12px 10px;
+      }
+
       .project-card {
         padding: 26px;
       }
@@ -527,7 +551,7 @@
   </section>
 
 
-  <section id="competencies">
+  <section id="competencies" class="competencies-section">
     <h2 class="section-title">Core Competencies</h2>
     <p class="section-intro">
       A focused blend of healthcare technology, analytics, operational reporting, and project execution capabilities.
