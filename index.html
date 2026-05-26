@@ -41,7 +41,11 @@
 
     body {
       font-family: Inter, Arial, sans-serif;
-      background: var(--soft-bg);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(37, 99, 235, 0.16), transparent 28%),
+        radial-gradient(circle at 82% 28%, rgba(125, 181, 255, 0.28), transparent 30%),
+        radial-gradient(circle at 70% 85%, rgba(31, 157, 138, 0.14), transparent 28%),
+        linear-gradient(135deg, #eef7ff 0%, #dbeeff 42%, #f8fbff 100%);
       color: var(--ink);
       line-height: 1.7;
     }
@@ -118,12 +122,44 @@
     }
 
     .hero {
+      position: relative;
+      isolation: isolate;
       background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(31, 157, 138, 0.18), transparent 30%),
-        linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
+        linear-gradient(115deg, rgba(255,255,255,0.72), rgba(219,238,255,0.58)),
+        radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.20), transparent 30%),
+        radial-gradient(circle at 82% 20%, rgba(147, 197, 253, 0.34), transparent 34%),
+        radial-gradient(circle at 72% 86%, rgba(31, 157, 138, 0.14), transparent 30%),
+        linear-gradient(135deg, #eef7ff 0%, #dceeff 48%, #f8fbff 100%);
       padding: 72px 6% 46px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(219, 228, 239, 0.88);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.45) 34%, transparent 54%),
+        linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px);
+      background-size: auto, 46px 46px, 46px 46px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.16));
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      right: -250px;
+      top: -220px;
+      background: rgba(37, 99, 235, 0.16);
+      filter: blur(90px);
+      border-radius: 50%;
+      z-index: -2;
     }
 
     .hero-inner {
@@ -239,8 +275,9 @@
 
     .profile-panel {
       width: min(560px, 100%);
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(219, 228, 239, 0.9);
+      background: rgba(255, 255, 255, 0.62);
+      backdrop-filter: blur(22px);
+      border: 1px solid rgba(255, 255, 255, 0.72);
       border-radius: 32px;
       padding: 26px;
       box-shadow: var(--shadow-md);
@@ -292,11 +329,22 @@
     }
 
     .profile-metric {
-      background: #f8fbff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 22px;
-      min-height: 118px;
+      display: block;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.64);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      border-radius: 999px;
+      padding: 20px 22px;
+      min-height: 112px;
+      box-shadow: 0 10px 28px rgba(20, 33, 61, 0.08);
+      transition: 0.22s ease;
+    }
+
+    .profile-metric:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(20, 33, 61, 0.14);
+      border-color: rgba(37, 99, 235, 0.35);
     }
 
     .profile-metric strong {
@@ -320,12 +368,19 @@
     }
 
     .hero-callout {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow-sm);
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.60);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.74);
+      border-radius: 999px;
+      box-shadow: 0 12px 34px rgba(20, 33, 61, 0.10);
+      padding: 22px 26px;
       min-height: 150px;
+      transition: 0.22s ease;
+    }
+
+    .hero-callout:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(20, 33, 61, 0.14);
     }
 
     .hero-callout strong {
@@ -1232,22 +1287,22 @@
             </div>
 
             <div class="profile-metrics">
-              <div class="profile-metric">
+              <a href="#projects" class="profile-metric" aria-label="Go to featured projects">
                 <strong>4</strong>
                 <span>Featured Projects</span>
-              </div>
-              <div class="profile-metric">
+              </a>
+              <a href="#interactive-tools" class="profile-metric" aria-label="Go to interactive tools">
                 <strong>3</strong>
                 <span>Interactive Tools</span>
-              </div>
-              <div class="profile-metric">
+              </a>
+              <a href="#patient-flow-screenshots" class="profile-metric" aria-label="Go to portfolio visuals">
                 <strong>9+</strong>
                 <span>Portfolio Visuals</span>
-              </div>
-              <div class="profile-metric">
+              </a>
+              <a href="#impact" class="profile-metric" aria-label="Go to operations and Health IT impact section">
                 <strong>360°</strong>
                 <span>Ops + Health IT View</span>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -1437,7 +1492,7 @@
                 <strong>Key insight:</strong> This project demonstrates how database design and SQL analytics can turn fragmented healthcare operations data into leadership-ready patient flow intelligence.
               </div>
 
-              <div class="module-card patient-flow-dashboard">
+              <div class="module-card patient-flow-dashboard" id="interactive-tools">
                 <h4>Live Patient Flow Optimization Dashboard</h4>
                 <p class="module-note">
                   Explore simulated hospital patient flow metrics by visit type and department. The dashboard updates length of stay, wait time, discharge rate, and visit distribution in real time.
@@ -1581,7 +1636,7 @@
                 </a>
               </div>
 
-              <div class="module-card">
+              <div class="module-card" id="patient-movement-dashboard">
                 <h4>Live Patient Movement Dashboard</h4>
                 <p class="module-note">
                   Explore simulated patient movement trends by unit, severity level, event type, and outcome category.
