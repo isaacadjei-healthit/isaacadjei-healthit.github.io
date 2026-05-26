@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isaac K. Adjei | Health IT & Operational Analytics Portfolio</title>
+  <title>Isaac Adjei | Health IT Portfolio</title>
+  <meta name="description" content="Isaac Adjei - Health IT, Project Management & Operational Analytics portfolio." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --ink: #14213d;
-      --navy: #1f3a5f;
-      --blue: #2563eb;
-      --blue-soft: #eaf2ff;
-      --teal: #1f9d8a;
-      --teal-soft: #e7f7f4;
-      --gold: #d99a26;
-      --burgundy: #8a3a4a;
-      --slate: #64748b;
-      --slate-dark: #334155;
-      --line: #dbe4ef;
-      --soft-bg: #f5f8fc;
-      --white: #ffffff;
-      --card: #ffffff;
-      --shadow-sm: 0 8px 22px rgba(20, 33, 61, 0.06);
-      --shadow-md: 0 16px 42px rgba(20, 33, 61, 0.10);
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --max-width: 1180px;
+      --bg: #06111c;
+      --bg-2: #081b27;
+      --panel: rgba(11, 31, 45, 0.78);
+      --panel-light: #ffffff;
+      --ink: #f6fbff;
+      --muted: #a9bac7;
+      --dark-ink: #071425;
+      --dark-muted: #4c5a66;
+      --teal: #62e6e0;
+      --teal-2: #2abfc0;
+      --line: rgba(98, 230, 224, 0.28);
+      --white-line: rgba(255, 255, 255, 0.13);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+      --radius: 22px;
+      --max: 1180px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -40,3224 +40,1180 @@
     }
 
     body {
-      font-family: Inter, Arial, sans-serif;
-      background:
-        radial-gradient(circle at 18% 18%, rgba(37, 99, 235, 0.16), transparent 28%),
-        radial-gradient(circle at 82% 28%, rgba(125, 181, 255, 0.28), transparent 30%),
-        radial-gradient(circle at 70% 85%, rgba(31, 157, 138, 0.14), transparent 28%),
-        linear-gradient(135deg, #eef7ff 0%, #dbeeff 42%, #f8fbff 100%);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
-      line-height: 1.7;
+      background:
+        radial-gradient(circle at 74% 16%, rgba(98, 230, 224, 0.14), transparent 28%),
+        radial-gradient(circle at 17% 34%, rgba(42, 191, 192, 0.11), transparent 28%),
+        linear-gradient(180deg, #06111c 0%, #071522 46%, #06111c 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: radial-gradient(circle at center, black, transparent 72%);
+      z-index: -2;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
     img {
       max-width: 100%;
+      display: block;
     }
 
-    .site-shell {
-      overflow: hidden;
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .top-nav {
-      position: sticky;
+    .nav {
+      position: fixed;
       top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(219, 228, 239, 0.86);
+      left: 0;
+      right: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 14, 24, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 14px 6%;
+      height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 28px;
     }
 
     .brand {
-      text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 900;
-      letter-spacing: -0.3px;
-      color: var(--ink);
+      gap: 14px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 0.91rem;
     }
 
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
+    .monogram {
+      width: 40px;
+      height: 40px;
+      border-left: 2px solid var(--teal);
+      border-bottom: 2px solid var(--teal);
+      position: relative;
+      color: var(--teal);
       display: grid;
       place-items: center;
-      color: var(--white);
-      background: linear-gradient(135deg, var(--blue), var(--teal));
-      box-shadow: var(--shadow-sm);
+      font-size: 1.15rem;
+      letter-spacing: -0.12em;
+    }
+
+    .monogram::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 4px;
+      width: 2px;
+      height: 31px;
+      background: var(--teal);
+      transform: rotate(28deg);
+      opacity: 0.82;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.64rem;
+      letter-spacing: 0.18em;
+      font-weight: 600;
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
       align-items: center;
-      font-size: 0.92rem;
+      gap: 30px;
+      font-size: 0.78rem;
       font-weight: 800;
-      color: var(--slate-dark);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .nav-links a {
-      text-decoration: none;
-      transition: 0.2s ease;
+      color: rgba(255,255,255,0.84);
+      position: relative;
+      padding: 8px 0;
+      transition: 0.25s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--blue);
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--teal);
+    }
+
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: var(--teal);
+    }
+
+    .resume-btn {
+      border: 1px solid var(--teal);
+      border-radius: 8px;
+      padding: 14px 22px;
+      color: #fff !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.25s ease;
+    }
+
+    .resume-btn:hover {
+      background: rgba(98,230,224,0.11);
+      transform: translateY(-2px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--white-line);
+      border-radius: 12px;
+      background: transparent;
+      color: #fff;
+      font-size: 1.35rem;
     }
 
     .hero {
+      min-height: 100vh;
+      padding: 142px 0 70px;
       position: relative;
-      isolation: isolate;
-      background:
-        linear-gradient(115deg, rgba(255,255,255,0.72), rgba(219,238,255,0.58)),
-        radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.20), transparent 30%),
-        radial-gradient(circle at 82% 20%, rgba(147, 197, 253, 0.34), transparent 34%),
-        radial-gradient(circle at 72% 86%, rgba(31, 157, 138, 0.14), transparent 30%),
-        linear-gradient(135deg, #eef7ff 0%, #dceeff 48%, #f8fbff 100%);
-      padding: 72px 6% 46px;
-      border-bottom: 1px solid rgba(219, 228, 239, 0.88);
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background:
-        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.45) 34%, transparent 54%),
-        linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px);
-      background-size: auto, 46px 46px, 46px 46px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.16));
-      pointer-events: none;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 760px;
-      height: 760px;
-      right: -250px;
-      top: -220px;
-      background: rgba(37, 99, 235, 0.16);
-      filter: blur(90px);
-      border-radius: 50%;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(6,17,28,0.96) 0%, rgba(6,17,28,0.68) 40%, rgba(6,17,28,0.18) 72%, rgba(6,17,28,0.88) 100%),
+        url("images/hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.28;
       z-index: -2;
     }
 
-    .hero-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
+    .hero-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 56px;
+      grid-template-columns: 1fr 0.95fr;
       align-items: center;
+      gap: 34px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      border-radius: 999px;
-      background: var(--blue-soft);
-      color: var(--blue);
-      font-weight: 900;
-      font-size: 0.78rem;
+      color: var(--teal);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 18px;
+      letter-spacing: 0.2em;
+      font-size: 0.83rem;
+      font-weight: 800;
+      margin-bottom: 22px;
     }
 
-    .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4.7rem);
-      line-height: 0.98;
-      letter-spacing: -3px;
-      margin-bottom: 18px;
-      color: var(--ink);
-    }
-
-    .hero h1 span {
-      color: var(--blue);
-    }
-
-    .hero-subtitle {
-      font-size: 1.18rem;
-      color: var(--slate-dark);
-      max-width: 760px;
-      margin-bottom: 18px;
-    }
-
-    .hero-description {
-      color: var(--slate);
-      max-width: 740px;
-      font-size: 1.02rem;
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.55rem, 5vw, 5rem);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+      max-width: 780px;
       margin-bottom: 28px;
     }
 
-    .cta-group {
+    h1 span,
+    .accent {
+      color: var(--teal);
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      color: rgba(246,251,255,0.78);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
       display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 70px;
+    }
+
+    .btn-primary {
+      min-height: 54px;
+      padding: 0 28px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-2));
+      color: #06202a;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 16px 35px rgba(42,191,192,0.24);
+      transition: 0.28s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 45px rgba(42,191,192,0.34);
+    }
+
+    .btn-line {
+      color: #fff;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding-bottom: 9px;
+      border-bottom: 2px solid var(--teal);
+    }
+
+    .scroll-note {
+      display: inline-flex;
+      align-items: center;
       gap: 13px;
-      flex-wrap: wrap;
-      margin-bottom: 26px;
+      color: rgba(255,255,255,0.58);
+      text-transform: uppercase;
+      letter-spacing: 0.19em;
+      font-size: 0.74rem;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 46px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 0.92rem;
-      transition: 0.22s ease;
-      border: 1px solid transparent;
+    .mouse {
+      width: 22px;
+      height: 36px;
+      border: 2px solid rgba(255,255,255,0.8);
+      border-radius: 30px;
+      position: relative;
     }
 
-    .btn-primary,
-    .btn-secondary {
-      background: var(--white);
-      color: var(--ink);
-      border-color: var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-primary:hover,
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(37, 99, 235, 0.35);
-      color: var(--blue);
-    }
-
-    .hero-tags {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .mini-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.88);
-      color: var(--ink);
+    .mouse::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      height: 7px;
       border-radius: 999px;
-      padding: 12px 18px;
-      font-size: 0.88rem;
-      font-weight: 900;
-      box-shadow: 0 10px 24px rgba(20, 33, 61, 0.08);
-      backdrop-filter: blur(14px);
-      transition: 0.22s ease;
+      background: var(--teal);
+      top: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: wheel 1.4s ease-in-out infinite;
     }
 
-    .mini-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 32px rgba(20, 33, 61, 0.14);
-      border-color: rgba(37, 99, 235, 0.35);
+    @keyframes wheel {
+      0% { opacity: 0; transform: translate(-50%, 0); }
+      45% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, 12px); }
     }
 
-    .hero-visual {
-      min-height: 560px;
+    .visual {
+      position: relative;
+      min-height: 620px;
       display: grid;
-      gap: 18px;
-      align-content: center;
+      place-items: center;
     }
 
-    .profile-panel {
-      width: min(560px, 100%);
-      background: rgba(255, 255, 255, 0.62);
-      backdrop-filter: blur(22px);
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      border-radius: 32px;
-      padding: 26px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .profile-top {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      margin-bottom: 30px;
-    }
-
-    .profile-pic-wrap {
-      width: 170px;
-      height: 170px;
+    .portrait-wrap {
+      width: min(530px, 88vw);
+      aspect-ratio: 1/1;
       border-radius: 50%;
-      overflow: hidden;
-      background: var(--white);
-      box-shadow: 0 14px 34px rgba(20, 33, 61, 0.16);
-      flex-shrink: 0;
+      border: 1px solid rgba(98,230,224,0.33);
+      position: relative;
+      display: grid;
+      place-items: center;
+      animation: float 6s ease-in-out infinite;
     }
 
-    .profile-pic {
-      width: 100%;
-      height: 100%;
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .portrait-wrap::before,
+    .portrait-wrap::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(98,230,224,0.16);
+    }
+
+    .portrait-wrap::before {
+      inset: 38px;
+    }
+
+    .portrait-wrap::after {
+      inset: -22px;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      animation: rotate 18s linear infinite;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    .portrait {
+      width: 72%;
+      height: 82%;
       object-fit: cover;
-      object-position: center;
-      border-radius: 50%;
-      transform: scale(1.14);
-      display: block;
+      object-position: top center;
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.48));
+      border-radius: 44% 44% 18% 18%;
+      z-index: 2;
     }
 
-    .profile-title h2 {
-      font-size: 1.75rem;
-      line-height: 1.2;
+    .orbit-card {
+      position: absolute;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      max-width: 190px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(5,18,31,0.38);
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+      cursor: default;
+    }
+
+    .orbit-card:hover {
+      border-color: var(--line);
+      background: rgba(5,18,31,0.78);
+      transform: translateY(-4px);
+    }
+
+    .orbit-card .icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      color: var(--teal);
+      border: 1px solid rgba(98,230,224,0.35);
+      border-radius: 50%;
+    }
+
+    .orbit-card strong {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
       margin-bottom: 5px;
     }
 
-    .profile-title p {
-      color: var(--slate);
-      font-weight: 800;
-      font-size: 1.05rem;
-    }
-
-    .profile-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .profile-metric {
+    .orbit-card span {
       display: block;
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.64);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.74);
-      border-radius: 999px;
-      padding: 20px 22px;
-      min-height: 112px;
-      box-shadow: 0 10px 28px rgba(20, 33, 61, 0.08);
-      transition: 0.22s ease;
+      color: rgba(255,255,255,0.68);
+      font-size: 0.8rem;
+      line-height: 1.45;
     }
 
-    .profile-metric:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 36px rgba(20, 33, 61, 0.14);
-      border-color: rgba(37, 99, 235, 0.35);
-    }
+    .orbit-connect { left: 2%; top: 32%; }
+    .orbit-analyze { right: -3%; top: 16%; }
+    .orbit-solve { right: -5%; top: 48%; }
+    .orbit-impact { left: 4%; bottom: 24%; }
 
-    .profile-metric strong {
-      display: block;
-      font-size: 2.1rem;
-      color: var(--blue);
-      letter-spacing: -0.8px;
-    }
-
-    .profile-metric span {
-      color: var(--slate);
-      font-size: 0.95rem;
-      font-weight: 800;
-    }
-
-    .hero-callouts {
-      width: min(560px, 100%);
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .hero-callout {
-      background: rgba(255, 255, 255, 0.60);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.74);
-      border-radius: 999px;
-      box-shadow: 0 12px 34px rgba(20, 33, 61, 0.10);
-      padding: 22px 26px;
-      min-height: 150px;
-      transition: 0.22s ease;
-    }
-
-    .hero-callout:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 40px rgba(20, 33, 61, 0.14);
-    }
-
-    .hero-callout strong {
-      display: block;
-      font-size: 0.92rem;
-      margin-bottom: 4px;
-      color: var(--ink);
-    }
-
-    .hero-callout small {
-      color: var(--slate);
-      font-weight: 700;
-      line-height: 1.55;
+    .quote-card {
+      position: absolute;
+      bottom: 36px;
+      left: 25%;
+      z-index: 7;
+      padding-left: 18px;
+      border-left: 3px solid var(--teal);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      line-height: 1.4;
+      color: #fff;
+      text-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
 
     section {
-      padding: 64px 6%;
+      padding: 78px 0;
     }
 
-    .section-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
+    .light-section {
+      background:
+        radial-gradient(circle at 16% 0%, rgba(98,230,224,0.10), transparent 24%),
+        #f8fbfd;
+      color: var(--dark-ink);
+      box-shadow: 0 -18px 70px rgba(0,0,0,0.18);
     }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
-      margin-bottom: 30px;
+    .section-head {
+      text-align: center;
+      margin-bottom: 38px;
     }
 
-    .section-kicker {
-      color: var(--teal);
-      font-size: 0.78rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      margin-bottom: 7px;
+    .section-head .eyebrow {
+      margin-bottom: 10px;
+      font-size: 0.72rem;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      line-height: 1.06;
-      letter-spacing: -1.4px;
-      color: var(--ink);
+    h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 3.6vw, 3.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
     }
 
-    .section-intro {
-      max-width: 650px;
-      color: var(--slate);
-      font-size: 1rem;
-    }
-
-    .analytics-strip {
-      padding: 0 6% 50px;
-      background: var(--soft-bg);
-    }
-
-    .strip-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
+    .what-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 22px;
     }
 
-    .strip-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: var(--shadow-sm);
+    .what-card {
+      background: #fff;
+      color: var(--dark-ink);
+      border: 1px solid rgba(8,24,42,0.09);
+      border-radius: 14px;
+      min-height: 230px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 18px 45px rgba(8,24,42,0.08);
+      transition: 0.25s ease;
     }
 
-    .strip-card strong {
-      display: block;
-      font-size: 2rem;
-      line-height: 1;
-      color: var(--ink);
-      margin-bottom: 8px;
-      letter-spacing: -1px;
+    .what-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(8,24,42,0.13);
     }
 
-    .strip-card span {
-      color: var(--slate);
-      font-size: 0.88rem;
-      font-weight: 800;
-    }
-
-    .about-grid {
+    .what-card .round-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 22px;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
-      align-items: stretch;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: radial-gradient(circle at 35% 25%, #296c72, #07383e);
+      box-shadow: 0 12px 22px rgba(7,56,62,0.28);
+      font-size: 1.55rem;
     }
 
-    .about-card,
-    .focus-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      padding: 30px;
+    .what-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 14px;
     }
 
-    .about-card p {
-      color: var(--slate-dark);
-      margin-bottom: 16px;
-    }
-
-    .highlight {
-      color: var(--blue);
-      font-weight: 900;
-    }
-
-    .focus-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .focus-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 14px;
-      border-radius: 16px;
-      background: #f8fbff;
-      border: 1px solid var(--line);
-    }
-
-    .focus-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--blue), var(--teal));
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
-
-    .focus-item strong {
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .focus-item span {
-      color: var(--slate);
-      font-size: 0.92rem;
-      font-weight: 650;
-    }
-
-    .competencies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 14px;
-    }
-
-    .competency-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px 16px;
-      min-height: 86px;
-      box-shadow: var(--shadow-sm);
-      transition: 0.22s ease;
-    }
-
-    .competency-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(37, 99, 235, 0.24);
-    }
-
-    .competency-card strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--ink);
-      font-size: 0.98rem;
-    }
-
-    .competency-card span {
-      color: var(--slate);
-      font-size: 0.86rem;
-      font-weight: 650;
+    .what-card p {
+      color: var(--dark-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
     }
 
     .projects-section {
-      background: #ffffff;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(98,230,224,0.13), transparent 35%),
+        linear-gradient(180deg, #071522 0%, #05111c 100%);
     }
 
     .projects-grid {
       display: grid;
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
     }
 
     .project-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      box-shadow: var(--shadow-sm);
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+      border: 1px solid var(--white-line);
+      border-radius: 16px;
       overflow: hidden;
-      transition: 0.25s ease;
+      box-shadow: var(--shadow);
+      transition: 0.28s ease;
+      position: relative;
     }
 
     .project-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
+      transform: translateY(-9px);
+      border-color: rgba(98,230,224,0.45);
     }
 
-    .project-hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 0;
-      min-height: 360px;
-      background: linear-gradient(135deg, #f8fbff, #eef7ff);
+    .project-shot {
+      height: 185px;
+      background:
+        linear-gradient(135deg, rgba(98,230,224,0.16), rgba(255,255,255,0.04)),
+        #eff6fb;
+      padding: 12px;
     }
 
-    .project-hero.visual-right {
-      grid-template-columns: 0.9fr 1.1fr;
+    .project-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.07);
     }
 
-    .project-summary {
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .project-body {
+      padding: 22px 22px 24px;
     }
 
-    .project-category {
-      display: inline-flex;
-      width: fit-content;
-      background: var(--teal-soft);
-      color: var(--teal);
-      border-radius: 999px;
-      padding: 7px 11px;
-      font-size: 0.76rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+    .project-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
     }
 
-    .project-summary h3 {
-      font-size: clamp(1.7rem, 3vw, 2.45rem);
-      line-height: 1.08;
-      letter-spacing: -1px;
-      margin-bottom: 14px;
-      color: var(--ink);
+    .project-body p {
+      color: rgba(246,251,255,0.68);
+      line-height: 1.7;
+      font-size: 0.94rem;
+      min-height: 64px;
     }
 
-    .project-summary p {
-      color: var(--slate-dark);
-      margin-bottom: 18px;
-      max-width: 610px;
-    }
-
-    .project-meta {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 9px;
-      margin-bottom: 22px;
-    }
-
-    .project-meta span {
-      background: var(--white);
-      border: 1px solid var(--line);
-      color: var(--slate-dark);
-      border-radius: 999px;
-      padding: 7px 10px;
-      font-size: 0.78rem;
-      font-weight: 900;
-    }
-
-    .project-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .project-actions .btn,
-    .cta-group .btn {
-      background: var(--white);
-      color: var(--ink);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .project-actions .btn:hover,
-    .cta-group .btn:hover {
-      color: var(--blue);
-      border-color: rgba(37, 99, 235, 0.35);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .project-visual {
-      padding: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle at 70% 30%, rgba(31, 157, 138, 0.14), transparent 26%),
-        linear-gradient(135deg, #eef6ff, #f7fbff);
-      border-left: 1px solid rgba(219, 228, 239, 0.9);
-    }
-
-    .visual-right .project-visual {
-      border-left: 0;
-      border-right: 1px solid rgba(219, 228, 239, 0.9);
-    }
-
-    .visual-frame {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 12px;
-      box-shadow: var(--shadow-md);
-      width: 100%;
-    }
-
-    .visual-frame img {
-      width: 100%;
-      height: 285px;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      border-radius: 16px;
-      background: var(--line);
-    }
-
-    .visual-caption {
-      padding: 12px 5px 2px;
-      color: var(--slate);
-      font-weight: 800;
-      font-size: 0.86rem;
-    }
-
-    .case-study-body {
-      padding: 34px;
-      border-top: 1px solid var(--line);
-    }
-
-    .case-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-
-    .case-block {
-      background: #f8fbff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px;
-    }
-
-    .case-block h4 {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--burgundy);
-      margin-bottom: 8px;
-    }
-
-    .case-block p,
-    .case-block li {
-      color: var(--slate-dark);
-      font-size: 0.94rem;
-    }
-
-    .case-block ul {
-      padding-left: 18px;
-    }
-
-    .insight-box {
-      background: linear-gradient(135deg, var(--blue-soft), var(--teal-soft));
-      border: 1px solid rgba(37, 99, 235, 0.14);
-      border-radius: 20px;
-      padding: 20px;
-      margin-bottom: 26px;
-      color: var(--slate-dark);
-    }
-
-    .insight-box strong {
-      color: var(--ink);
-    }
-
-    .module-card {
-      margin: 8px 0 26px;
-      padding: 24px;
-      border-radius: 22px;
-      background: #f8fbff;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .module-card h4 {
-      font-size: 1.25rem;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .module-note {
-      color: var(--slate);
-      font-size: 0.95rem;
-      margin-bottom: 18px;
-      max-width: 850px;
-    }
-
-    .dashboard-controls,
-    .water-calculator-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .field label,
-    .dashboard-controls label {
-      display: block;
-      font-size: 0.84rem;
-      font-weight: 900;
-      color: var(--ink);
-    }
-
-    .field input,
-    .field select,
-    .dashboard-controls select {
-      margin-top: 6px;
-      width: 100%;
-      padding: 12px 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      background: var(--white);
-      color: var(--ink);
-      font: inherit;
-      outline: none;
-    }
-
-    .field input:focus,
-    .field select:focus,
-    .dashboard-controls select:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
-    }
-
-    .dashboard-kpis {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .kpi-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 8px 18px rgba(20, 33, 61, 0.045);
-    }
-
-    .kpi-card span {
-      display: block;
-      font-size: 1.85rem;
-      font-weight: 950;
-      color: var(--blue);
-      margin-bottom: 5px;
-      letter-spacing: -1px;
-    }
-
-    .kpi-card small {
-      color: var(--slate);
-      font-weight: 900;
-    }
-
-    .dashboard-bars h5 {
-      margin-bottom: 12px;
-      color: var(--ink);
-      font-size: 1rem;
-    }
-
-    .bar-row {
-      margin-bottom: 14px;
-    }
-
-    .bar-label {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      font-size: 0.9rem;
-      font-weight: 900;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .bar-track {
-      width: 100%;
-      height: 12px;
-      background: #dbe4ef;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--blue), var(--teal));
-    }
-
-    .water-calculator-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-top: 4px;
-    }
-
-    .water-calc-button {
-      border: none;
-      border-radius: 12px;
-      background: var(--ink);
-      color: var(--white);
-      padding: 12px 18px;
-      font-weight: 900;
-      cursor: pointer;
-      transition: 0.22s ease;
-    }
-
-    .water-calc-button:hover {
-      transform: translateY(-2px);
-      background: var(--blue);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .water-result-card {
       margin-top: 18px;
-      padding: 18px;
-      border-radius: 18px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-left: 6px solid var(--teal);
-      color: var(--ink);
     }
 
-    .water-result-main {
-      font-size: 1.25rem;
-      font-weight: 950;
-      margin-bottom: 6px;
-      letter-spacing: -0.4px;
+    .tag {
+      color: var(--teal);
+      border: 1px solid rgba(98,230,224,0.32);
+      border-radius: 5px;
+      padding: 7px 10px;
+      font-size: 0.75rem;
+      background: rgba(98,230,224,0.06);
     }
 
-    .water-result-detail {
-      color: var(--slate);
-      font-size: 0.95rem;
-      font-weight: 650;
+    .arrow-link {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      color: #fff;
+      font-size: 1.8rem;
+      transition: 0.25s ease;
     }
 
-    .dashboard-disclaimer {
-      margin-top: -10px;
-      margin-bottom: 26px;
-      color: var(--slate);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      background: rgba(20, 33, 61, 0.035);
-      border-left: 4px solid var(--blue);
-      padding: 14px 16px;
-      border-radius: 14px;
+    .project-card:hover .arrow-link {
+      color: var(--teal);
+      transform: translateX(5px);
     }
 
-    .screenshots-title {
-      font-size: 1.1rem;
-      font-weight: 950;
-      margin: 22px 0 16px;
-      color: var(--ink);
-      letter-spacing: -0.3px;
-    }
-
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      margin-bottom: 26px;
-    }
-
-    .screenshot-card {
-      grid-column: span 4;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: 0.22s ease;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .screenshot-card.featured-shot {
-      grid-column: span 6;
-    }
-
-    .screenshot-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .screenshot-card img {
-      width: 100%;
-      display: block;
-      height: 270px;
-      object-fit: cover;
-      object-position: top;
-      background: var(--line);
-    }
-
-    .screenshot-card p {
-      padding: 14px 16px;
-      color: var(--slate-dark);
-      font-size: 0.9rem;
-      font-weight: 900;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .impact-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      transition: 0.22s ease;
-    }
-
-    .impact-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .impact-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 9px;
-      color: var(--ink);
-    }
-
-    .impact-card p {
-      color: var(--slate);
-      font-size: 0.93rem;
-      font-weight: 650;
-    }
-
-    .contact-section {
-      background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 28%),
-        linear-gradient(135deg, #ffffff, #f4f9ff);
-    }
-
-    .contact-enhanced {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 24px;
+    .center-action {
+      text-align: center;
       margin-top: 28px;
     }
 
-    .contact-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 30px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .contact-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 12px;
-      color: var(--ink);
-    }
-
-    .contact-card p,
-    .contact-card li {
-      color: var(--slate-dark);
-      font-size: 0.96rem;
-    }
-
-    .contact-card ul {
-      padding-left: 18px;
-      line-height: 1.9;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .contact-links a {
-      color: var(--blue);
-      font-weight: 900;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background: var(--ink);
-      color: #c8d6e5;
-      text-align: center;
-      padding: 36px 6%;
-      font-size: 0.94rem;
-    }
-
-    footer a {
-      color: #8fd7ce;
-      text-decoration: none;
-      font-weight: 900;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeIn 0.75s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.08s; }
-    .delay-2 { animation-delay: 0.16s; }
-    .delay-3 { animation-delay: 0.24s; }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 980px) {
-      .hero-inner,
-      .project-hero,
-      .project-hero.visual-right,
-      .about-grid,
-      .contact-enhanced {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        min-height: auto;
-      }
-
-
-      .project-visual,
-      .visual-right .project-visual {
-        border-left: 0;
-        border-right: 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .case-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .strip-inner,
-      .impact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .screenshot-card,
-      .screenshot-card.featured-shot {
-        grid-column: span 6;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .nav-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 12px;
-        font-size: 0.86rem;
-      }
-
-      .hero {
-        padding-top: 48px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1.6px;
-      }
-
-      .profile-panel,
-      .project-summary,
-      .case-study-body,
-      .about-card,
-      .focus-card,
-      .contact-card {
-        padding: 22px;
-      }
-
-      .profile-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .profile-pic-wrap {
-        width: 135px;
-        height: 135px;
-      }
-
-      .profile-metrics,
-      .hero-callouts,
-      .strip-inner,
-      .impact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 50px 6%;
-      }
-
-      .section-header {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .screenshot-card,
-      .screenshot-card.featured-shot {
-        grid-column: span 12;
-      }
-
-      .screenshot-card img,
-      .visual-frame img {
-        height: 220px;
-      }
-    }
-
-
-    /* Preferred-layout refresh: glass navbar, hero profile panel, compact featured cards */
-    :root {
-      --ink: #061556;
-      --blue: #256eff;
-      --blue-2: #60a5fa;
-      --line: rgba(255,255,255,0.66);
-      --soft-bg: #eef6ff;
-      --shadow-sm: 0 10px 24px rgba(6, 21, 86, 0.08);
-      --shadow-md: 0 22px 55px rgba(6, 21, 86, 0.16);
-      --max-width: 1520px;
-    }
-
-    body {
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 85% 18%, rgba(73, 137, 255, 0.34), transparent 28%),
-        radial-gradient(circle at 8% 75%, rgba(39, 126, 255, 0.22), transparent 32%),
-        linear-gradient(135deg, #eaf7ff 0%, #dcecff 45%, #f8fbff 100%);
-    }
-
-    .top-nav {
-      position: relative;
-      top: auto;
-      z-index: 20;
-      width: calc(100% - 40px);
-      margin: 8px auto 0;
-      background: rgba(255,255,255,0.50);
-      backdrop-filter: blur(24px);
-      border: 1px solid rgba(255,255,255,0.78);
-      border-radius: 24px;
-      box-shadow: 0 18px 54px rgba(53, 111, 203, 0.14);
-    }
-
-    .nav-inner {
-      max-width: none;
-      width: 100%;
-      padding: 14px 34px;
-    }
-
-    .brand-mark { display: none; }
-
-    .brand-text {
-      display: grid;
-      line-height: 1.05;
-    }
-
-    .brand-text strong {
-      font-size: 1.55rem;
-      letter-spacing: -0.7px;
-      color: var(--ink);
-    }
-
-    .brand-text small {
-      margin-top: 5px;
-      font-size: 0.96rem;
-      font-weight: 700;
-      color: #11307f;
-      letter-spacing: 0;
-    }
-
-    .nav-buttons {
-      gap: 14px;
-    }
-
-    .nav-buttons a {
-      min-height: 52px;
-      padding: 0 22px;
+    .outline-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      border-radius: 15px;
-      background: rgba(255,255,255,0.58);
-      border: 1px solid rgba(255,255,255,0.82);
-      box-shadow: 0 10px 22px rgba(6, 21, 86, 0.08);
-      color: var(--ink);
+      gap: 16px;
+      min-height: 48px;
+      padding: 0 30px;
+      border: 1px solid var(--teal);
+      border-radius: 7px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.8rem;
       font-weight: 900;
+      transition: 0.25s ease;
     }
 
-    .nav-icon {
-      display: inline-grid;
-      place-items: center;
-      width: 18px;
-      height: 18px;
-      font-weight: 950;
-      color: var(--ink);
+    .outline-btn:hover {
+      background: rgba(98,230,224,0.1);
+      transform: translateY(-3px);
     }
 
-    .hero {
-      margin-top: -96px;
-      padding: 140px 3.5% 22px;
-      min-height: 690px;
-      border-bottom: 0;
-      background:
-        radial-gradient(circle at 98% 55%, rgba(37,110,255,0.30), transparent 30%),
-        radial-gradient(circle at 0% 58%, rgba(80,168,255,0.24), transparent 36%),
-        linear-gradient(135deg, rgba(239,250,255,0.92), rgba(214,232,255,0.88) 55%, rgba(248,251,255,0.94));
+    .impact-band {
+      margin-top: 34px;
+      border: 1px solid var(--white-line);
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      align-items: center;
+      overflow: hidden;
     }
 
-    .hero::before {
-      opacity: 0.95;
-      background:
-        radial-gradient(circle at 3% 25%, rgba(255,255,255,0.95) 0 2px, transparent 3px),
-        radial-gradient(circle at 92% 56%, rgba(255,255,255,0.95) 0 2px, transparent 3px),
-        repeating-radial-gradient(ellipse at 0% 72%, rgba(37,110,255,0.22) 0 1px, transparent 2px 12px),
-        repeating-radial-gradient(ellipse at 100% 65%, rgba(37,110,255,0.18) 0 1px, transparent 2px 13px);
-      background-size: auto, auto, 660px 310px, 660px 310px;
-      background-repeat: no-repeat;
-      mask-image: none;
+    .belief {
+      padding: 34px 42px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.45rem;
+      line-height: 1.55;
     }
 
-    .hero-inner {
-      max-width: 1320px;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 58px;
-      min-height: 540px;
-    }
-
-    .eyebrow { display: none; }
-
-    .hero h1 {
-      max-width: 660px;
-      font-size: clamp(3.1rem, 5.2vw, 5rem);
-      line-height: 1.01;
-      letter-spacing: -4px;
-      margin-bottom: 34px;
-    }
-
-    .hero h1 span {
+    .belief::before {
+      content: "“";
+      color: var(--teal);
+      font-size: 3rem;
+      line-height: 0;
       display: block;
-      background: linear-gradient(180deg, #256eff, #1d5ee7);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      margin-bottom: 16px;
     }
 
-    .hero-subtitle,
-    .hero-description {
-      max-width: 640px;
-      color: #082970;
-      font-size: 1.12rem;
-      line-height: 1.65;
+    .metric {
+      padding: 34px 22px;
+      min-height: 172px;
+      text-align: center;
+      border-left: 1px solid var(--white-line);
+      display: grid;
+      place-items: center;
     }
 
-    .hero-description { margin-bottom: 84px; }
+    .metric-icon {
+      color: var(--teal);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
 
-    .mini-tag {
-      background: rgba(255,255,255,0.72);
-      border-color: rgba(255,255,255,0.90);
-      box-shadow: 0 10px 24px rgba(6,21,86,0.08);
-      color: var(--ink);
-      padding: 12px 18px;
+    .metric strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      color: rgba(246,251,255,0.75);
+      font-size: 0.85rem;
+    }
+
+    .about-section {
+      background: #f8fbfd;
+      color: var(--dark-ink);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .about-panel {
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid rgba(8,24,42,0.08);
+      padding: 30px;
+      box-shadow: 0 24px 60px rgba(8,24,42,0.1);
+    }
+
+    .about-panel h3 {
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+    }
+
+    .about-panel p,
+    .about-text p {
+      color: var(--dark-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .profile-mini {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      background: #dce9ef;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .skill-list span {
+      background: rgba(42,191,192,0.09);
+      color: #07545a;
+      border: 1px solid rgba(42,191,192,0.18);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .contact-section {
+      text-align: center;
+      padding-bottom: 50px;
+    }
+
+    .contact-section p {
+      max-width: 620px;
+      margin: 18px auto 30px;
+      color: rgba(246,251,255,0.72);
+      line-height: 1.8;
+    }
+
+    .footer {
+      border-top: 1px solid var(--white-line);
+      padding: 32px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255,255,255,0.55);
       font-size: 0.88rem;
     }
 
-    .hero-visual {
-      min-height: 540px;
-      align-content: center;
-    }
-
-    .profile-panel {
-      width: min(630px, 100%);
-      border-radius: 26px;
-      padding: 34px 40px 28px;
-      background: rgba(255,255,255,0.45);
-      border: 1px solid rgba(255,255,255,0.78);
-      box-shadow: 0 26px 65px rgba(6,21,86,0.15);
-    }
-
-    .profile-top {
-      display: grid;
-      grid-template-columns: 225px 1fr;
-      align-items: center;
-      gap: 34px;
-      margin-bottom: 22px;
-    }
-
-    .profile-pic-wrap {
-      width: 225px;
-      height: 225px;
-      border: 3px solid rgba(255,255,255,0.78);
-      box-shadow: 0 0 0 10px rgba(255,255,255,0.28), 0 18px 46px rgba(37,110,255,0.20);
-    }
-
-    .profile-title h2 {
-      font-size: clamp(2rem, 2.3vw, 2.65rem);
-      line-height: 1.05;
-      letter-spacing: -1.4px;
-    }
-
-    .profile-title p {
-      margin-top: 12px;
-      color: #123385;
-      font-size: 1.22rem;
-      line-height: 1.42;
-      max-width: 330px;
-    }
-
-    .profile-metrics {
-      margin-left: 265px;
-      grid-template-columns: repeat(2, minmax(130px, 1fr));
-    }
-
-    .profile-metric {
-      border-radius: 15px;
-      padding: 17px 20px;
-      min-height: 104px;
-      background: rgba(255,255,255,0.48);
-      border-color: rgba(255,255,255,0.78);
-    }
-
-    .profile-metric strong {
-      font-size: 1.85rem;
-    }
-
-    .profile-metric span {
-      color: var(--ink);
-      font-size: 0.98rem;
-      line-height: 1.35;
-    }
-
-    .hero-callouts {
-      width: min(550px, 100%);
-      margin-left: 0;
-      margin-top: 18px;
-      grid-template-columns: repeat(2, 1fr);
-      transform: none;
-      align-items: stretch;
-    }
-
-    .hero-callout {
-      border-radius: 18px;
-      min-height: 132px;
-      background: rgba(255,255,255,0.64);
-      border-color: rgba(255,255,255,0.82);
-      box-shadow: 0 14px 35px rgba(6,21,86,0.10);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-callout strong { font-size: 1rem; }
-    .hero-callout small { color: #082970; font-size: 0.95rem; }
-
-    .analytics-strip { display: none; }
-
-    .featured-showcase {
-      padding: 22px 3.5% 46px;
-      background: rgba(255,255,255,0.80);
-      border-top: 1px solid rgba(255,255,255,0.85);
-      box-shadow: inset 0 24px 60px rgba(37,110,255,0.06);
-    }
-
-    .featured-inner {
-      max-width: 1420px;
-      margin: 0 auto;
-    }
-
-    .featured-header {
+    .socials {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 22px;
-      margin-bottom: 18px;
-    }
-
-    .featured-header h2 {
-      color: var(--ink);
-      font-size: 1.55rem;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-    }
-
-    .featured-header p {
-      color: #123385;
-      font-weight: 650;
-      margin-top: 4px;
-      font-size: 0.93rem;
-    }
-
-    .view-all {
-      color: #1263ff;
-      font-weight: 900;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      white-space: nowrap;
-    }
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .featured-card {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
       gap: 18px;
-      min-height: 230px;
-      padding: 18px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.70);
-      border: 1px solid rgba(224,235,255,0.95);
-      box-shadow: 0 16px 40px rgba(6,21,86,0.08);
-      transition: transform .22s ease, box-shadow .22s ease;
-    }
-
-    .featured-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 55px rgba(6,21,86,0.13);
-    }
-
-    .featured-image {
-      display: grid;
-      place-items: center;
-      min-height: 190px;
-      border-radius: 9px;
-      overflow: hidden;
-      background: linear-gradient(135deg,#dbeafe,#f8fbff);
-      text-decoration: none;
-    }
-
-    .featured-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 190px;
-      object-fit: cover;
-      object-position: top;
-      filter: saturate(1.02);
-    }
-
-    .featured-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .featured-copy h3 {
-      color: var(--ink);
-      font-size: 1.02rem;
-      line-height: 1.22;
-      letter-spacing: -0.2px;
-    }
-
-    .featured-copy p {
-      color: #123385;
-      font-size: 0.86rem;
-      line-height: 1.55;
-      font-weight: 650;
-    }
-
-    .featured-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .featured-tags span {
-      padding: 8px 11px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(206,224,255,0.95);
-      color: var(--ink);
-      font-size: 0.73rem;
-      font-weight: 900;
-    }
-
-    .featured-btn {
-      margin-top: auto;
-      align-self: center;
-      min-width: 132px;
-      display: inline-flex;
-      justify-content: center;
       align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 12px;
-      background: linear-gradient(180deg, #2f7bff, #1763ef);
-      box-shadow: 0 12px 24px rgba(37,110,255,0.26);
-      color: white;
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 900;
+      color: #fff;
     }
 
-    .water-preview {
-      width: 100%;
-      min-height: 190px;
+    .socials a {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--white-line);
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      text-align: center;
-      padding: 18px;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 70% 20%, rgba(37,110,255,0.20), transparent 35%),
-        linear-gradient(135deg,#eaf3ff,#ffffff);
+      transition: 0.25s ease;
     }
 
-    .water-preview strong { font-size: 2.4rem; line-height: 1; color: #1763ef; }
-    .water-preview span { font-weight: 950; }
-    .water-preview small { color: #123385; font-weight: 700; }
-
-    .detailed-projects {
-      background: #f8fbff;
+    .socials a:hover {
+      color: var(--teal);
+      border-color: var(--teal);
+      transform: translateY(-3px);
     }
 
-    @media (max-width: 1120px) {
-      .featured-grid { grid-template-columns: 1fr; }
-      .profile-metrics { margin-left: 0; }
-      .hero-callouts { transform: none; margin-left: 0; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.75s ease;
     }
 
-    @media (max-width: 980px) {
-      .hero { margin-top: 0; padding-top: 50px; }
-      .nav-inner { align-items: flex-start; }
-      .profile-top { grid-template-columns: 1fr; }
-      .profile-metrics { margin-left: 0; }
-      .featured-card { grid-template-columns: 0.9fr 1.1fr; }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    @media (max-width: 700px) {
-      .top-nav { width: calc(100% - 24px); border-radius: 18px; }
-      .nav-inner { padding: 18px; }
-      .nav-buttons a { width: 100%; justify-content: center; }
-      .hero h1 { letter-spacing: -2px; }
-      .hero-description { margin-bottom: 32px; }
-      .profile-pic-wrap { width: 165px; height: 165px; }
-      .profile-metrics, .hero-callouts { grid-template-columns: 1fr; }
-      .featured-header { align-items: flex-start; flex-direction: column; }
-      .featured-card { grid-template-columns: 1fr; }
-    }
-
-
-
-    /* Final hero profile-card alignment fix: places Portfolio Focus and Built for Recruiters directly under the profile photo. */
-    .profile-panel {
-      width: min(650px, 100%);
-      padding: 34px;
-    }
-
-    .profile-card-grid {
-      display: grid;
-      grid-template-columns: 235px 1fr;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .profile-left-column {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .profile-right-column {
-      display: grid;
-      gap: 24px;
-      align-content: start;
-    }
-
-    .profile-card-grid .profile-pic-wrap {
-      width: 225px;
-      height: 225px;
-      margin: 0 auto;
-    }
-
-    .profile-card-grid .profile-title h2 {
-      font-size: clamp(2.3rem, 3vw, 3rem);
-      line-height: 1.04;
-      margin-bottom: 12px;
-    }
-
-    .profile-card-grid .profile-title p {
-      max-width: 330px;
-      color: #123385;
-      font-size: 1.22rem;
-      line-height: 1.45;
-      font-weight: 900;
-    }
-
-    .profile-card-grid .profile-metrics {
-      margin-left: 0 !important;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(125px, 1fr));
-      gap: 14px;
-    }
-
-    .profile-card-grid .profile-metric {
-      min-height: 132px;
-      padding: 22px;
-      border-radius: 18px;
-    }
-
-    .profile-card-grid .hero-callouts {
-      width: 100%;
-      margin: 0 !important;
-      transform: none !important;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .profile-card-grid .hero-callout {
-      min-height: 126px;
-      padding: 20px 22px;
-      border-radius: 18px;
-    }
-
-    .profile-card-grid .hero-callout strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: var(--ink);
-    }
-
-    .profile-card-grid .hero-callout small {
-      display: block;
-      color: #082970;
-      font-size: 0.92rem;
-      font-weight: 750;
-      line-height: 1.55;
-    }
-
-    @media (max-width: 1120px) {
-      .profile-card-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-card-grid .profile-pic-wrap {
-        width: 190px;
-        height: 190px;
-        margin: 0;
-      }
-
-      .profile-card-grid .hero-callouts {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 700px) {
-      .profile-panel {
+    @media (max-width: 1050px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 86px;
+        background: rgba(4,14,24,0.96);
+        border: 1px solid var(--white-line);
+        border-radius: 18px;
         padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .profile-card-grid .profile-pic-wrap {
-        width: 165px;
-        height: 165px;
+      .nav-links.open {
+        display: flex;
       }
 
-      .profile-card-grid .profile-metrics,
-      .profile-card-grid .hero-callouts {
+      .mobile-toggle {
+        display: block;
+      }
+
+      .hero-grid,
+      .about-grid {
         grid-template-columns: 1fr;
       }
-    }
 
-
-    /* FINAL PROFILE CARD FIX: photo left, callouts directly under photo, metrics to the right. */
-    .hero-visual {
-      min-height: 560px;
-      display: grid;
-      align-content: center;
-    }
-
-    .profile-panel {
-      width: min(650px, 100%) !important;
-      background: rgba(255, 255, 255, 0.62);
-      backdrop-filter: blur(22px);
-      border: 1px solid rgba(255, 255, 255, 0.72);
-      border-radius: 32px;
-      padding: 32px !important;
-      box-shadow: var(--shadow-md);
-    }
-
-    .final-profile-layout {
-      display: grid !important;
-      grid-template-columns: 225px 1fr !important;
-      grid-template-areas:
-        "photo title"
-        "callouts metrics" !important;
-      column-gap: 30px !important;
-      row-gap: 18px !important;
-      align-items: start !important;
-    }
-
-    .profile-photo-area {
-      grid-area: photo !important;
-      width: 225px !important;
-      height: 225px !important;
-      margin: 0 !important;
-    }
-
-    .profile-title-area {
-      grid-area: title !important;
-      align-self: center !important;
-    }
-
-    .profile-title-area h2 {
-      font-size: clamp(2.25rem, 3vw, 3rem) !important;
-      line-height: 1.03 !important;
-      margin-bottom: 12px !important;
-      color: var(--ink);
-      letter-spacing: -1px;
-    }
-
-    .profile-title-area p {
-      max-width: 340px;
-      color: #123385 !important;
-      font-size: 1.2rem !important;
-      line-height: 1.45 !important;
-      font-weight: 900 !important;
-    }
-
-    .profile-callouts-area {
-      grid-area: callouts !important;
-      width: 100% !important;
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 14px !important;
-      margin: 0 !important;
-      transform: none !important;
-      align-self: start !important;
-    }
-
-    .profile-callouts-area .hero-callout {
-      min-height: 126px !important;
-      padding: 20px 22px !important;
-      border-radius: 18px !important;
-      background: rgba(255, 255, 255, 0.72) !important;
-      border: 1px solid rgba(255, 255, 255, 0.82) !important;
-      box-shadow: 0 12px 34px rgba(20, 33, 61, 0.10) !important;
-    }
-
-    .profile-callouts-area .hero-callout strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: var(--ink);
-    }
-
-    .profile-callouts-area .hero-callout small {
-      display: block;
-      color: #082970;
-      font-size: 0.92rem;
-      font-weight: 750;
-      line-height: 1.55;
-    }
-
-    .profile-metrics-area {
-      grid-area: metrics !important;
-      display: grid !important;
-      grid-template-columns: repeat(2, minmax(125px, 1fr)) !important;
-      gap: 14px !important;
-      margin: 0 !important;
-      align-self: start !important;
-    }
-
-    .profile-metrics-area .profile-metric {
-      min-height: 132px !important;
-      padding: 22px !important;
-      border-radius: 18px !important;
-    }
-
-    @media (max-width: 1120px) {
-      .final-profile-layout {
-        grid-template-columns: 1fr !important;
-        grid-template-areas:
-          "photo"
-          "title"
-          "metrics"
-          "callouts" !important;
+      .visual {
+        min-height: 560px;
+        order: -1;
       }
 
-      .profile-photo-area {
-        width: 190px !important;
-        height: 190px !important;
+      .hero {
+        padding-top: 120px;
       }
 
-      .profile-callouts-area {
-        grid-template-columns: repeat(2, 1fr) !important;
+      .what-grid,
+      .projects-grid,
+      .impact-band {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .belief {
+        grid-column: 1 / -1;
       }
     }
 
-    @media (max-width: 700px) {
-      .profile-panel {
-        padding: 24px !important;
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 28px, var(--max));
       }
 
-      .profile-photo-area {
-        width: 165px !important;
-        height: 165px !important;
+      .brand {
+        letter-spacing: 0.16em;
+        font-size: 0.76rem;
       }
 
-      .profile-metrics-area,
-      .profile-callouts-area {
-        grid-template-columns: 1fr !important;
+      .hero {
+        padding-bottom: 44px;
       }
-    }
 
+      .visual {
+        min-height: 470px;
+      }
 
+      .portrait-wrap {
+        width: min(390px, 92vw);
+      }
 
-    /* MOBILE OPTIMIZATION PATCH: preserves desktop layout, improves phone readability and stacking. */
-    @media (max-width: 760px) {
-      html, body {
+      .orbit-card {
+        position: static;
+        margin: 8px auto;
         width: 100%;
-        overflow-x: hidden;
+        max-width: 280px;
       }
 
-      body {
-        line-height: 1.6;
+      .quote-card {
+        position: static;
+        margin-top: 18px;
+        font-size: 1.1rem;
       }
 
-      .site-shell {
-        overflow-x: hidden;
+      .hero-actions {
+        margin-bottom: 38px;
       }
 
-      .top-nav {
-        width: calc(100% - 20px) !important;
-        margin: 10px auto 0 !important;
-        left: auto !important;
-        right: auto !important;
-        border-radius: 18px !important;
+      .what-grid,
+      .projects-grid,
+      .impact-band {
+        grid-template-columns: 1fr;
       }
 
-      .nav-inner {
-        padding: 14px !important;
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-        align-items: start !important;
+      .metric {
+        border-left: none;
+        border-top: 1px solid var(--white-line);
       }
 
-      .brand-text strong {
-        font-size: 0.95rem !important;
-        letter-spacing: 0.5px !important;
-      }
-
-      .brand-text small {
-        font-size: 0.76rem !important;
-        line-height: 1.35 !important;
-      }
-
-      .nav-links,
-      .nav-buttons {
-        width: 100% !important;
-        display: grid !important;
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 8px !important;
-      }
-
-      .nav-links a,
-      .nav-buttons a {
-        width: 100% !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 10px 8px !important;
-        font-size: 0.78rem !important;
-        border-radius: 12px !important;
-      }
-
-      .hero {
-        padding: 34px 5% 38px !important;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr !important;
-        gap: 28px !important;
-        align-items: start !important;
-      }
-
-      .eyebrow {
-        font-size: 0.68rem !important;
-        padding: 7px 10px !important;
-        margin-bottom: 14px !important;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.35rem, 12vw, 3.35rem) !important;
-        line-height: 0.98 !important;
-        letter-spacing: -1.8px !important;
-        margin-bottom: 14px !important;
-      }
-
-      .hero-subtitle {
-        font-size: 1rem !important;
-        line-height: 1.65 !important;
-        margin-bottom: 12px !important;
-      }
-
-      .hero-description {
-        font-size: 0.96rem !important;
-        line-height: 1.65 !important;
-        margin-bottom: 20px !important;
-      }
-
-      .hero-tags {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-        margin-top: 16px !important;
-      }
-
-      .mini-tag {
-        width: 100% !important;
-        justify-content: center !important;
-        padding: 12px 14px !important;
-        font-size: 0.88rem !important;
-      }
-
-      .hero-visual {
-        min-height: auto !important;
-        width: 100% !important;
-      }
-
-      .profile-panel {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 20px !important;
-        border-radius: 24px !important;
-      }
-
-      .final-profile-layout,
-      .profile-card-grid.final-profile-layout {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        grid-template-areas:
-          "photo"
-          "title"
-          "metrics"
-          "callouts" !important;
-        gap: 16px !important;
-      }
-
-      .profile-photo-area,
-      .profile-card-grid .profile-pic-wrap,
-      .profile-pic-wrap {
-        width: 150px !important;
-        height: 150px !important;
-        margin: 0 auto !important;
-      }
-
-      .profile-title-area {
-        text-align: center !important;
-        align-self: start !important;
-      }
-
-      .profile-title-area h2,
-      .profile-card-grid .profile-title h2,
-      .profile-title h2 {
-        font-size: 2rem !important;
-        line-height: 1.08 !important;
-        margin-bottom: 8px !important;
-        letter-spacing: -0.6px !important;
-      }
-
-      .profile-title-area p,
-      .profile-card-grid .profile-title p,
-      .profile-title p {
-        max-width: 100% !important;
-        font-size: 0.98rem !important;
-        line-height: 1.45 !important;
-        margin: 0 auto !important;
-      }
-
-      .profile-metrics-area,
-      .profile-card-grid .profile-metrics,
-      .profile-metrics {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 10px !important;
-      }
-
-      .profile-metrics-area .profile-metric,
-      .profile-card-grid .profile-metric,
-      .profile-metric {
-        min-height: 104px !important;
-        padding: 15px 12px !important;
-        border-radius: 16px !important;
-        text-align: center !important;
-      }
-
-      .profile-metric strong {
-        font-size: 1.7rem !important;
-        margin-bottom: 5px !important;
-      }
-
-      .profile-metric span {
-        font-size: 0.78rem !important;
-        line-height: 1.25 !important;
-      }
-
-      .profile-callouts-area,
-      .profile-card-grid .hero-callouts,
-      .hero-callouts {
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-      }
-
-      .profile-callouts-area .hero-callout,
-      .profile-card-grid .hero-callout,
-      .hero-callout {
-        min-height: auto !important;
-        padding: 16px !important;
-        border-radius: 16px !important;
-        text-align: center !important;
-      }
-
-      .hero-callout strong {
-        font-size: 0.95rem !important;
-        margin-bottom: 6px !important;
-      }
-
-      .hero-callout small {
-        font-size: 0.84rem !important;
-        line-height: 1.5 !important;
-      }
-
-      section {
-        padding: 44px 5% !important;
-      }
-
-      .section-header {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 12px !important;
-        margin-bottom: 22px !important;
-      }
-
-      .section-title {
-        font-size: clamp(1.85rem, 9vw, 2.35rem) !important;
-        line-height: 1.08 !important;
-        letter-spacing: -1px !important;
-      }
-
-      .section-intro {
-        font-size: 0.96rem !important;
-        line-height: 1.65 !important;
-      }
-
-      .analytics-strip {
-        padding: 0 5% 34px !important;
-      }
-
-      .strip-inner,
-      .impact-grid,
-      .competencies-grid,
-      .about-grid,
-      .contact-enhanced,
-      .case-grid,
-      .dashboard-kpis,
-      .dashboard-controls,
-      .water-calculator-grid {
-        grid-template-columns: 1fr !important;
-      }
-
-      .project-hero,
-      .project-hero.visual-right,
-      .featured-card {
-        grid-template-columns: 1fr !important;
-        min-height: auto !important;
-      }
-
-      .project-summary,
-      .case-study-body,
-      .about-card,
-      .focus-card,
-      .contact-card,
-      .module-card {
-        padding: 20px !important;
-        border-radius: 20px !important;
-      }
-
-      .project-summary h3 {
-        font-size: 1.55rem !important;
-        line-height: 1.12 !important;
-      }
-
-      .project-actions,
-      .cta-group,
-      .water-calculator-actions {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 10px !important;
-      }
-
-      .btn,
-      .water-calc-button {
-        width: 100% !important;
-        justify-content: center !important;
-        min-height: 46px !important;
-      }
-
-      .project-visual,
-      .visual-right .project-visual {
-        padding: 18px !important;
-        border-left: 0 !important;
-        border-right: 0 !important;
-        border-top: 1px solid var(--line) !important;
-      }
-
-      .visual-frame img,
-      .screenshot-card img {
-        height: 210px !important;
-      }
-
-      .screenshot-grid {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 14px !important;
-      }
-
-      .screenshot-card,
-      .screenshot-card.featured-shot {
-        grid-column: auto !important;
-        width: 100% !important;
-      }
-
-      .kpi-card {
-        padding: 16px !important;
-      }
-
-      .kpi-card span {
-        font-size: 1.55rem !important;
-      }
-
-      footer {
-        padding: 28px 5% !important;
-        font-size: 0.85rem !important;
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
       }
     }
-
-    @media (max-width: 430px) {
-      .nav-links,
-      .nav-buttons {
-        grid-template-columns: 1fr !important;
-      }
-
-      .hero {
-        padding-left: 4.5% !important;
-        padding-right: 4.5% !important;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.1rem, 13vw, 2.85rem) !important;
-      }
-
-      .profile-panel {
-        padding: 16px !important;
-      }
-
-      .profile-photo-area,
-      .profile-card-grid .profile-pic-wrap,
-      .profile-pic-wrap {
-        width: 132px !important;
-        height: 132px !important;
-      }
-
-      .profile-metrics-area,
-      .profile-card-grid .profile-metrics,
-      .profile-metrics {
-        grid-template-columns: 1fr !important;
-      }
-
-      .profile-metrics-area .profile-metric,
-      .profile-card-grid .profile-metric,
-      .profile-metric {
-        min-height: 86px !important;
-      }
-
-      .hero-tags {
-        gap: 8px !important;
-      }
-
-      .visual-frame img,
-      .screenshot-card img {
-        height: 185px !important;
-      }
-    }
-
-  
-
-    /* Mobile/tablet hero order fix: show profile card above headline text */
-    @media (max-width: 980px) {
-      .hero-inner {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-      }
-
-      .hero-visual {
-        order: 1 !important;
-      }
-
-      .hero-copy {
-        order: 2 !important;
-      }
-    }
-</style>
+  </style>
 </head>
 
 <body>
-  <div class="site-shell">
-    <nav class="top-nav">
-      <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="Isaac K. Adjei Portfolio Home">
-          <span class="brand-text">
-            <strong>ISAAC K. ADJEI</strong>
-            <small>Health IT, Project Management &amp; Operational Analytics</small>
-          </span>
-        </a>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Isaac Adjei home">
+        <span class="monogram">IA</span>
+        <span>Isaac Adjei <small>Health IT Professional</small></span>
+      </a>
 
-        <div class="nav-links nav-buttons">
-          <a href="#projects"><span class="nav-icon">▦</span>Explore Projects</a>
-          <a href="Isaac-Adjei-Resume.pdf"><span class="nav-icon">▤</span>View Resume</a>
-          <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener"><span class="nav-icon">●</span>GitHub</a>
-          <a href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank" rel="noopener"><span class="nav-icon">in</span>LinkedIn</a>
-        </div>
-      </div>
-    </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
 
-    <header class="hero" id="top">
-      <div class="hero-inner">
-        <div class="hero-copy fade-in">
-          <div class="eyebrow">Health IT • Analytics • Project Leadership</div>
-          <h1>Operational analytics for <span>healthcare decision-making.</span></h1>
-
-          <p class="hero-subtitle">
-            Health IT, Clinical Informatics, Healthcare Analytics, and Project Management portfolio focused on practical dashboards, SQL systems, operational reporting, and leadership-ready insights.
-          </p>
-
-          <p class="hero-description">
-            I build practical Health IT and healthcare analytics solutions that transform operational data into clearer workflows, stronger decision-making, and measurable leadership value.
-          </p>
-
-          <div class="hero-tags">
-            <span class="mini-tag">🧮 SQL</span>
-            <span class="mini-tag">📊 Power BI</span>
-            <span class="mini-tag">🏥 Healthcare Informatics</span>
-            <span class="mini-tag">📈 Dashboarding</span>
-            <span class="mini-tag">📋 Project Management</span>
-          </div>
-        </div>
-
-        <div class="hero-visual fade-in delay-2">
-          <div class="profile-panel">
-            <div class="profile-card-grid final-profile-layout">
-              <div class="profile-pic-wrap profile-photo-area">
-                <img src="images/isaac-profile.jpg" alt="Isaac K. Adjei profile picture" class="profile-pic" />
-              </div>
-
-              <div class="profile-title profile-title-area">
-                <h2>Isaac K. Adjei</h2>
-                <p>Health IT, Project Management &amp; Operational Analytics</p>
-              </div>
-
-              <div class="hero-callouts profile-callouts-area">
-                <div class="hero-callout">
-                  <strong>Portfolio Focus</strong>
-                  <small>Healthcare operations, patient flow, readiness tracking, and resource planning.</small>
-                </div>
-                <div class="hero-callout">
-                  <strong>Built for Recruiters</strong>
-                  <small>Case studies, screenshots, tools, outcomes, and business impact.</small>
-                </div>
-              </div>
-
-              <div class="profile-metrics profile-metrics-area">
-                <a href="#projects" class="profile-metric" aria-label="Go to featured projects">
-                  <strong>4</strong>
-                  <span>Featured Projects</span>
-                </a>
-                <a href="#interactive-tools" class="profile-metric" aria-label="Go to interactive tools">
-                  <strong>3</strong>
-                  <span>Interactive Tools</span>
-                </a>
-                <a href="#patient-flow-screenshots" class="profile-metric" aria-label="Go to portfolio visuals">
-                  <strong>9+</strong>
-                  <span>Portfolio Visuals</span>
-                </a>
-                <a href="#impact" class="profile-metric" aria-label="Go to operations and Health IT impact section">
-                  <strong>360°</strong>
-                  <span>Ops + Health IT View</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </header>
-
-    <section id="projects" class="featured-showcase">
-      <div class="featured-inner">
-        <div class="featured-header">
-          <div>
-            <h2>Featured Projects</h2>
-            <p>Real-world Health IT and operational analytics solutions with measurable impact.</p>
-          </div>
-          <a class="view-all" href="#case-studies">View all projects <span>→</span></a>
-        </div>
-
-        <div class="featured-grid">
-          <article class="featured-card">
-            <a class="featured-image" href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization" target="_blank" rel="noopener">
-              <img src="images/combined-patient-flow-view.png" alt="Patient flow and capacity dashboard preview" />
-            </a>
-            <div class="featured-copy">
-              <h3>Patient Flow &amp; Capacity Dashboard</h3>
-              <p>Monitors patient volume, LOS, and capacity to optimize throughput and reduce delays.</p>
-              <div class="featured-tags"><span>SQL</span><span>Power BI</span><span>Healthcare Analytics</span></div>
-              <a class="featured-btn" href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization" target="_blank" rel="noopener">View Project <span>→</span></a>
-            </div>
-          </article>
-
-          <article class="featured-card">
-            <a class="featured-image" href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard" target="_blank" rel="noopener">
-              <img src="images/patient-movement-trends.png" alt="Patient movement tracker dashboard preview" />
-            </a>
-            <div class="featured-copy">
-              <h3>Operational Patient Movement Analytics</h3>
-              <p>Tracks medical cases, severity, unit trends, outcomes, and leadership-ready readiness reporting.</p>
-              <div class="featured-tags"><span>Excel</span><span>Dashboarding</span><span>Operational Reporting</span></div>
-              <a class="featured-btn" href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard" target="_blank" rel="noopener">View Project <span>→</span></a>
-            </div>
-          </article>
-
-          <article class="featured-card">
-            <a class="featured-image" href="https://github.com/isaacadjei-healthit/military-water-consumption-dashboard" target="_blank" rel="noopener">
-              <div class="water-preview">
-                <strong>2,700</strong><span>Estimated gallons</span>
-                <small>600 soldiers • 3 days • moderate weather</small>
-              </div>
-            </a>
-            <div class="featured-copy">
-              <h3>Water Consumption Readiness Tool</h3>
-              <p>Forecasts hydration requirements for personnel planning, logistics readiness, and field operations.</p>
-              <div class="featured-tags"><span>Logistics</span><span>Calculator</span><span>Readiness</span></div>
-              <a class="featured-btn" href="#water-calculator">Use Tool <span>→</span></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="analytics-strip">
-      <div class="strip-inner">
-        <div class="strip-card fade-in delay-1">
-          <strong>SQL</strong>
-          <span>Database design and operational analytics</span>
-        </div>
-        <div class="strip-card fade-in delay-2">
-          <strong>BI</strong>
-          <span>Dashboards, KPIs, and reporting workflows</span>
-        </div>
-        <div class="strip-card fade-in delay-3">
-          <strong>PM</strong>
-          <span>Project execution and stakeholder alignment</span>
-        </div>
-        <div class="strip-card fade-in delay-3">
-          <strong>HIT</strong>
-          <span>Healthcare systems and informatics focus</span>
-        </div>
-      </div>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="resume-btn" href="Isaac_Adjei_Resume.pdf" target="_blank" rel="noopener">Resume ↓</a>
+      </nav>
     </div>
+  </header>
 
-    <section id="about">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Professional Focus</div>
-            <h2 class="section-title">A Health IT portfolio built around evidence.</h2>
-          </div>
-          <p class="section-intro">
-            This portfolio sits at the intersection of healthcare operations, clinical systems, data analytics, information systems, military healthcare leadership, and project execution.
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Health IT, Project Management & Operational Analytics</div>
+          <h1>Transforming Healthcare Through <span>Data & Technology</span></h1>
+          <p class="hero-copy">
+            I design intelligent healthcare and operational solutions that improve visibility, strengthen decision-making, and connect people, processes, and technology with purpose.
           </p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#projects">View My Work <span>→</span></a>
+            <a class="btn-line" href="#about">About Me</a>
+          </div>
+
+          <a class="scroll-note" href="#what-i-do">
+            <span class="mouse"></span>
+            <span>Scroll to explore</span>
+          </a>
         </div>
 
-        <div class="about-grid">
-          <div class="about-card">
-            <p>
-              I am a Health IT professional with experience in <span class="highlight">health informatics, project management, clinical systems, healthcare analytics, and military healthcare leadership</span>. My work focuses on using structured data, dashboards, databases, and workflow analysis to solve practical operational problems.
-            </p>
-            <p>
-              The projects below are presented as case studies. Each one explains the problem, why it mattered, the solution, workflow, measurable outcomes, and leadership or business impact.
-            </p>
-            <p>
-              The goal is simple: show that I can connect technical execution to operational value in healthcare and mission-support environments.
-            </p>
-          </div>
+        <div class="visual reveal">
+          <div class="portrait-wrap" aria-label="Interactive healthcare technology identity visual">
+            <img class="portrait" src="images/profile.png" alt="Isaac Adjei professional portrait" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80';" />
 
-          <div class="focus-card">
-            <div class="focus-list">
-              <div class="focus-item">
-                <span class="focus-dot"></span>
-                <div>
-                  <strong>Healthcare Operations</strong>
-                  <span>Patient flow, staff workload, resource utilization, readiness, and reporting.</span>
-                </div>
-              </div>
-              <div class="focus-item">
-                <span class="focus-dot"></span>
-                <div>
-                  <strong>Analytics Storytelling</strong>
-                  <span>Dashboards and screenshots that show what the project actually produced.</span>
-                </div>
-              </div>
-              <div class="focus-item">
-                <span class="focus-dot"></span>
-                <div>
-                  <strong>Project Leadership</strong>
-                  <span>Clear problem framing, stakeholder value, governance awareness, and outcomes.</span>
-                </div>
-              </div>
-              <div class="focus-item">
-                <span class="focus-dot"></span>
-                <div>
-                  <strong>Privacy Awareness</strong>
-                  <span>Portfolio demonstrations use simulated or de-identified data concepts.</span>
-                </div>
-              </div>
+            <div class="orbit-card orbit-connect">
+              <div class="icon">⌘</div>
+              <div><strong>Connect</strong><span>People, process & technology</span></div>
+            </div>
+
+            <div class="orbit-card orbit-analyze">
+              <div class="icon">⌁</div>
+              <div><strong>Analyze</strong><span>Transform complex data</span></div>
+            </div>
+
+            <div class="orbit-card orbit-solve">
+              <div class="icon">◎</div>
+              <div><strong>Solve</strong><span>Operational challenges</span></div>
+            </div>
+
+            <div class="orbit-card orbit-impact">
+              <div class="icon">✦</div>
+              <div><strong>Impact</strong><span>Better outcomes. Stronger systems.</span></div>
             </div>
           </div>
+
+          <div class="quote-card">
+            Technology is the tool.<br />People are the purpose.
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="competencies">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Core Competencies</div>
-            <h2 class="section-title">Technical, healthcare, and leadership capabilities.</h2>
-          </div>
-          <p class="section-intro">
-            A focused blend of healthcare technology, analytics, operational reporting, and project execution capabilities.
-          </p>
+    <section class="light-section" id="what-i-do">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">What I Do</div>
+          <h2>Bridging Healthcare, Operations & Technology</h2>
         </div>
 
-        <div class="competencies-grid">
-          <div class="competency-card"><strong>SQL</strong><span>Queries, joins, aggregation, and database reporting.</span></div>
-          <div class="competency-card"><strong>Power BI</strong><span>KPI dashboards, visual reporting, and insight delivery.</span></div>
-          <div class="competency-card"><strong>Healthcare Informatics</strong><span>Clinical systems, workflows, and operational data use.</span></div>
-          <div class="competency-card"><strong>Project Management</strong><span>Planning, execution, stakeholder communication, and delivery.</span></div>
-          <div class="competency-card"><strong>Data Visualization</strong><span>Charts, dashboards, case studies, and decision support.</span></div>
-          <div class="competency-card"><strong>Clinical Operations Analytics</strong><span>Patient movement, readiness, flow, and resource trends.</span></div>
-          <div class="competency-card"><strong>HIPAA & Data Governance</strong><span>Privacy-aware reporting and responsible portfolio presentation.</span></div>
-          <div class="competency-card"><strong>Leadership Reporting</strong><span>Executive-ready summaries, metrics, and operational recommendations.</span></div>
+        <div class="what-grid">
+          <article class="what-card reveal">
+            <div class="round-icon">▥</div>
+            <h3>Data-Driven Insights</h3>
+            <p>Turning healthcare and operational data into clear insights that support better decisions.</p>
+          </article>
+
+          <article class="what-card reveal">
+            <div class="round-icon">▣</div>
+            <h3>Operational Excellence</h3>
+            <p>Improving workflows, capacity tracking, and resource utilization across complex environments.</p>
+          </article>
+
+          <article class="what-card reveal">
+            <div class="round-icon">♟</div>
+            <h3>Project Leadership</h3>
+            <p>Leading cross-functional work with discipline, communication, accountability, and execution.</p>
+          </article>
+
+          <article class="what-card reveal">
+            <div class="round-icon">⌾</div>
+            <h3>Mission Focused</h3>
+            <p>Veteran leader committed to advancing healthcare through service, integrity, and innovation.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="case-studies" class="projects-section detailed-projects">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Featured Projects</div>
-            <h2 class="section-title">Detailed case studies with screenshots and outcomes.</h2>
-          </div>
-          <p class="section-intro">
-            A Maven-style project showcase built around visual evidence, problem-solving, tools used, and leadership value.
-          </p>
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Featured Projects</div>
+          <h2>Solving Real Healthcare Challenges</h2>
         </div>
 
         <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-hero">
-              <div class="project-summary">
-                <span class="project-category">Healthcare Database Analytics</span>
-                <h3>Healthcare Database for Patient Flow Optimization</h3>
-                <p>
-                  Designed and implemented a healthcare database analytics system focused on patient flow optimization, length of stay, staff workload, resource utilization, and hospital operations reporting.
-                </p>
-
-                <div class="project-meta">
-                  <span>SQL</span>
-                  <span>Database Design</span>
-                  <span>ERD</span>
-                  <span>Healthcare Analytics</span>
-                  <span>Patient Flow</span>
-                </div>
-
-                <div class="project-actions">
-                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization" target="_blank" rel="noopener">View Repository</a>
-                  <a class="btn btn-secondary" href="#patient-flow-screenshots">View Screenshots</a>
-                </div>
-              </div>
-
-              <div class="project-visual">
-                <div class="visual-frame">
-                  <img src="images/combined-patient-flow-view.png" alt="Combined patient flow analytics view" />
-                  <div class="visual-caption">Featured visual: combined patient flow operational view</div>
-                </div>
-              </div>
+          <article class="project-card reveal">
+            <div class="project-shot">
+              <img src="images/patient-movement-tracker.png" alt="Patient Movement Tracker dashboard screenshot" onerror="this.src='images/cases-by-unit.png';" />
             </div>
-
-            <div class="case-study-body">
-              <div class="case-grid">
-                <div class="case-block">
-                  <h4>The Problem</h4>
-                  <p>Hospitals often struggle with fragmented patient flow data, making it harder to evaluate length of stay, staff workload, resource usage, and visit patterns.</p>
-                </div>
-                <div class="case-block">
-                  <h4>The Solution</h4>
-                  <p>Built a relational database analytics workflow that organizes patient, visit, staff, and resource data into a structured reporting model.</p>
-                </div>
-                <div class="case-block">
-                  <h4>Leadership Impact</h4>
-                  <p>Supports staffing decisions, throughput monitoring, workflow improvement, and executive reporting through structured operational metrics.</p>
-                </div>
-              </div>
-
-              <div class="insight-box">
-                <strong>Key insight:</strong> This project demonstrates how database design and SQL analytics can turn fragmented healthcare operations data into leadership-ready patient flow intelligence.
-              </div>
-
-              <div class="module-card patient-flow-dashboard" id="interactive-tools">
-                <h4>Live Patient Flow Optimization Dashboard</h4>
-                <p class="module-note">
-                  Explore simulated hospital patient flow metrics by visit type and department. The dashboard updates length of stay, wait time, discharge rate, and visit distribution in real time.
-                </p>
-
-                <div class="dashboard-controls">
-                  <label>
-                    Visit Type
-                    <select id="pfVisitTypeFilter">
-                      <option value="All">All Visit Types</option>
-                      <option value="Emergency">Emergency</option>
-                      <option value="Inpatient">Inpatient</option>
-                      <option value="Outpatient">Outpatient</option>
-                      <option value="Observation">Observation</option>
-                    </select>
-                  </label>
-
-                  <label>
-                    Department
-                    <select id="pfDepartmentFilter">
-                      <option value="All">All Departments</option>
-                      <option value="Emergency Department">Emergency Department</option>
-                      <option value="Medical-Surgical">Medical-Surgical</option>
-                      <option value="Cardiology">Cardiology</option>
-                      <option value="Orthopedics">Orthopedics</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div class="dashboard-kpis">
-                  <div class="kpi-card"><span id="pfTotalVisits">0</span><small>Total Visits</small></div>
-                  <div class="kpi-card"><span id="pfAvgLOS">0</span><small>Avg. Length of Stay</small></div>
-                  <div class="kpi-card"><span id="pfAvgWait">0</span><small>Avg. Wait Time</small></div>
-                  <div class="kpi-card"><span id="pfDischargeRate">0%</span><small>Discharge Rate</small></div>
-                </div>
-
-                <div class="dashboard-bars">
-                  <h5>Visits by Department</h5>
-                  <div id="pfDepartmentBars"></div>
-                </div>
-              </div>
-
-              <p class="dashboard-disclaimer">
-                The patient flow metrics shown above are based on simulated healthcare operational data created for portfolio demonstration purposes. This dashboard demonstrates patient flow monitoring, KPI tracking, and healthcare operations reporting concepts used in Health IT environments.
-              </p>
-
-              <div class="screenshots-title" id="patient-flow-screenshots">Project Screenshots</div>
-              <div class="screenshot-grid">
-                <a class="screenshot-card featured-shot" href="images/avg-los-by-visit-type.png" target="_blank" rel="noopener">
-                  <img src="images/avg-los-by-visit-type.png" alt="Average length of stay by visit type" />
-                  <p>Average length of stay by visit type</p>
-                </a>
-                <a class="screenshot-card featured-shot" href="images/staff-workload.png" target="_blank" rel="noopener">
-                  <img src="images/staff-workload.png" alt="Staff workload analytics screenshot" />
-                  <p>Staff workload analytics</p>
-                </a>
-                <a class="screenshot-card" href="images/resource-utilization-duration.png" target="_blank" rel="noopener">
-                  <img src="images/resource-utilization-duration.png" alt="Resource utilization duration screenshot" />
-                  <p>Resource utilization duration</p>
-                </a>
-                <a class="screenshot-card" href="images/combined-patient-flow-view.png" target="_blank" rel="noopener">
-                  <img src="images/combined-patient-flow-view.png" alt="Combined patient flow view screenshot" />
-                  <p>Combined patient flow view</p>
-                </a>
-                <a class="screenshot-card" href="images/patient-visit-summary-query.png" target="_blank" rel="noopener">
-                  <img src="images/patient-visit-summary-query.png" alt="Patient visit summary SQL query screenshot" />
-                  <p>Patient visit summary query</p>
-                </a>
-              </div>
+            <div class="project-body">
+              <h3>Patient Movement Tracker</h3>
+              <p>Operational dashboard for tracking patient movement, case trends, and medical readiness visibility.</p>
+              <div class="tags"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Operations</span></div>
             </div>
+            <a class="arrow-link" href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard" target="_blank" rel="noopener" aria-label="View Patient Movement Tracker repository">→</a>
           </article>
 
-          <article class="project-card">
-            <div class="project-hero visual-right">
-              <div class="project-visual">
-                <div class="visual-frame">
-                  <img src="images/patient-movement-trends.png" alt="Patient movement trends dashboard" />
-                  <div class="visual-caption">Featured visual: patient movement trends dashboard</div>
-                </div>
-              </div>
-
-              <div class="project-summary">
-                <span class="project-category">Operational Readiness Analytics</span>
-                <h3>Patient Movement Tracker Dashboard</h3>
-                <p>
-                  Developed an operational patient movement tracking dashboard to improve visibility of medical readiness, patient status, severity, outcomes, and movement trends.
-                </p>
-
-                <div class="project-meta">
-                  <span>Excel</span>
-                  <span>Dashboarding</span>
-                  <span>Pivot Tables</span>
-                  <span>Operational Reporting</span>
-                  <span>Leadership Analytics</span>
-                </div>
-
-                <div class="project-actions">
-                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard" target="_blank" rel="noopener">View Repository</a>
-                  <a class="btn btn-secondary" href="#patient-movement-screenshots">View Screenshots</a>
-                </div>
-              </div>
+          <article class="project-card reveal">
+            <div class="project-shot">
+              <img src="images/water-consumption-dashboard.png" alt="Water consumption readiness dashboard screenshot" onerror="this.src='https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=900&q=80';" />
             </div>
-
-            <div class="case-study-body">
-              <div class="case-grid">
-                <div class="case-block">
-                  <h4>The Problem</h4>
-                  <p>Patient movement and medical tracking can become difficult when information is spread across manual logs, inconsistent formats, or disconnected summaries.</p>
-                </div>
-                <div class="case-block">
-                  <h4>The Solution</h4>
-                  <p>Organized case-level operational data into a dashboard workflow with unit, severity, event type, outcome, and movement trend views.</p>
-                </div>
-                <div class="case-block">
-                  <h4>Leadership Impact</h4>
-                  <p>Improves visibility for patient counts, case trends, severity levels, outcomes, and unit-level medical activity while remaining privacy-aware.</p>
-                </div>
-              </div>
-
-              <div class="insight-box">
-                <strong>Key insight:</strong> This dashboard demonstrates how operational health data can be translated into leadership-ready reporting while maintaining HIPAA and privacy awareness.
-              </div>
-
-              <div class="screenshots-title" id="patient-movement-screenshots">Project Screenshots</div>
-              <div class="screenshot-grid">
-                <a class="screenshot-card featured-shot" href="images/cases-by-unit.png" target="_blank" rel="noopener">
-                  <img src="images/cases-by-unit.png" alt="Cases by unit dashboard screenshot" />
-                  <p>Cases by unit</p>
-                </a>
-                <a class="screenshot-card featured-shot" href="images/condition-severity-distribution.png" target="_blank" rel="noopener">
-                  <img src="images/condition-severity-distribution.png" alt="Condition severity distribution dashboard screenshot" />
-                  <p>Condition severity distribution</p>
-                </a>
-                <a class="screenshot-card" href="images/conditions-by-event-type.png" target="_blank" rel="noopener">
-                  <img src="images/conditions-by-event-type.png" alt="Conditions by event type dashboard screenshot" />
-                  <p>Conditions by event type</p>
-                </a>
-                <a class="screenshot-card" href="images/patient-movement-trends.png" target="_blank" rel="noopener">
-                  <img src="images/patient-movement-trends.png" alt="Patient movement trends dashboard screenshot" />
-                  <p>Patient movement trends</p>
-                </a>
-              </div>
-
-              <div class="module-card" id="patient-movement-dashboard">
-                <h4>Live Patient Movement Dashboard</h4>
-                <p class="module-note">
-                  Explore simulated patient movement trends by unit, severity level, event type, and outcome category.
-                </p>
-
-                <div class="dashboard-controls">
-                  <label>
-                    Unit
-                    <select id="pmUnitFilter">
-                      <option value="All">All Units</option>
-                      <option value="HHC">HHC</option>
-                      <option value="Alpha">Alpha</option>
-                      <option value="Bravo">Bravo</option>
-                      <option value="Charlie">Charlie</option>
-                    </select>
-                  </label>
-
-                  <label>
-                    Severity
-                    <select id="pmSeverityFilter">
-                      <option value="All">All Severities</option>
-                      <option value="Low">Low</option>
-                      <option value="Moderate">Moderate</option>
-                      <option value="High">High</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div class="dashboard-kpis">
-                  <div class="kpi-card"><span id="pmTotalCases">0</span><small>Total Cases</small></div>
-                  <div class="kpi-card"><span id="pmRTD">0</span><small>Returned to Duty</small></div>
-                  <div class="kpi-card"><span id="pmEvacuated">0</span><small>Evacuated</small></div>
-                  <div class="kpi-card"><span id="pmFollowUp">0</span><small>Follow-Up Cases</small></div>
-                </div>
-
-                <div class="dashboard-bars">
-                  <h5>Cases by Event Type</h5>
-                  <div id="pmEventBars"></div>
-                </div>
-              </div>
-
-              <p class="dashboard-disclaimer">
-                The patient movement data displayed above is simulated for educational and portfolio purposes. This dashboard demonstrates operational readiness tracking, case monitoring, and healthcare logistics analytics workflows.
-              </p>
+            <div class="project-body">
+              <h3>Water Consumption Readiness Dashboard</h3>
+              <p>Planning tool for estimating hydration needs across personnel strength, climate, and mission duration.</p>
+              <div class="tags"><span class="tag">Readiness</span><span class="tag">Analytics</span><span class="tag">Planning</span></div>
             </div>
+            <a class="arrow-link" href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener" aria-label="View water consumption project">→</a>
           </article>
 
-          <article class="project-card">
-            <div class="project-hero">
-              <div class="project-summary">
-                <span class="project-category">Logistics Planning Analytics</span>
-                <h3>Military Water Consumption Dashboard</h3>
-                <p>
-                  Built an interactive operational water consumption dashboard to support logistics planning, hydration readiness assessments, and resource forecasting for large-scale personnel operations.
-                </p>
-
-                <div class="project-meta">
-                  <span>Excel</span>
-                  <span>Logistics Analytics</span>
-                  <span>Leadership Reporting</span>
-                  <span>Planning Model</span>
-                  <span>Interactive Calculator</span>
-                </div>
-
-                <div class="project-actions">
-                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit/military-water-consumption-dashboard" target="_blank" rel="noopener">View Repository</a>
-                  <a class="btn btn-secondary" href="#water-calculator">Use Calculator</a>
-                </div>
-              </div>
-
-              <div class="project-visual">
-                <div class="visual-frame">
-                  <div class="module-card" style="margin:0; box-shadow:none;">
-                    <h4>Planning Scenario</h4>
-                    <div class="dashboard-kpis" style="grid-template-columns:1fr 1fr;">
-                      <div class="kpi-card"><span>600</span><small>Soldiers</small></div>
-                      <div class="kpi-card"><span>3</span><small>Days</small></div>
-                      <div class="kpi-card"><span>2,700</span><small>Gallons</small></div>
-                      <div class="kpi-card"><span>10,221</span><small>Liters</small></div>
-                    </div>
-                    <div class="visual-caption">Interactive calculator retained below for live planning estimates.</div>
-                  </div>
-                </div>
-              </div>
+          <article class="project-card reveal">
+            <div class="project-shot">
+              <img src="images/healthcare-database.png" alt="Healthcare database project screenshot" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80';" />
             </div>
-
-            <div class="case-study-body">
-              <div class="case-grid">
-                <div class="case-block">
-                  <h4>The Problem</h4>
-                  <p>Field operations require accurate water planning, but estimates can become inconsistent when based on rough calculations or informal notes.</p>
-                </div>
-                <div class="case-block">
-                  <h4>The Solution</h4>
-                  <p>Built consumption assumptions by weather category and calculated liters and gallons required for planning scenarios.</p>
-                </div>
-                <div class="case-block">
-                  <h4>Leadership Impact</h4>
-                  <p>Supports soldier safety, logistics, sustainment, readiness, and command-level decision-making during field operations.</p>
-                </div>
-              </div>
-
-              <div class="insight-box">
-                <strong>Key insight:</strong> This project shows how field requirements can be converted into a reusable, leadership-ready decision-support tool.
-              </div>
-
-              <div class="module-card" id="water-calculator">
-                <h4>Water Use Calculator</h4>
-                <p class="module-note">
-                  Estimate total water requirements by adjusting the number of soldiers, mission duration, and environmental condition.
-                </p>
-
-                <div class="water-calculator-grid">
-                  <div class="field">
-                    <label for="waterSoldiers">Number of Soldiers</label>
-                    <input type="number" id="waterSoldiers" value="600" min="1" />
-                  </div>
-
-                  <div class="field">
-                    <label for="waterDays">Number of Days</label>
-                    <input type="number" id="waterDays" value="3" min="1" />
-                  </div>
-
-                  <div class="field">
-                    <label for="waterCondition">Environmental Condition</label>
-                    <select id="waterCondition">
-                      <option value="1.5">Moderate Weather - 1.5 gallons/person/day</option>
-                      <option value="2">Hot Weather - 2 gallons/person/day</option>
-                      <option value="3">Extreme Heat/High Activity - 3 gallons/person/day</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="water-calculator-actions">
-                  <button type="button" class="water-calc-button" onclick="calculateWaterUse()">Calculate Requirement</button>
-                </div>
-
-                <div class="water-result-card" id="waterResult">
-                  <div class="water-result-main">Estimated requirement: 2,700 gallons</div>
-                  <div class="water-result-detail">That equals approximately 10,221 liters for 600 soldiers over 3 days at 1.5 gallons per soldier per day.</div>
-                </div>
-              </div>
+            <div class="project-body">
+              <h3>Healthcare Database System</h3>
+              <p>Relational database concept for patient flow optimization using normalized tables and SQL analytics.</p>
+              <div class="tags"><span class="tag">SQL</span><span class="tag">ERD</span><span class="tag">Database</span></div>
             </div>
+            <a class="arrow-link" href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener" aria-label="View healthcare database project">→</a>
           </article>
+        </div>
 
-          <article class="project-card">
-            <div class="project-hero visual-right">
-              <div class="project-visual">
-                <div class="visual-frame">
-                  <div class="module-card" style="margin:0; box-shadow:none;">
-                    <h4>Governance Lens</h4>
-                    <div class="focus-list">
-                      <div class="focus-item"><span class="focus-dot"></span><div><strong>Alignment</strong><span>IT initiatives tied to business value.</span></div></div>
-                      <div class="focus-item"><span class="focus-dot"></span><div><strong>Risk</strong><span>Governance, compliance, and stakeholder considerations.</span></div></div>
-                      <div class="focus-item"><span class="focus-dot"></span><div><strong>Execution</strong><span>Structured recommendations for healthcare technology planning.</span></div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="center-action reveal">
+          <a class="outline-btn" href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">Explore All Projects <span>→</span></a>
+        </div>
 
-              <div class="project-summary">
-                <span class="project-category">IT Strategy & Governance</span>
-                <h3>IT Strategy & Governance Analysis</h3>
-                <p>
-                  Conducted strategic IT governance and organizational analysis focused on operational alignment, technology oversight, risk management, and enterprise decision-making frameworks.
-                </p>
-
-                <div class="project-meta">
-                  <span>IT Governance</span>
-                  <span>Healthcare Strategy</span>
-                  <span>Risk Awareness</span>
-                  <span>Business Alignment</span>
-                </div>
-
-                <div class="project-actions">
-                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">View GitHub</a>
-                </div>
-              </div>
+        <div class="impact-band reveal">
+          <div class="belief">
+            I believe the best systems are built at the intersection of <span class="accent">empathy</span>, <span class="accent">strategy</span>, and <span class="accent">technology</span>.
+          </div>
+          <div class="metric">
+            <div>
+              <div class="metric-icon">✺</div>
+              <strong>10+</strong>
+              <span>Projects Completed</span>
             </div>
-
-            <div class="case-study-body">
-              <div class="case-grid">
-                <div class="case-block">
-                  <h4>The Problem</h4>
-                  <p>Healthcare organizations need IT initiatives that align with governance, compliance, risk management, stakeholder needs, and measurable business value.</p>
-                </div>
-                <div class="case-block">
-                  <h4>The Solution</h4>
-                  <p>Analyzed governance and IT alignment concepts, connected information systems to business value, and evaluated risk and stakeholder considerations.</p>
-                </div>
-                <div class="case-block">
-                  <h4>Leadership Impact</h4>
-                  <p>Shows strategic thinking beyond technical execution by connecting technology decisions to governance, risk, stakeholders, and organizational value.</p>
-                </div>
-              </div>
+          </div>
+          <div class="metric">
+            <div>
+              <div class="metric-icon">▤</div>
+              <strong>5+</strong>
+              <span>Data Sources Worked With</span>
             </div>
-          </article>
+          </div>
+          <div class="metric">
+            <div>
+              <div class="metric-icon">◎</div>
+              <strong>100%</strong>
+              <span>Mission Focused</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="impact">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Portfolio Value</div>
-            <h2 class="section-title">What this portfolio demonstrates.</h2>
-          </div>
-          <p class="section-intro">
-            More than completed projects: this portfolio shows how I define problems, build solutions, communicate outcomes, and connect technical work to leadership value.
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-panel reveal">
+          <img class="profile-mini" src="images/profile.png" alt="Isaac Adjei" onerror="this.style.display='none';" />
+          <h3>Isaac Adjei</h3>
+          <p><strong>Health IT, Project Management & Operational Analytics</strong></p>
+          <p>Healthcare technology professional with experience across project coordination, operational reporting, informatics coursework, and military healthcare leadership.</p>
+        </div>
+
+        <div class="about-text reveal" id="experience">
+          <div class="eyebrow">About Me</div>
+          <h2>Building systems that make healthcare work better.</h2>
+          <p>
+            My work sits at the intersection of healthcare operations, information systems, analytics, and leadership. I enjoy turning fragmented operational information into clear tools that help teams act faster and make better decisions.
           </p>
-        </div>
-
-        <div class="impact-grid">
-          <div class="impact-card">
-            <h3>Health IT Specialization</h3>
-            <p>Healthcare data, clinical systems, operational reporting, workflow improvement, and information system design.</p>
-          </div>
-          <div class="impact-card">
-            <h3>Project Storytelling</h3>
-            <p>Each project explains the problem, why it mattered, the solution, workflow, outcomes, and leadership impact.</p>
-          </div>
-          <div class="impact-card">
-            <h3>Technical Execution</h3>
-            <p>SQL, database design, dashboards, analytics, documentation, GitHub, and portfolio deployment.</p>
-          </div>
-          <div class="impact-card">
-            <h3>Leadership Value</h3>
-            <p>Connects technical work to decision-making, planning, process improvement, reporting, and stakeholder communication.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <div class="section-inner">
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">Connect</div>
-            <h2 class="section-title">Let’s connect.</h2>
-          </div>
-          <p class="section-intro">
-            I welcome opportunities to collaborate, network, and contribute to healthcare and information systems initiatives.
+          <p>
+            My portfolio reflects practical projects in patient movement tracking, readiness planning, database design, and healthcare analytics — combining technical execution with mission-focused problem solving.
           </p>
-        </div>
 
-        <div class="contact-enhanced">
-          <div class="contact-card">
-            <h3>Professional Interests</h3>
-            <ul>
-              <li>Health Information Technology</li>
-              <li>Clinical Informatics</li>
-              <li>Healthcare Analytics & Reporting</li>
-              <li>Healthcare Project Management</li>
-              <li>Operational Readiness & Process Improvement</li>
-              <li>SQL, Power BI, and Data Visualization</li>
-            </ul>
-          </div>
-
-          <div class="contact-card">
-            <h3>Open to Opportunities</h3>
-            <p>
-              I am open to Health IT, Clinical Informatics, Healthcare Analytics, and Project Management opportunities where I can apply technical, operational, and leadership experience to improve healthcare workflows.
-            </p>
-
-            <div class="contact-links">
-              <a href="mailto:izaak.adjei@gmail.com">izaak.adjei@gmail.com</a>
-              <a href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank" rel="noopener">LinkedIn Profile</a>
-              <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">GitHub Portfolio</a>
-            </div>
+          <div class="skill-list" id="skills">
+            <span>Health Informatics</span>
+            <span>Project Management</span>
+            <span>Power BI</span>
+            <span>SQL</span>
+            <span>Operational Analytics</span>
+            <span>Healthcare Data</span>
+            <span>Military Leadership</span>
+            <span>Process Improvement</span>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      <p>
-        © 2026 Isaac K. Adjei | Health IT & Operational Analytics Portfolio |
-        <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">GitHub</a>
-      </p>
-    </footer>
-  </div>
+    <section class="contact-section" id="contact">
+      <div class="container reveal">
+        <div class="eyebrow">Contact</div>
+        <h2>Let’s build better healthcare systems.</h2>
+        <p>
+          I’m open to Health IT, clinical informatics, project coordination, healthcare analytics, and operational technology opportunities.
+        </p>
+        <a class="btn-primary" href="mailto:izaak.adjei@gmail.com">Contact Me <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#home">
+        <span class="monogram">IA</span>
+        <span>Isaac Adjei <small>Health IT Professional</small></span>
+      </a>
+
+      <div class="socials" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+        <a href="mailto:izaak.adjei@gmail.com" aria-label="Email">✉</a>
+      </div>
+
+      <p>© 2026 Isaac Adjei. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
-    function calculateWaterUse() {
-      const soldiers = Number(document.getElementById("waterSoldiers").value) || 0;
-      const days = Number(document.getElementById("waterDays").value) || 0;
-      const rate = Number(document.getElementById("waterCondition").value) || 0;
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
 
-      const totalGallons = soldiers * days * rate;
-      const totalLiters = totalGallons * 3.78541;
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
 
-      document.getElementById("waterResult").innerHTML = `
-        <div class="water-result-main">Estimated requirement: ${totalGallons.toLocaleString()} gallons</div>
-        <div class="water-result-detail">That equals approximately ${Math.round(totalLiters).toLocaleString()} liters for ${soldiers.toLocaleString()} soldiers over ${days.toLocaleString()} day${days === 1 ? "" : "s"} at ${rate} gallons per soldier per day.</div>
-      `;
-    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
 
-    const patientFlowData = [
-      { visitType: "Emergency", department: "Emergency Department", status: "Discharged", los: 1.2, wait: 42 },
-      { visitType: "Emergency", department: "Emergency Department", status: "Admitted", los: 2.4, wait: 68 },
-      { visitType: "Inpatient", department: "Medical-Surgical", status: "Discharged", los: 4.6, wait: 95 },
-      { visitType: "Inpatient", department: "Cardiology", status: "Transferred", los: 5.1, wait: 110 },
-      { visitType: "Outpatient", department: "Orthopedics", status: "Discharged", los: 0.5, wait: 24 },
-      { visitType: "Outpatient", department: "Cardiology", status: "Discharged", los: 0.7, wait: 31 },
-      { visitType: "Observation", department: "Medical-Surgical", status: "Discharged", los: 1.8, wait: 53 },
-      { visitType: "Observation", department: "Emergency Department", status: "Admitted", los: 2.1, wait: 75 },
-      { visitType: "Inpatient", department: "Orthopedics", status: "Discharged", los: 3.9, wait: 84 },
-      { visitType: "Emergency", department: "Cardiology", status: "Transferred", los: 2.8, wait: 88 },
-      { visitType: "Outpatient", department: "Medical-Surgical", status: "Discharged", los: 0.6, wait: 29 },
-      { visitType: "Observation", department: "Orthopedics", status: "Discharged", los: 1.5, wait: 47 }
-    ];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
 
-    function updatePatientFlowDashboard() {
-      const visitTypeFilter = document.getElementById("pfVisitTypeFilter").value;
-      const departmentFilter = document.getElementById("pfDepartmentFilter").value;
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      const filtered = patientFlowData.filter(item => {
-        const visitTypeMatch = visitTypeFilter === "All" || item.visitType === visitTypeFilter;
-        const departmentMatch = departmentFilter === "All" || item.department === departmentFilter;
-        return visitTypeMatch && departmentMatch;
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) current = section.getAttribute('id');
       });
 
-      const totalVisits = filtered.length;
-      const avgLOS = totalVisits
-        ? filtered.reduce((sum, item) => sum + item.los, 0) / totalVisits
-        : 0;
-      const avgWait = totalVisits
-        ? filtered.reduce((sum, item) => sum + item.wait, 0) / totalVisits
-        : 0;
-      const discharged = filtered.filter(item => item.status === "Discharged").length;
-      const dischargeRate = totalVisits ? Math.round((discharged / totalVisits) * 100) : 0;
-
-      document.getElementById("pfTotalVisits").textContent = totalVisits;
-      document.getElementById("pfAvgLOS").textContent = `${avgLOS.toFixed(1)} days`;
-      document.getElementById("pfAvgWait").textContent = `${Math.round(avgWait)} min`;
-      document.getElementById("pfDischargeRate").textContent = `${dischargeRate}%`;
-
-      const departmentCounts = {};
-
-      filtered.forEach(item => {
-        departmentCounts[item.department] =
-          (departmentCounts[item.department] || 0) + 1;
+      navItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
       });
-
-      const maxCount = Math.max(...Object.values(departmentCounts), 1);
-      const container = document.getElementById("pfDepartmentBars");
-      container.innerHTML = "";
-
-      Object.entries(departmentCounts).forEach(([department, count]) => {
-        const width = (count / maxCount) * 100;
-
-        container.innerHTML += `
-          <div class="bar-row">
-            <div class="bar-label">
-              <span>${department}</span>
-              <span>${count}</span>
-            </div>
-            <div class="bar-track">
-              <div class="bar-fill" style="width:${width}%"></div>
-            </div>
-          </div>
-        `;
-      });
-
-      if (filtered.length === 0) {
-        container.innerHTML = `
-          <p class="module-note">
-            No visits match the selected filters.
-          </p>
-        `;
-      }
-    }
-
-    const patientMovementData = [
-      { unit: "HHC", severity: "Low", eventType: "Sick Call", outcome: "RTD" },
-      { unit: "HHC", severity: "Moderate", eventType: "Injury", outcome: "Follow-Up" },
-      { unit: "Alpha", severity: "High", eventType: "Heat Injury", outcome: "Evacuated" },
-      { unit: "Alpha", severity: "Low", eventType: "Sick Call", outcome: "RTD" },
-      { unit: "Bravo", severity: "Moderate", eventType: "Musculoskeletal", outcome: "Follow-Up" },
-      { unit: "Bravo", severity: "High", eventType: "Injury", outcome: "Evacuated" },
-      { unit: "Charlie", severity: "Low", eventType: "Sick Call", outcome: "RTD" },
-      { unit: "Charlie", severity: "Moderate", eventType: "Heat Injury", outcome: "Follow-Up" },
-      { unit: "HHC", severity: "High", eventType: "Musculoskeletal", outcome: "Evacuated" },
-      { unit: "Alpha", severity: "Moderate", eventType: "Injury", outcome: "RTD" }
-    ];
-
-    function updatePatientDashboard() {
-      const unitFilter = document.getElementById("pmUnitFilter").value;
-      const severityFilter = document.getElementById("pmSeverityFilter").value;
-
-      const filtered = patientMovementData.filter(item => {
-        const unitMatch = unitFilter === "All" || item.unit === unitFilter;
-        const severityMatch = severityFilter === "All" || item.severity === severityFilter;
-        return unitMatch && severityMatch;
-      });
-
-      document.getElementById("pmTotalCases").textContent = filtered.length;
-      document.getElementById("pmRTD").textContent =
-        filtered.filter(x => x.outcome === "RTD").length;
-
-      document.getElementById("pmEvacuated").textContent =
-        filtered.filter(x => x.outcome === "Evacuated").length;
-
-      document.getElementById("pmFollowUp").textContent =
-        filtered.filter(x => x.outcome === "Follow-Up").length;
-
-      const eventCounts = {};
-
-      filtered.forEach(item => {
-        eventCounts[item.eventType] =
-          (eventCounts[item.eventType] || 0) + 1;
-      });
-
-      const maxCount = Math.max(...Object.values(eventCounts), 1);
-
-      const container = document.getElementById("pmEventBars");
-      container.innerHTML = "";
-
-      Object.entries(eventCounts).forEach(([eventType, count]) => {
-        const width = (count / maxCount) * 100;
-
-        container.innerHTML += `
-          <div class="bar-row">
-            <div class="bar-label">
-              <span>${eventType}</span>
-              <span>${count}</span>
-            </div>
-            <div class="bar-track">
-              <div class="bar-fill" style="width:${width}%"></div>
-            </div>
-          </div>
-        `;
-      });
-
-      if (filtered.length === 0) {
-        container.innerHTML = `
-          <p class="module-note">
-            No cases match the selected filters.
-          </p>
-        `;
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const visitTypeFilter = document.getElementById("pfVisitTypeFilter");
-      const departmentFilter = document.getElementById("pfDepartmentFilter");
-
-      if (visitTypeFilter && departmentFilter) {
-        visitTypeFilter.addEventListener("change", updatePatientFlowDashboard);
-        departmentFilter.addEventListener("change", updatePatientFlowDashboard);
-        updatePatientFlowDashboard();
-      }
-
-      const unitFilter = document.getElementById("pmUnitFilter");
-      const severityFilter = document.getElementById("pmSeverityFilter");
-
-      if (unitFilter && severityFilter) {
-        unitFilter.addEventListener("change", updatePatientDashboard);
-        severityFilter.addEventListener("change", updatePatientDashboard);
-        updatePatientDashboard();
-      }
     });
   </script>
 </body>
