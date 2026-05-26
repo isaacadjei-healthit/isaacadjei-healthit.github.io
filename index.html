@@ -523,6 +523,74 @@
       background: linear-gradient(90deg, var(--royal-blue), var(--muted-teal));
     }
 
+    .dashboard-disclaimer {
+      margin-top: -12px;
+      margin-bottom: 28px;
+      color: var(--slate);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      background: rgba(7, 26, 47, 0.03);
+      border-left: 4px solid var(--royal-blue);
+      padding: 14px 16px;
+      border-radius: 10px;
+    }
+
+    .contact-section {
+      padding-top: 52px;
+      padding-bottom: 52px;
+      background: var(--soft-bg);
+    }
+
+    .contact-enhanced {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--light-slate);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px var(--shadow);
+      border-top: 5px solid var(--muted-teal);
+    }
+
+    .contact-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+      color: var(--navy);
+    }
+
+    .contact-card p,
+    .contact-card li {
+      color: var(--slate);
+      font-size: 0.96rem;
+    }
+
+    .contact-card ul {
+      padding-left: 18px;
+      line-height: 1.9;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-links a {
+      color: var(--royal-blue);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
     .impact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -794,6 +862,11 @@
           </div>
         </div>
 
+        <p class="dashboard-disclaimer">
+          The patient flow metrics shown above are based on simulated healthcare operational data created for portfolio demonstration purposes.
+          This dashboard demonstrates patient flow monitoring, KPI tracking, and healthcare operations reporting concepts used in Health IT environments.
+        </p>
+
         <div class="screenshots-title">Project Screenshots</div>
 
         <div class="screenshot-grid">
@@ -958,6 +1031,11 @@
             <div id="pmEventBars"></div>
           </div>
         </div>
+
+        <p class="dashboard-disclaimer">
+          The patient movement data displayed above is simulated for educational and portfolio purposes.
+          This dashboard demonstrates operational readiness tracking, case monitoring, and healthcare logistics analytics workflows.
+        </p>
 
         <div class="project-links">
           <a href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard">
@@ -1140,6 +1218,40 @@
       <div class="impact-card">
         <h3>Leadership Value</h3>
         <p>Connects technical work to decision-making, planning, process improvement, reporting, and stakeholder communication.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">Let’s Connect</h2>
+    <p class="section-intro">
+      I am actively building experience in Health IT, healthcare analytics, clinical informatics, and technology-driven operational improvement. I welcome opportunities to collaborate, network, and contribute to healthcare and information systems initiatives.
+    </p>
+
+    <div class="contact-enhanced">
+      <div class="contact-card">
+        <h3>Professional Interests</h3>
+        <ul>
+          <li>Health Information Technology</li>
+          <li>Clinical Informatics</li>
+          <li>Healthcare Analytics &amp; Reporting</li>
+          <li>Healthcare Project Management</li>
+          <li>Operational Readiness &amp; Process Improvement</li>
+          <li>SQL, Power BI, and Data Visualization</li>
+        </ul>
+      </div>
+
+      <div class="contact-card">
+        <h3>Connect With Me</h3>
+        <p>
+          I am open to Health IT, Clinical Informatics, Healthcare Analytics, and Project Management opportunities where I can apply technical, operational, and leadership experience to improve healthcare workflows.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:izaak.adjei@gmail.com">izaak.adjei@gmail.com</a>
+          <a href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank" rel="noopener">LinkedIn Profile</a>
+          <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">GitHub Portfolio</a>
+        </div>
       </div>
     </div>
   </section>
