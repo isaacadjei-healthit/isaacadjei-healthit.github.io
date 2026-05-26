@@ -3,20 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isaac K. Adjei | Health IT Portfolio</title>
+  <title>Isaac K. Adjei | Health IT & Operational Analytics Portfolio</title>
 
   <style>
     :root {
-      --deep-navy: #04111f;
-      --navy: #071a2f;
-      --royal-blue: #1e5aa8;
-      --slate: #5f6f82;
-      --light-slate: #e8eef4;
-      --soft-bg: #f7f9fc;
-      --white: #ffffff;
-      --muted-teal: #4fa3a5;
+      --ink: #14213d;
+      --navy: #1f3a5f;
+      --blue: #2563eb;
+      --blue-soft: #eaf2ff;
+      --teal: #1f9d8a;
+      --teal-soft: #e7f7f4;
+      --gold: #d99a26;
       --burgundy: #8a3a4a;
-      --shadow: rgba(7, 26, 47, 0.08);
+      --slate: #64748b;
+      --slate-dark: #334155;
+      --line: #dbe4ef;
+      --soft-bg: #f5f8fc;
+      --white: #ffffff;
+      --card: #ffffff;
+      --shadow-sm: 0 8px 22px rgba(20, 33, 61, 0.06);
+      --shadow-md: 0 16px 42px rgba(20, 33, 61, 0.10);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max-width: 1180px;
     }
 
     * {
@@ -25,474 +35,758 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Inter, Arial, sans-serif;
       background: var(--soft-bg);
-      color: var(--navy);
+      color: var(--ink);
       line-height: 1.7;
     }
 
-    header {
-      background:
-        linear-gradient(rgba(4,17,31,0.72), rgba(4,17,31,0.78)),
-        url("images/cover-page-portfolio.jpeg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: var(--white);
-      padding: 55px 8% 60px;
+    a {
+      color: inherit;
     }
 
-    .hero-content {
+    img {
+      max-width: 100%;
+    }
+
+    .site-shell {
+      overflow: hidden;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(219, 228, 239, 0.86);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 6%;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 34px;
-      max-width: 1200px;
-      margin: 0 auto;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      color: var(--ink);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
       flex-wrap: wrap;
-    }
-
-    .profile-pic {
-      width: 155px;
-      height: 155px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid rgba(255,255,255,0.25);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
-      flex-shrink: 0;
-    }
-
-    .hero-text {
-      text-align: left;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
+      align-items: center;
+      font-size: 0.92rem;
       font-weight: 800;
-      letter-spacing: -0.8px;
-      margin-bottom: 8px;
+      color: var(--slate-dark);
     }
 
-    header h2 {
-      font-size: 1.08rem;
-      font-weight: 500;
-      color: #d9e8f6;
+    .nav-links a {
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(31, 157, 138, 0.18), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
+      padding: 72px 6% 46px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       margin-bottom: 18px;
     }
 
-    .tagline {
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      font-size: 1.18rem;
+      color: var(--slate-dark);
       max-width: 760px;
-      margin-bottom: 24px;
-      color: #c8d6e5;
-      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      color: var(--slate);
+      max-width: 740px;
+      font-size: 1.02rem;
+      margin-bottom: 28px;
     }
 
     .cta-group {
       display: flex;
-      gap: 14px;
+      gap: 13px;
       flex-wrap: wrap;
+      margin-bottom: 26px;
     }
 
     .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 12px;
       text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 10px;
-      font-weight: 700;
-      transition: 0.25s ease;
-      border: 1px solid rgba(79,163,165,0.9);
-      color: var(--white);
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(6px);
+      font-weight: 900;
+      font-size: 0.92rem;
+      transition: 0.22s ease;
+      border: 1px solid transparent;
     }
 
-    .btn-primary,
-    .btn-secondary {
-      border: 1px solid rgba(79,163,165,0.9);
+    .btn-primary {
+      background: var(--ink);
       color: var(--white);
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow-sm);
     }
 
-    .btn:hover {
+    .btn-primary:hover,
+    .btn-secondary:hover {
       transform: translateY(-2px);
-      background: rgba(255,255,255,0.10);
-      border-color: rgba(79,163,165,1);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--ink);
+      border-color: var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mini-tag {
+      background: var(--white);
+      border: 1px solid var(--line);
+      color: var(--slate-dark);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 460px;
+      display: grid;
+      place-items: center;
+    }
+
+    .profile-panel {
+      width: min(420px, 100%);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(219, 228, 239, 0.9);
+      border-radius: 32px;
+      padding: 26px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      z-index: 3;
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .profile-pic {
+      width: 118px;
+      height: 118px;
+      object-fit: cover;
+      border-radius: 26px;
+      border: 5px solid var(--white);
+      box-shadow: 0 12px 26px rgba(20, 33, 61, 0.16);
+      background: var(--line);
+    }
+
+    .profile-title h2 {
+      font-size: 1.3rem;
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+
+    .profile-title p {
+      color: var(--slate);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .profile-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .profile-metric {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .profile-metric strong {
+      display: block;
+      font-size: 1.55rem;
+      color: var(--blue);
+      letter-spacing: -0.8px;
+    }
+
+    .profile-metric span {
+      color: var(--slate);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 4;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow-md);
+      padding: 14px 16px;
+      max-width: 230px;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+    }
+
+    .floating-card small {
+      color: var(--slate);
+      font-weight: 700;
+    }
+
+    .float-one {
+      left: 4px;
+      top: 56px;
+    }
+
+    .float-two {
+      right: 0;
+      bottom: 54px;
     }
 
     section {
-      padding: 52px 8%;
+      padding: 64px 6%;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 7px;
     }
 
     .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--navy);
-      letter-spacing: -0.4px;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.06;
+      letter-spacing: -1.4px;
+      color: var(--ink);
     }
 
     .section-intro {
-      max-width: 900px;
+      max-width: 650px;
       color: var(--slate);
-      margin-bottom: 24px;
-      font-size: 1.02rem;
+      font-size: 1rem;
+    }
+
+    .analytics-strip {
+      padding: 0 6% 50px;
+      background: var(--soft-bg);
+    }
+
+    .strip-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .strip-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .strip-card strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 8px;
+      letter-spacing: -1px;
+    }
+
+    .strip-card span {
+      color: var(--slate);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
     }
 
     .about-card,
-    .project-card,
-    .impact-card {
+    .focus-card {
       background: var(--white);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px var(--shadow);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 30px;
     }
 
-    .about-card {
-      padding: 36px;
-      border-top: 5px solid var(--muted-teal);
-      max-width: 1100px;
+    .about-card p {
+      color: var(--slate-dark);
+      margin-bottom: 16px;
     }
 
     .highlight {
-      color: var(--royal-blue);
-      font-weight: 700;
+      color: var(--blue);
+      font-weight: 900;
     }
 
-
-    .competencies-section {
-      padding-top: 34px;
-      padding-bottom: 28px;
+    .focus-list {
+      display: grid;
+      gap: 14px;
     }
 
-    .competencies-section .section-intro {
-      margin-bottom: 18px;
+    .focus-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 16px;
+      background: #f8fbff;
+      border: 1px solid var(--line);
+    }
+
+    .focus-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .focus-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .focus-item span {
+      color: var(--slate);
+      font-size: 0.92rem;
+      font-weight: 650;
     }
 
     .competencies-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
-      gap: 12px;
-      max-width: 1080px;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
     }
 
     .competency-card {
       background: var(--white);
-      border: 1px solid var(--light-slate);
-      border-radius: 12px;
-      padding: 14px 12px;
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 18px rgba(7, 26, 47, 0.04);
-      transition: 0.25s ease;
-      font-weight: 800;
-      line-height: 1.35;
-      color: var(--navy);
-      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 16px;
+      min-height: 86px;
+      box-shadow: var(--shadow-sm);
+      transition: 0.22s ease;
     }
 
     .competency-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(7, 26, 47, 0.10);
-      border-color: rgba(79,163,165,0.45);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(37, 99, 235, 0.24);
+    }
+
+    .competency-card strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 0.98rem;
+    }
+
+    .competency-card span {
+      color: var(--slate);
+      font-size: 0.86rem;
+      font-weight: 650;
+    }
+
+    .projects-section {
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 34px;
+      gap: 32px;
     }
 
     .project-card {
-      padding: 36px;
-      border-top: 5px solid var(--muted-teal);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: 0.25s ease;
     }
 
-    .project-card h3 {
-      font-size: 1.65rem;
-      color: var(--navy);
-      margin-bottom: 22px;
-      line-height: 1.3;
-      letter-spacing: -0.3px;
+    .project-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
     }
 
-    .project-story {
+    .project-hero {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+      min-height: 360px;
+      background: linear-gradient(135deg, #f8fbff, #eef7ff);
+    }
+
+    .project-hero.visual-right {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .project-summary {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .project-category {
+      display: inline-flex;
+      width: fit-content;
+      background: var(--teal-soft);
+      color: var(--teal);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .project-summary h3 {
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      line-height: 1.08;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+
+    .project-summary p {
+      color: var(--slate-dark);
+      margin-bottom: 18px;
+      max-width: 610px;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 22px;
+    }
+
+    .project-meta span {
+      background: var(--white);
+      border: 1px solid var(--line);
+      color: var(--slate-dark);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-visual {
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(31, 157, 138, 0.14), transparent 26%),
+        linear-gradient(135deg, #eef6ff, #f7fbff);
+      border-left: 1px solid rgba(219, 228, 239, 0.9);
+    }
+
+    .visual-right .project-visual {
+      border-left: 0;
+      border-right: 1px solid rgba(219, 228, 239, 0.9);
+    }
+
+    .visual-frame {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+      width: 100%;
+    }
+
+    .visual-frame img {
+      width: 100%;
+      height: 285px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-radius: 16px;
+      background: var(--line);
+    }
+
+    .visual-caption {
+      padding: 12px 5px 2px;
+      color: var(--slate);
+      font-weight: 800;
+      font-size: 0.86rem;
+    }
+
+    .case-study-body {
+      padding: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
       margin-bottom: 28px;
     }
 
-    .project-block {
-      background: #fbfcfe;
-      border: 1px solid var(--light-slate);
-      border-radius: 14px;
+    .case-block {
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
       padding: 20px;
     }
 
-    .project-label {
-      font-size: 0.76rem;
+    .case-block h4 {
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      font-weight: 800;
       color: var(--burgundy);
       margin-bottom: 8px;
     }
 
-    .project-block p,
-    .project-block li {
-      color: var(--slate);
-      font-size: 0.96rem;
+    .case-block p,
+    .case-block li {
+      color: var(--slate-dark);
+      font-size: 0.94rem;
     }
 
-    ul {
+    .case-block ul {
       padding-left: 18px;
     }
 
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 8px 0 28px;
-    }
-
-    .pill {
-      background: var(--light-slate);
-      color: var(--navy);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-
-    .screenshots-title {
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin: 18px 0 16px;
-      color: var(--navy);
-    }
-
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+    .insight-box {
+      background: linear-gradient(135deg, var(--blue-soft), var(--teal-soft));
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      border-radius: 20px;
+      padding: 20px;
       margin-bottom: 26px;
+      color: var(--slate-dark);
     }
 
-    .screenshot-card {
-      background: var(--white);
-      border: 1px solid var(--light-slate);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(7, 26, 47, 0.06);
-      transition: 0.25s ease;
+    .insight-box strong {
+      color: var(--ink);
     }
 
-    .screenshot-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(7, 26, 47, 0.1);
-    }
-
-    .screenshot-card img {
-      width: 100%;
-      display: block;
-      height: 210px;
-      object-fit: cover;
-      object-position: top;
-      background: var(--light-slate);
-    }
-
-    .screenshot-card p {
-      padding: 14px 16px;
-      color: var(--slate);
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .project-links a {
-      text-decoration: none;
-      font-weight: 800;
-      color: var(--royal-blue);
-    }
-
-    .water-use-calculator-card {
-      margin: 4px 0 28px;
+    .module-card {
+      margin: 8px 0 26px;
       padding: 24px;
-      border-radius: 16px;
-      background: #fbfcfe;
-      border: 1px solid var(--light-slate);
-      box-shadow: 0 8px 22px rgba(7, 26, 47, 0.05);
+      border-radius: 22px;
+      background: #f8fbff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
     }
 
-    .water-use-calculator-card h4 {
+    .module-card h4 {
       font-size: 1.25rem;
-      color: var(--navy);
-      margin-bottom: 8px;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
 
-    .water-calculator-note {
+    .module-note {
       color: var(--slate);
       font-size: 0.95rem;
       margin-bottom: 18px;
       max-width: 850px;
     }
 
+    .dashboard-controls,
     .water-calculator-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .water-calculator-field label {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    .water-calculator-field input,
-    .water-calculator-field select {
-      width: 100%;
-      padding: 11px 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 10px;
-      background: var(--white);
-      color: var(--navy);
-      font: inherit;
-    }
-
-    .water-calculator-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-top: 6px;
-    }
-
-    .water-calc-button {
-      border: none;
-      border-radius: 10px;
-      background: var(--navy);
-      color: var(--white);
-      padding: 11px 18px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
-
-    .water-calc-button:hover {
-      transform: translateY(-2px);
-      background: var(--royal-blue);
-    }
-
-    .water-result-card {
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: 14px;
-      background: var(--white);
-      border-left: 5px solid var(--muted-teal);
-      color: var(--navy);
-    }
-
-    .water-result-main {
-      font-size: 1.2rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .water-result-detail {
-      color: var(--slate);
-      font-size: 0.95rem;
-    }
-
-    .interactive-dashboard {
-      margin: 8px 0 28px;
-      padding: 24px;
-      border-radius: 16px;
-      background: #fbfcfe;
-      border: 1px solid var(--light-slate);
-      box-shadow: 0 8px 22px rgba(7, 26, 47, 0.05);
-    }
-
-    .interactive-dashboard h4 {
-      font-size: 1.25rem;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-
-    .dashboard-note {
-      color: var(--slate);
-      font-size: 0.95rem;
-      margin-bottom: 18px;
-      max-width: 850px;
-    }
-
-    .dashboard-controls {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
       margin-bottom: 20px;
     }
 
+    .field label,
     .dashboard-controls label {
       display: block;
-      font-size: 0.86rem;
-      font-weight: 800;
-      color: var(--navy);
+      font-size: 0.84rem;
+      font-weight: 900;
+      color: var(--ink);
     }
 
+    .field input,
+    .field select,
     .dashboard-controls select {
       margin-top: 6px;
-      width: 220px;
-      padding: 11px 12px;
+      width: 100%;
+      padding: 12px 12px;
       border: 1px solid #cbd5e1;
-      border-radius: 10px;
+      border-radius: 12px;
       background: var(--white);
-      color: var(--navy);
+      color: var(--ink);
       font: inherit;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .dashboard-controls select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.10);
     }
 
     .dashboard-kpis {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
       margin-bottom: 22px;
     }
 
     .kpi-card {
       background: var(--white);
-      border: 1px solid var(--light-slate);
-      border-radius: 14px;
-      padding: 18px;
-      text-align: center;
-      box-shadow: 0 6px 18px rgba(7, 26, 47, 0.05);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 18px rgba(20, 33, 61, 0.045);
     }
 
     .kpi-card span {
       display: block;
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--royal-blue);
-      margin-bottom: 6px;
+      font-size: 1.85rem;
+      font-weight: 950;
+      color: var(--blue);
+      margin-bottom: 5px;
+      letter-spacing: -1px;
     }
 
     .kpi-card small {
       color: var(--slate);
-      font-weight: 700;
+      font-weight: 900;
     }
 
     .dashboard-bars h5 {
       margin-bottom: 12px;
-      color: var(--navy);
+      color: var(--ink);
       font-size: 1rem;
     }
 
@@ -503,10 +797,11 @@
     .bar-label {
       display: flex;
       justify-content: space-between;
+      gap: 12px;
       font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 5px;
+      font-weight: 900;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
 
     .bar-track {
@@ -520,52 +815,183 @@
     .bar-fill {
       height: 100%;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--royal-blue), var(--muted-teal));
+      background: linear-gradient(90deg, var(--blue), var(--teal));
+    }
+
+    .water-calculator-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .water-calc-button {
+      border: none;
+      border-radius: 12px;
+      background: var(--ink);
+      color: var(--white);
+      padding: 12px 18px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.22s ease;
+    }
+
+    .water-calc-button:hover {
+      transform: translateY(-2px);
+      background: var(--blue);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .water-result-card {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--teal);
+      color: var(--ink);
+    }
+
+    .water-result-main {
+      font-size: 1.25rem;
+      font-weight: 950;
+      margin-bottom: 6px;
+      letter-spacing: -0.4px;
+    }
+
+    .water-result-detail {
+      color: var(--slate);
+      font-size: 0.95rem;
+      font-weight: 650;
     }
 
     .dashboard-disclaimer {
-      margin-top: -12px;
-      margin-bottom: 28px;
+      margin-top: -10px;
+      margin-bottom: 26px;
       color: var(--slate);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       line-height: 1.6;
-      background: rgba(7, 26, 47, 0.03);
-      border-left: 4px solid var(--royal-blue);
+      background: rgba(20, 33, 61, 0.035);
+      border-left: 4px solid var(--blue);
       padding: 14px 16px;
-      border-radius: 10px;
+      border-radius: 14px;
+    }
+
+    .screenshots-title {
+      font-size: 1.1rem;
+      font-weight: 950;
+      margin: 22px 0 16px;
+      color: var(--ink);
+      letter-spacing: -0.3px;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .screenshot-card {
+      grid-column: span 4;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: 0.22s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .screenshot-card.featured-shot {
+      grid-column: span 6;
+    }
+
+    .screenshot-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      display: block;
+      height: 270px;
+      object-fit: cover;
+      object-position: top;
+      background: var(--line);
+    }
+
+    .screenshot-card p {
+      padding: 14px 16px;
+      color: var(--slate-dark);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .impact-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: 0.22s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .impact-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 9px;
+      color: var(--ink);
+    }
+
+    .impact-card p {
+      color: var(--slate);
+      font-size: 0.93rem;
+      font-weight: 650;
     }
 
     .contact-section {
-      padding-top: 52px;
-      padding-bottom: 52px;
-      background: var(--soft-bg);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 28%),
+        linear-gradient(135deg, #ffffff, #f4f9ff);
     }
 
     .contact-enhanced {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: 0.95fr 1.05fr;
       gap: 24px;
       margin-top: 28px;
     }
 
     .contact-card {
       background: var(--white);
-      border: 1px solid var(--light-slate);
-      border-radius: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
       padding: 30px;
-      box-shadow: 0 10px 30px var(--shadow);
-      border-top: 5px solid var(--muted-teal);
+      box-shadow: var(--shadow-sm);
     }
 
     .contact-card h3 {
       font-size: 1.25rem;
-      margin-bottom: 14px;
-      color: var(--navy);
+      margin-bottom: 12px;
+      color: var(--ink);
     }
 
     .contact-card p,
     .contact-card li {
-      color: var(--slate);
+      color: var(--slate-dark);
       font-size: 0.96rem;
     }
 
@@ -582,8 +1008,8 @@
     }
 
     .contact-links a {
-      color: var(--royal-blue);
-      font-weight: 800;
+      color: var(--blue);
+      font-weight: 900;
       text-decoration: none;
     }
 
@@ -591,677 +1017,834 @@
       text-decoration: underline;
     }
 
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-    }
-
-    .impact-card {
-      padding: 28px;
-      border-top: 5px solid var(--burgundy);
-    }
-
-    .impact-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: var(--navy);
-    }
-
-    .impact-card p {
-      color: var(--slate);
-      font-size: 0.96rem;
-    }
-
     footer {
-      background: var(--deep-navy);
+      background: var(--ink);
       color: #c8d6e5;
       text-align: center;
-      padding: 38px 8%;
-      font-size: 0.95rem;
+      padding: 36px 6%;
+      font-size: 0.94rem;
     }
 
     footer a {
-      color: var(--muted-teal);
+      color: #8fd7ce;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 900;
     }
 
-    @media (max-width: 900px) {
-      .hero-content {
-        align-items: flex-start;
-        gap: 28px;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeIn 0.75s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .project-hero,
+      .project-hero.visual-right,
+      .about-grid,
+      .contact-enhanced {
+        grid-template-columns: 1fr;
       }
 
-      .profile-pic {
-        width: 135px;
-        height: 135px;
+      .hero-visual {
+        min-height: auto;
       }
 
-      header h1 {
-        font-size: 2.1rem;
+      .floating-card {
+        position: static;
+        max-width: 100%;
+        margin-top: 12px;
+      }
+
+      .project-visual,
+      .visual-right .project-visual {
+        border-left: 0;
+        border-right: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .strip-inner,
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .screenshot-card,
+      .screenshot-card.featured-shot {
+        grid-column: span 6;
       }
     }
 
     @media (max-width: 700px) {
-      header {
-        padding: 42px 6% 48px;
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.86rem;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1.6px;
+      }
+
+      .profile-panel,
+      .project-summary,
+      .case-study-body,
+      .about-card,
+      .focus-card,
+      .contact-card {
+        padding: 22px;
+      }
+
+      .profile-top {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .profile-pic {
-        width: 115px;
-        height: 115px;
+        width: 105px;
+        height: 105px;
       }
 
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header h2 {
-        font-size: 1rem;
+      .profile-metrics,
+      .strip-inner,
+      .impact-grid {
+        grid-template-columns: 1fr;
       }
 
       section {
-        padding: 55px 6%;
+        padding: 50px 6%;
       }
 
-      .competencies-section {
-        padding-top: 28px;
-        padding-bottom: 24px;
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .competency-card {
-        min-height: 64px;
-        padding: 12px 10px;
+      .screenshot-card,
+      .screenshot-card.featured-shot {
+        grid-column: span 12;
       }
 
-      .project-card {
-        padding: 26px;
-      }
-
-      .water-use-calculator-card {
-        padding: 20px;
+      .screenshot-card img,
+      .visual-frame img {
+        height: 220px;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="site-shell">
+    <nav class="top-nav">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Isaac K. Adjei Portfolio Home">
+          <span class="brand-mark">IA</span>
+          <span>Isaac K. Adjei</span>
+        </a>
 
-  <header>
-    <div class="hero-content">
-      <img src="images/isaac-profile.jpg" alt="Isaac K. Adjei Profile Picture" class="profile-pic">
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#competencies">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#impact">Impact</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
 
-      <div class="hero-text">
-        <h1>Isaac K. Adjei</h1>
-        <h2>Health IT | Clinical Informatics | Healthcare Analytics | Project Management</h2>
+    <header class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy fade-in">
+          <div class="eyebrow">Health IT • Analytics • Project Leadership</div>
+          <h1>Operational analytics for <span>healthcare decision-making.</span></h1>
 
-        <p class="tagline">
-          I build practical Health IT and healthcare analytics solutions that transform operational data into clearer workflows, stronger decision-making, and measurable leadership value.
-        </p>
+          <p class="hero-subtitle">
+            Health IT, Clinical Informatics, Healthcare Analytics, and Project Management portfolio focused on practical dashboards, SQL systems, operational reporting, and leadership-ready insights.
+          </p>
 
-        <div class="cta-group">
-          <a href="#projects" class="btn btn-primary">View Portfolio Projects</a>
-          <a href="Isaac-Adjei-Resume.pdf" class="btn btn-secondary">View Resume</a>
-          <a href="https://github.com/isaacadjei-healthit" class="btn btn-secondary">GitHub</a>
-          <a href="https://www.linkedin.com/in/isaacadjei-healthit/" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+          <p class="hero-description">
+            I build practical Health IT and healthcare analytics solutions that transform operational data into clearer workflows, stronger decision-making, and measurable leadership value.
+          </p>
+
+          <div class="cta-group">
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+            <a href="Isaac-Adjei-Resume.pdf" class="btn btn-secondary">View Resume</a>
+            <a href="https://github.com/isaacadjei-healthit" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/isaacadjei-healthit/" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+
+          <div class="hero-tags">
+            <span class="mini-tag">SQL</span>
+            <span class="mini-tag">Power BI</span>
+            <span class="mini-tag">Healthcare Informatics</span>
+            <span class="mini-tag">Dashboarding</span>
+            <span class="mini-tag">Project Management</span>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-in delay-2">
+          <div class="floating-card float-one">
+            <strong>Portfolio Focus</strong>
+            <small>Healthcare operations, patient flow, readiness tracking, and resource planning.</small>
+          </div>
+
+          <div class="profile-panel">
+            <div class="profile-top">
+              <img src="images/isaac-profile.jpg" alt="Isaac K. Adjei profile picture" class="profile-pic" />
+              <div class="profile-title">
+                <h2>Isaac K. Adjei</h2>
+                <p>Health IT & Operational Analytics</p>
+              </div>
+            </div>
+
+            <div class="profile-metrics">
+              <div class="profile-metric">
+                <strong>4</strong>
+                <span>Featured Projects</span>
+              </div>
+              <div class="profile-metric">
+                <strong>3</strong>
+                <span>Interactive Tools</span>
+              </div>
+              <div class="profile-metric">
+                <strong>9+</strong>
+                <span>Portfolio Visuals</span>
+              </div>
+              <div class="profile-metric">
+                <strong>360°</strong>
+                <span>Ops + Health IT View</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card float-two">
+            <strong>Built for Recruiters</strong>
+            <small>Case studies, screenshots, tools, outcomes, and business impact.</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="analytics-strip">
+      <div class="strip-inner">
+        <div class="strip-card fade-in delay-1">
+          <strong>SQL</strong>
+          <span>Database design and operational analytics</span>
+        </div>
+        <div class="strip-card fade-in delay-2">
+          <strong>BI</strong>
+          <span>Dashboards, KPIs, and reporting workflows</span>
+        </div>
+        <div class="strip-card fade-in delay-3">
+          <strong>PM</strong>
+          <span>Project execution and stakeholder alignment</span>
+        </div>
+        <div class="strip-card fade-in delay-3">
+          <strong>HIT</strong>
+          <span>Healthcare systems and informatics focus</span>
         </div>
       </div>
     </div>
-  </header>
 
-  <section id="about">
-    <h2 class="section-title">Professional Focus</h2>
-    <p class="section-intro">
-      My portfolio sits at the intersection of healthcare operations, clinical systems, data analytics, information systems, and project execution.
-    </p>
+    <section id="about">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Professional Focus</div>
+            <h2 class="section-title">A Health IT portfolio built around evidence.</h2>
+          </div>
+          <p class="section-intro">
+            This portfolio sits at the intersection of healthcare operations, clinical systems, data analytics, information systems, military healthcare leadership, and project execution.
+          </p>
+        </div>
 
-    <div class="about-card">
+        <div class="about-grid">
+          <div class="about-card">
+            <p>
+              I am a Health IT professional with experience in <span class="highlight">health informatics, project management, clinical systems, healthcare analytics, and military healthcare leadership</span>. My work focuses on using structured data, dashboards, databases, and workflow analysis to solve practical operational problems.
+            </p>
+            <p>
+              The projects below are presented as case studies. Each one explains the problem, why it mattered, the solution, workflow, measurable outcomes, and leadership or business impact.
+            </p>
+            <p>
+              The goal is simple: show that I can connect technical execution to operational value in healthcare and mission-support environments.
+            </p>
+          </div>
+
+          <div class="focus-card">
+            <div class="focus-list">
+              <div class="focus-item">
+                <span class="focus-dot"></span>
+                <div>
+                  <strong>Healthcare Operations</strong>
+                  <span>Patient flow, staff workload, resource utilization, readiness, and reporting.</span>
+                </div>
+              </div>
+              <div class="focus-item">
+                <span class="focus-dot"></span>
+                <div>
+                  <strong>Analytics Storytelling</strong>
+                  <span>Dashboards and screenshots that show what the project actually produced.</span>
+                </div>
+              </div>
+              <div class="focus-item">
+                <span class="focus-dot"></span>
+                <div>
+                  <strong>Project Leadership</strong>
+                  <span>Clear problem framing, stakeholder value, governance awareness, and outcomes.</span>
+                </div>
+              </div>
+              <div class="focus-item">
+                <span class="focus-dot"></span>
+                <div>
+                  <strong>Privacy Awareness</strong>
+                  <span>Portfolio demonstrations use simulated or de-identified data concepts.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="competencies">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Core Competencies</div>
+            <h2 class="section-title">Technical, healthcare, and leadership capabilities.</h2>
+          </div>
+          <p class="section-intro">
+            A focused blend of healthcare technology, analytics, operational reporting, and project execution capabilities.
+          </p>
+        </div>
+
+        <div class="competencies-grid">
+          <div class="competency-card"><strong>SQL</strong><span>Queries, joins, aggregation, and database reporting.</span></div>
+          <div class="competency-card"><strong>Power BI</strong><span>KPI dashboards, visual reporting, and insight delivery.</span></div>
+          <div class="competency-card"><strong>Healthcare Informatics</strong><span>Clinical systems, workflows, and operational data use.</span></div>
+          <div class="competency-card"><strong>Project Management</strong><span>Planning, execution, stakeholder communication, and delivery.</span></div>
+          <div class="competency-card"><strong>Data Visualization</strong><span>Charts, dashboards, case studies, and decision support.</span></div>
+          <div class="competency-card"><strong>Clinical Operations Analytics</strong><span>Patient movement, readiness, flow, and resource trends.</span></div>
+          <div class="competency-card"><strong>HIPAA & Data Governance</strong><span>Privacy-aware reporting and responsible portfolio presentation.</span></div>
+          <div class="competency-card"><strong>Leadership Reporting</strong><span>Executive-ready summaries, metrics, and operational recommendations.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Featured Projects</div>
+            <h2 class="section-title">Analytics case studies with screenshots and outcomes.</h2>
+          </div>
+          <p class="section-intro">
+            A Maven-style project showcase built around visual evidence, problem-solving, tools used, and leadership value.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-hero">
+              <div class="project-summary">
+                <span class="project-category">Healthcare Database Analytics</span>
+                <h3>Healthcare Database for Patient Flow Optimization</h3>
+                <p>
+                  Designed and implemented a healthcare database analytics system focused on patient flow optimization, length of stay, staff workload, resource utilization, and hospital operations reporting.
+                </p>
+
+                <div class="project-meta">
+                  <span>SQL</span>
+                  <span>Database Design</span>
+                  <span>ERD</span>
+                  <span>Healthcare Analytics</span>
+                  <span>Patient Flow</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization" target="_blank" rel="noopener">View Repository</a>
+                  <a class="btn btn-secondary" href="#patient-flow-screenshots">View Screenshots</a>
+                </div>
+              </div>
+
+              <div class="project-visual">
+                <div class="visual-frame">
+                  <img src="images/combined-patient-flow-view.png" alt="Combined patient flow analytics view" />
+                  <div class="visual-caption">Featured visual: combined patient flow operational view</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>The Problem</h4>
+                  <p>Hospitals often struggle with fragmented patient flow data, making it harder to evaluate length of stay, staff workload, resource usage, and visit patterns.</p>
+                </div>
+                <div class="case-block">
+                  <h4>The Solution</h4>
+                  <p>Built a relational database analytics workflow that organizes patient, visit, staff, and resource data into a structured reporting model.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Leadership Impact</h4>
+                  <p>Supports staffing decisions, throughput monitoring, workflow improvement, and executive reporting through structured operational metrics.</p>
+                </div>
+              </div>
+
+              <div class="insight-box">
+                <strong>Key insight:</strong> This project demonstrates how database design and SQL analytics can turn fragmented healthcare operations data into leadership-ready patient flow intelligence.
+              </div>
+
+              <div class="module-card patient-flow-dashboard">
+                <h4>Live Patient Flow Optimization Dashboard</h4>
+                <p class="module-note">
+                  Explore simulated hospital patient flow metrics by visit type and department. The dashboard updates length of stay, wait time, discharge rate, and visit distribution in real time.
+                </p>
+
+                <div class="dashboard-controls">
+                  <label>
+                    Visit Type
+                    <select id="pfVisitTypeFilter">
+                      <option value="All">All Visit Types</option>
+                      <option value="Emergency">Emergency</option>
+                      <option value="Inpatient">Inpatient</option>
+                      <option value="Outpatient">Outpatient</option>
+                      <option value="Observation">Observation</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Department
+                    <select id="pfDepartmentFilter">
+                      <option value="All">All Departments</option>
+                      <option value="Emergency Department">Emergency Department</option>
+                      <option value="Medical-Surgical">Medical-Surgical</option>
+                      <option value="Cardiology">Cardiology</option>
+                      <option value="Orthopedics">Orthopedics</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="dashboard-kpis">
+                  <div class="kpi-card"><span id="pfTotalVisits">0</span><small>Total Visits</small></div>
+                  <div class="kpi-card"><span id="pfAvgLOS">0</span><small>Avg. Length of Stay</small></div>
+                  <div class="kpi-card"><span id="pfAvgWait">0</span><small>Avg. Wait Time</small></div>
+                  <div class="kpi-card"><span id="pfDischargeRate">0%</span><small>Discharge Rate</small></div>
+                </div>
+
+                <div class="dashboard-bars">
+                  <h5>Visits by Department</h5>
+                  <div id="pfDepartmentBars"></div>
+                </div>
+              </div>
+
+              <p class="dashboard-disclaimer">
+                The patient flow metrics shown above are based on simulated healthcare operational data created for portfolio demonstration purposes. This dashboard demonstrates patient flow monitoring, KPI tracking, and healthcare operations reporting concepts used in Health IT environments.
+              </p>
+
+              <div class="screenshots-title" id="patient-flow-screenshots">Project Screenshots</div>
+              <div class="screenshot-grid">
+                <a class="screenshot-card featured-shot" href="images/avg-los-by-visit-type.png" target="_blank" rel="noopener">
+                  <img src="images/avg-los-by-visit-type.png" alt="Average length of stay by visit type" />
+                  <p>Average length of stay by visit type</p>
+                </a>
+                <a class="screenshot-card featured-shot" href="images/staff-workload.png" target="_blank" rel="noopener">
+                  <img src="images/staff-workload.png" alt="Staff workload analytics screenshot" />
+                  <p>Staff workload analytics</p>
+                </a>
+                <a class="screenshot-card" href="images/resource-utilization-duration.png" target="_blank" rel="noopener">
+                  <img src="images/resource-utilization-duration.png" alt="Resource utilization duration screenshot" />
+                  <p>Resource utilization duration</p>
+                </a>
+                <a class="screenshot-card" href="images/combined-patient-flow-view.png" target="_blank" rel="noopener">
+                  <img src="images/combined-patient-flow-view.png" alt="Combined patient flow view screenshot" />
+                  <p>Combined patient flow view</p>
+                </a>
+                <a class="screenshot-card" href="images/patient-visit-summary-query.png" target="_blank" rel="noopener">
+                  <img src="images/patient-visit-summary-query.png" alt="Patient visit summary SQL query screenshot" />
+                  <p>Patient visit summary query</p>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-hero visual-right">
+              <div class="project-visual">
+                <div class="visual-frame">
+                  <img src="images/patient-movement-trends.png" alt="Patient movement trends dashboard" />
+                  <div class="visual-caption">Featured visual: patient movement trends dashboard</div>
+                </div>
+              </div>
+
+              <div class="project-summary">
+                <span class="project-category">Operational Readiness Analytics</span>
+                <h3>Patient Movement Tracker Dashboard</h3>
+                <p>
+                  Developed an operational patient movement tracking dashboard to improve visibility of medical readiness, patient status, severity, outcomes, and movement trends.
+                </p>
+
+                <div class="project-meta">
+                  <span>Excel</span>
+                  <span>Dashboarding</span>
+                  <span>Pivot Tables</span>
+                  <span>Operational Reporting</span>
+                  <span>Leadership Analytics</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard" target="_blank" rel="noopener">View Repository</a>
+                  <a class="btn btn-secondary" href="#patient-movement-screenshots">View Screenshots</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>The Problem</h4>
+                  <p>Patient movement and medical tracking can become difficult when information is spread across manual logs, inconsistent formats, or disconnected summaries.</p>
+                </div>
+                <div class="case-block">
+                  <h4>The Solution</h4>
+                  <p>Organized case-level operational data into a dashboard workflow with unit, severity, event type, outcome, and movement trend views.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Leadership Impact</h4>
+                  <p>Improves visibility for patient counts, case trends, severity levels, outcomes, and unit-level medical activity while remaining privacy-aware.</p>
+                </div>
+              </div>
+
+              <div class="insight-box">
+                <strong>Key insight:</strong> This dashboard demonstrates how operational health data can be translated into leadership-ready reporting while maintaining HIPAA and privacy awareness.
+              </div>
+
+              <div class="screenshots-title" id="patient-movement-screenshots">Project Screenshots</div>
+              <div class="screenshot-grid">
+                <a class="screenshot-card featured-shot" href="images/cases-by-unit.png" target="_blank" rel="noopener">
+                  <img src="images/cases-by-unit.png" alt="Cases by unit dashboard screenshot" />
+                  <p>Cases by unit</p>
+                </a>
+                <a class="screenshot-card featured-shot" href="images/condition-severity-distribution.png" target="_blank" rel="noopener">
+                  <img src="images/condition-severity-distribution.png" alt="Condition severity distribution dashboard screenshot" />
+                  <p>Condition severity distribution</p>
+                </a>
+                <a class="screenshot-card" href="images/conditions-by-event-type.png" target="_blank" rel="noopener">
+                  <img src="images/conditions-by-event-type.png" alt="Conditions by event type dashboard screenshot" />
+                  <p>Conditions by event type</p>
+                </a>
+                <a class="screenshot-card" href="images/patient-movement-trends.png" target="_blank" rel="noopener">
+                  <img src="images/patient-movement-trends.png" alt="Patient movement trends dashboard screenshot" />
+                  <p>Patient movement trends</p>
+                </a>
+              </div>
+
+              <div class="module-card">
+                <h4>Live Patient Movement Dashboard</h4>
+                <p class="module-note">
+                  Explore simulated patient movement trends by unit, severity level, event type, and outcome category.
+                </p>
+
+                <div class="dashboard-controls">
+                  <label>
+                    Unit
+                    <select id="pmUnitFilter">
+                      <option value="All">All Units</option>
+                      <option value="HHC">HHC</option>
+                      <option value="Alpha">Alpha</option>
+                      <option value="Bravo">Bravo</option>
+                      <option value="Charlie">Charlie</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Severity
+                    <select id="pmSeverityFilter">
+                      <option value="All">All Severities</option>
+                      <option value="Low">Low</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="High">High</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="dashboard-kpis">
+                  <div class="kpi-card"><span id="pmTotalCases">0</span><small>Total Cases</small></div>
+                  <div class="kpi-card"><span id="pmRTD">0</span><small>Returned to Duty</small></div>
+                  <div class="kpi-card"><span id="pmEvacuated">0</span><small>Evacuated</small></div>
+                  <div class="kpi-card"><span id="pmFollowUp">0</span><small>Follow-Up Cases</small></div>
+                </div>
+
+                <div class="dashboard-bars">
+                  <h5>Cases by Event Type</h5>
+                  <div id="pmEventBars"></div>
+                </div>
+              </div>
+
+              <p class="dashboard-disclaimer">
+                The patient movement data displayed above is simulated for educational and portfolio purposes. This dashboard demonstrates operational readiness tracking, case monitoring, and healthcare logistics analytics workflows.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-hero">
+              <div class="project-summary">
+                <span class="project-category">Logistics Planning Analytics</span>
+                <h3>Military Water Consumption Dashboard</h3>
+                <p>
+                  Built an interactive operational water consumption dashboard to support logistics planning, hydration readiness assessments, and resource forecasting for large-scale personnel operations.
+                </p>
+
+                <div class="project-meta">
+                  <span>Excel</span>
+                  <span>Logistics Analytics</span>
+                  <span>Leadership Reporting</span>
+                  <span>Planning Model</span>
+                  <span>Interactive Calculator</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit/military-water-consumption-dashboard" target="_blank" rel="noopener">View Repository</a>
+                  <a class="btn btn-secondary" href="#water-calculator">Use Calculator</a>
+                </div>
+              </div>
+
+              <div class="project-visual">
+                <div class="visual-frame">
+                  <div class="module-card" style="margin:0; box-shadow:none;">
+                    <h4>Planning Scenario</h4>
+                    <div class="dashboard-kpis" style="grid-template-columns:1fr 1fr;">
+                      <div class="kpi-card"><span>600</span><small>Soldiers</small></div>
+                      <div class="kpi-card"><span>3</span><small>Days</small></div>
+                      <div class="kpi-card"><span>2,700</span><small>Gallons</small></div>
+                      <div class="kpi-card"><span>10,221</span><small>Liters</small></div>
+                    </div>
+                    <div class="visual-caption">Interactive calculator retained below for live planning estimates.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>The Problem</h4>
+                  <p>Field operations require accurate water planning, but estimates can become inconsistent when based on rough calculations or informal notes.</p>
+                </div>
+                <div class="case-block">
+                  <h4>The Solution</h4>
+                  <p>Built consumption assumptions by weather category and calculated liters and gallons required for planning scenarios.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Leadership Impact</h4>
+                  <p>Supports soldier safety, logistics, sustainment, readiness, and command-level decision-making during field operations.</p>
+                </div>
+              </div>
+
+              <div class="insight-box">
+                <strong>Key insight:</strong> This project shows how field requirements can be converted into a reusable, leadership-ready decision-support tool.
+              </div>
+
+              <div class="module-card" id="water-calculator">
+                <h4>Water Use Calculator</h4>
+                <p class="module-note">
+                  Estimate total water requirements by adjusting the number of soldiers, mission duration, and environmental condition.
+                </p>
+
+                <div class="water-calculator-grid">
+                  <div class="field">
+                    <label for="waterSoldiers">Number of Soldiers</label>
+                    <input type="number" id="waterSoldiers" value="600" min="1" />
+                  </div>
+
+                  <div class="field">
+                    <label for="waterDays">Number of Days</label>
+                    <input type="number" id="waterDays" value="3" min="1" />
+                  </div>
+
+                  <div class="field">
+                    <label for="waterCondition">Environmental Condition</label>
+                    <select id="waterCondition">
+                      <option value="1.5">Moderate Weather - 1.5 gallons/person/day</option>
+                      <option value="2">Hot Weather - 2 gallons/person/day</option>
+                      <option value="3">Extreme Heat/High Activity - 3 gallons/person/day</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="water-calculator-actions">
+                  <button type="button" class="water-calc-button" onclick="calculateWaterUse()">Calculate Requirement</button>
+                </div>
+
+                <div class="water-result-card" id="waterResult">
+                  <div class="water-result-main">Estimated requirement: 2,700 gallons</div>
+                  <div class="water-result-detail">That equals approximately 10,221 liters for 600 soldiers over 3 days at 1.5 gallons per soldier per day.</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-hero visual-right">
+              <div class="project-visual">
+                <div class="visual-frame">
+                  <div class="module-card" style="margin:0; box-shadow:none;">
+                    <h4>Governance Lens</h4>
+                    <div class="focus-list">
+                      <div class="focus-item"><span class="focus-dot"></span><div><strong>Alignment</strong><span>IT initiatives tied to business value.</span></div></div>
+                      <div class="focus-item"><span class="focus-dot"></span><div><strong>Risk</strong><span>Governance, compliance, and stakeholder considerations.</span></div></div>
+                      <div class="focus-item"><span class="focus-dot"></span><div><strong>Execution</strong><span>Structured recommendations for healthcare technology planning.</span></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-summary">
+                <span class="project-category">IT Strategy & Governance</span>
+                <h3>IT Strategy & Governance Analysis</h3>
+                <p>
+                  Conducted strategic IT governance and organizational analysis focused on operational alignment, technology oversight, risk management, and enterprise decision-making frameworks.
+                </p>
+
+                <div class="project-meta">
+                  <span>IT Governance</span>
+                  <span>Healthcare Strategy</span>
+                  <span>Risk Awareness</span>
+                  <span>Business Alignment</span>
+                </div>
+
+                <div class="project-actions">
+                  <a class="btn btn-primary" href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">View GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-study-body">
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4>The Problem</h4>
+                  <p>Healthcare organizations need IT initiatives that align with governance, compliance, risk management, stakeholder needs, and measurable business value.</p>
+                </div>
+                <div class="case-block">
+                  <h4>The Solution</h4>
+                  <p>Analyzed governance and IT alignment concepts, connected information systems to business value, and evaluated risk and stakeholder considerations.</p>
+                </div>
+                <div class="case-block">
+                  <h4>Leadership Impact</h4>
+                  <p>Shows strategic thinking beyond technical execution by connecting technology decisions to governance, risk, stakeholders, and organizational value.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Portfolio Value</div>
+            <h2 class="section-title">What this portfolio demonstrates.</h2>
+          </div>
+          <p class="section-intro">
+            More than completed projects: this portfolio shows how I define problems, build solutions, communicate outcomes, and connect technical work to leadership value.
+          </p>
+        </div>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <h3>Health IT Specialization</h3>
+            <p>Healthcare data, clinical systems, operational reporting, workflow improvement, and information system design.</p>
+          </div>
+          <div class="impact-card">
+            <h3>Project Storytelling</h3>
+            <p>Each project explains the problem, why it mattered, the solution, workflow, outcomes, and leadership impact.</p>
+          </div>
+          <div class="impact-card">
+            <h3>Technical Execution</h3>
+            <p>SQL, database design, dashboards, analytics, documentation, GitHub, and portfolio deployment.</p>
+          </div>
+          <div class="impact-card">
+            <h3>Leadership Value</h3>
+            <p>Connects technical work to decision-making, planning, process improvement, reporting, and stakeholder communication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Connect</div>
+            <h2 class="section-title">Let’s connect.</h2>
+          </div>
+          <p class="section-intro">
+            I welcome opportunities to collaborate, network, and contribute to healthcare and information systems initiatives.
+          </p>
+        </div>
+
+        <div class="contact-enhanced">
+          <div class="contact-card">
+            <h3>Professional Interests</h3>
+            <ul>
+              <li>Health Information Technology</li>
+              <li>Clinical Informatics</li>
+              <li>Healthcare Analytics & Reporting</li>
+              <li>Healthcare Project Management</li>
+              <li>Operational Readiness & Process Improvement</li>
+              <li>SQL, Power BI, and Data Visualization</li>
+            </ul>
+          </div>
+
+          <div class="contact-card">
+            <h3>Open to Opportunities</h3>
+            <p>
+              I am open to Health IT, Clinical Informatics, Healthcare Analytics, and Project Management opportunities where I can apply technical, operational, and leadership experience to improve healthcare workflows.
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:izaak.adjei@gmail.com">izaak.adjei@gmail.com</a>
+              <a href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank" rel="noopener">LinkedIn Profile</a>
+              <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">GitHub Portfolio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
       <p>
-        I am a Health IT professional with experience in <span class="highlight">health informatics, project management, clinical systems, healthcare analytics, and military healthcare leadership</span>. My work focuses on using structured data, dashboards, databases, and workflow analysis to solve practical operational problems.
+        © 2026 Isaac K. Adjei | Health IT & Operational Analytics Portfolio |
+        <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">GitHub</a>
       </p>
-      <br />
-      <p>
-        This portfolio demonstrates how I approach real problems: define the issue, explain why it matters, design a practical solution, build the workflow, measure outcomes, and communicate the leadership or business impact.
-      </p>
-    </div>
-  </section>
-
-
-  <section id="competencies" class="competencies-section">
-    <h2 class="section-title">Core Competencies</h2>
-    <p class="section-intro">
-      A focused blend of healthcare technology, analytics, operational reporting, and project execution capabilities.
-    </p>
-
-    <div class="competencies-grid">
-      <div class="competency-card">SQL</div>
-      <div class="competency-card">Power BI</div>
-      <div class="competency-card">Healthcare Informatics</div>
-      <div class="competency-card">Project Management</div>
-      <div class="competency-card">Data Visualization</div>
-      <div class="competency-card">Clinical Operations Analytics</div>
-      <div class="competency-card">HIPAA &amp; Data Governance</div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Featured Health IT Projects</h2>
-    <p class="section-intro">
-      These projects show technical execution, operational thinking, and leadership-focused communication across healthcare, analytics, and mission-support environments.
-    </p>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <h3>Healthcare Database for Patient Flow Optimization</h3>
-
-        <div class="project-story">
-          <div class="project-block">
-            <div class="project-label">The Problem</div>
-            <p>Hospitals often struggle with fragmented patient flow data, making it harder to evaluate length of stay, staff workload, resource usage, and visit patterns.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Why It Mattered</div>
-            <p>Without structured data, leaders may lack timely visibility into operational bottlenecks that affect throughput, staffing, and patient care efficiency.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Solution</div>
-            <p>Designed and implemented a healthcare database analytics system focused on patient flow optimization, resource utilization, and operational efficiency.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Workflow</div>
-            <ul>
-              <li>Created ERD and database schema</li>
-              <li>Built patient, visit, staff, and resource tables</li>
-              <li>Wrote SQL queries for operational analysis</li>
-              <li>Generated visual outputs for portfolio documentation</li>
-            </ul>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Measurable Outcomes</div>
-            <p>Produced outputs showing average length of stay, staff workload distribution, visit summaries, and resource utilization duration.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Leadership / Business Impact</div>
-            <p>Demonstrates how relational database design and SQL analytics can support hospital operations, staffing decisions, workflow improvement, and executive reporting.</p>
-          </div>
-        </div>
-
-        <div class="tech-stack">
-          <span class="pill">SQL</span>
-          <span class="pill">Database Design</span>
-          <span class="pill">ERD</span>
-          <span class="pill">Healthcare Analytics</span>
-          <span class="pill">Patient Flow</span>
-        </div>
-
-
-
-        <div class="interactive-dashboard patient-flow-dashboard">
-          <h4>Live Patient Flow Optimization Dashboard</h4>
-
-          <p class="dashboard-note">
-            Explore simulated hospital patient flow metrics by visit type and department. The dashboard updates length of stay, wait time, discharge rate, and visit distribution in real time.
-          </p>
-
-          <div class="dashboard-controls">
-            <label>
-              Visit Type
-              <select id="pfVisitTypeFilter">
-                <option value="All">All Visit Types</option>
-                <option value="Emergency">Emergency</option>
-                <option value="Inpatient">Inpatient</option>
-                <option value="Outpatient">Outpatient</option>
-                <option value="Observation">Observation</option>
-              </select>
-            </label>
-
-            <label>
-              Department
-              <select id="pfDepartmentFilter">
-                <option value="All">All Departments</option>
-                <option value="Emergency Department">Emergency Department</option>
-                <option value="Medical-Surgical">Medical-Surgical</option>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Orthopedics">Orthopedics</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="dashboard-kpis">
-            <div class="kpi-card">
-              <span id="pfTotalVisits">0</span>
-              <small>Total Visits</small>
-            </div>
-
-            <div class="kpi-card">
-              <span id="pfAvgLOS">0</span>
-              <small>Avg. Length of Stay</small>
-            </div>
-
-            <div class="kpi-card">
-              <span id="pfAvgWait">0</span>
-              <small>Avg. Wait Time</small>
-            </div>
-
-            <div class="kpi-card">
-              <span id="pfDischargeRate">0%</span>
-              <small>Discharge Rate</small>
-            </div>
-          </div>
-
-          <div class="dashboard-bars">
-            <h5>Visits by Department</h5>
-            <div id="pfDepartmentBars"></div>
-          </div>
-        </div>
-
-        <p class="dashboard-disclaimer">
-          The patient flow metrics shown above are based on simulated healthcare operational data created for portfolio demonstration purposes.
-          This dashboard demonstrates patient flow monitoring, KPI tracking, and healthcare operations reporting concepts used in Health IT environments.
-        </p>
-
-        <div class="screenshots-title">Project Screenshots</div>
-
-        <div class="screenshot-grid">
-          <a class="screenshot-card" href="images/avg-los-by-visit-type.png" target="_blank">
-            <img src="images/avg-los-by-visit-type.png" alt="Average length of stay by visit type">
-            <p>Average length of stay by visit type</p>
-          </a>
-
-          <a class="screenshot-card" href="images/staff-workload.png" target="_blank">
-            <img src="images/staff-workload.png" alt="Staff workload analytics screenshot">
-            <p>Staff workload analytics</p>
-          </a>
-
-          <a class="screenshot-card" href="images/resource-utilization-duration.png" target="_blank">
-            <img src="images/resource-utilization-duration.png" alt="Resource utilization duration screenshot">
-            <p>Resource utilization duration</p>
-          </a>
-
-          <a class="screenshot-card" href="images/combined-patient-flow-view.png" target="_blank">
-            <img src="images/combined-patient-flow-view.png" alt="Combined patient flow view screenshot">
-            <p>Combined patient flow view</p>
-          </a>
-
-          <a class="screenshot-card" href="images/patient-visit-summary-query.png" target="_blank">
-            <img src="images/patient-visit-summary-query.png" alt="Patient visit summary SQL query screenshot">
-            <p>Patient visit summary query</p>
-          </a>
-        </div>
-
-        <div class="project-links">
-          <a href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization">View Repository →</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Patient Movement Tracker Dashboard</h3>
-
-        <div class="project-story">
-          <div class="project-block">
-            <div class="project-label">The Problem</div>
-            <p>Patient movement and medical tracking can become difficult when information is spread across manual logs, inconsistent formats, or disconnected summaries.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Why It Mattered</div>
-            <p>Leaders need clear visibility into patient counts, case trends, severity levels, outcomes, and unit-level medical activity while protecting sensitive information.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Solution</div>
-            <p>Developed an operational patient movement tracking dashboard to improve visibility of medical readiness, patient status, severity, outcomes, and movement trends.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Workflow</div>
-            <ul>
-              <li>Organized case-level data into a tracker format</li>
-              <li>Created severity and outcome categories</li>
-              <li>Built dashboard visuals and trend summaries</li>
-              <li>Prepared screenshots for professional presentation</li>
-            </ul>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Measurable Outcomes</div>
-            <p>Produced summaries by unit, condition, event type, severity, and patient movement trends.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Leadership / Business Impact</div>
-            <p>Demonstrates how operational health data can be translated into leadership-ready reporting while maintaining HIPAA and privacy awareness.</p>
-          </div>
-        </div>
-
-        <div class="tech-stack">
-          <span class="pill">Excel</span>
-          <span class="pill">Dashboarding</span>
-          <span class="pill">Pivot Tables</span>
-          <span class="pill">Operational Reporting</span>
-          <span class="pill">Leadership Analytics</span>
-        </div>
-
-        <div class="screenshots-title">Project Screenshots</div>
-
-        <div class="screenshot-grid">
-          <a class="screenshot-card" href="images/cases-by-unit.png" target="_blank">
-            <img src="images/cases-by-unit.png" alt="Cases by unit dashboard screenshot">
-            <p>Cases by unit</p>
-          </a>
-
-          <a class="screenshot-card" href="images/condition-severity-distribution.png" target="_blank">
-            <img src="images/condition-severity-distribution.png" alt="Condition severity distribution dashboard screenshot">
-            <p>Condition severity distribution</p>
-          </a>
-
-          <a class="screenshot-card" href="images/conditions-by-event-type.png" target="_blank">
-            <img src="images/conditions-by-event-type.png" alt="Conditions by event type dashboard screenshot">
-            <p>Conditions by event type</p>
-          </a>
-
-          <a class="screenshot-card" href="images/patient-movement-trends.png" target="_blank">
-            <img src="images/patient-movement-trends.png" alt="Patient movement trends dashboard screenshot">
-            <p>Patient movement trends</p>
-          </a>
-        </div>
-
-
-        <div class="interactive-dashboard">
-          <h4>Live Patient Movement Dashboard</h4>
-
-          <p class="dashboard-note">
-            Explore simulated patient movement trends by unit, severity level, event type, and outcome category.
-          </p>
-
-          <div class="dashboard-controls">
-            <label>
-              Unit
-              <select id="pmUnitFilter">
-                <option value="All">All Units</option>
-                <option value="HHC">HHC</option>
-                <option value="Alpha">Alpha</option>
-                <option value="Bravo">Bravo</option>
-                <option value="Charlie">Charlie</option>
-              </select>
-            </label>
-
-            <label>
-              Severity
-              <select id="pmSeverityFilter">
-                <option value="All">All Severities</option>
-                <option value="Low">Low</option>
-                <option value="Moderate">Moderate</option>
-                <option value="High">High</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="dashboard-kpis">
-            <div class="kpi-card">
-              <span id="pmTotalCases">0</span>
-              <small>Total Cases</small>
-            </div>
-
-            <div class="kpi-card">
-              <span id="pmRTD">0</span>
-              <small>Returned to Duty</small>
-            </div>
-
-            <div class="kpi-card">
-              <span id="pmEvacuated">0</span>
-              <small>Evacuated</small>
-            </div>
-
-            <div class="kpi-card">
-              <span id="pmFollowUp">0</span>
-              <small>Follow-Up Cases</small>
-            </div>
-          </div>
-
-          <div class="dashboard-bars">
-            <h5>Cases by Event Type</h5>
-            <div id="pmEventBars"></div>
-          </div>
-        </div>
-
-        <p class="dashboard-disclaimer">
-          The patient movement data displayed above is simulated for educational and portfolio purposes.
-          This dashboard demonstrates operational readiness tracking, case monitoring, and healthcare logistics analytics workflows.
-        </p>
-
-        <div class="project-links">
-          <a href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard">
-            View Repository →
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>Military Water Consumption Dashboard</h3>
-
-        <div class="project-story">
-          <div class="project-block">
-            <div class="project-label">The Problem</div>
-            <p>Field operations require accurate water planning, but estimates can become inconsistent when based on rough calculations or informal notes.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Why It Mattered</div>
-            <p>Water planning affects soldier safety, logistics, sustainment, readiness, and command-level decision-making during field operations.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Solution</div>
-            <p>Built an interactive operational water consumption dashboard to support logistics planning, hydration readiness assessments, and resource forecasting for large-scale personnel operations.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Workflow</div>
-            <ul>
-              <li>Built consumption assumptions by weather category</li>
-              <li>Calculated liters and gallons required</li>
-              <li>Structured the data for leadership reporting</li>
-              <li>Developed a reusable planning framework</li>
-            </ul>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Measurable Outcomes</div>
-            <p>Supported planning scenarios for hundreds of soldiers across multiple days and different environmental conditions.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Leadership / Business Impact</div>
-            <p>Demonstrates logistics planning, data-informed leadership, and the ability to convert field requirements into executive-ready decision-support tools.</p>
-          </div>
-        </div>
-
-        <div class="tech-stack">
-          <span class="pill">Excel</span>
-          <span class="pill">Logistics Analytics</span>
-          <span class="pill">Leadership Reporting</span>
-          <span class="pill">Planning Model</span>
-          <span class="pill">Interactive Calculator</span>
-        </div>
-
-        <div class="water-use-calculator-card">
-          <h4>Water Use Calculator</h4>
-          <p class="water-calculator-note">
-            Estimate total water requirements by adjusting the number of soldiers, mission duration, and environmental condition.
-          </p>
-
-          <div class="water-calculator-grid">
-            <div class="water-calculator-field">
-              <label for="waterSoldiers">Number of Soldiers</label>
-              <input type="number" id="waterSoldiers" value="600" min="1" />
-            </div>
-
-            <div class="water-calculator-field">
-              <label for="waterDays">Number of Days</label>
-              <input type="number" id="waterDays" value="3" min="1" />
-            </div>
-
-            <div class="water-calculator-field">
-              <label for="waterCondition">Environmental Condition</label>
-              <select id="waterCondition">
-                <option value="1.5">Moderate Weather - 1.5 gallons/person/day</option>
-                <option value="2">Hot Weather - 2 gallons/person/day</option>
-                <option value="3">Extreme Heat/High Activity - 3 gallons/person/day</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="water-calculator-actions">
-            <button type="button" class="water-calc-button" onclick="calculateWaterUse()">Calculate Requirement</button>
-          </div>
-
-          <div class="water-result-card" id="waterResult">
-            <div class="water-result-main">Estimated requirement: 2,700 gallons</div>
-            <div class="water-result-detail">That equals approximately 10,221 liters for 600 soldiers over 3 days at 1.5 gallons per soldier per day.</div>
-          </div>
-        </div>
-
-        <div class="project-links">
-          <a href="https://github.com/isaacadjei-healthit/military-water-consumption-dashboard">
-            View Repository →
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3>IT Strategy & Governance Analysis</h3>
-
-        <div class="project-story">
-          <div class="project-block">
-            <div class="project-label">The Problem</div>
-            <p>Healthcare organizations need IT initiatives that align with governance, compliance, risk management, stakeholder needs, and measurable business value.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Why It Mattered</div>
-            <p>Technology projects can fail when they are disconnected from organizational strategy, governance structure, or operational outcomes.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Solution</div>
-            <p>Conducted strategic IT governance and organizational analysis focused on operational alignment, technology oversight, risk management, and enterprise decision-making frameworks.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">The Workflow</div>
-            <ul>
-              <li>Analyzed governance and IT alignment concepts</li>
-              <li>Connected information systems to business value</li>
-              <li>Evaluated risk and stakeholder considerations</li>
-              <li>Presented structured recommendations</li>
-            </ul>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Measurable Outcomes</div>
-            <p>Produced an executive-style analysis demonstrating IT-business alignment, governance awareness, risk considerations, and healthcare technology planning.</p>
-          </div>
-
-          <div class="project-block">
-            <div class="project-label">Leadership / Business Impact</div>
-            <p>Shows strategic thinking beyond technical execution by connecting technology decisions to governance, risk, stakeholders, and organizational value.</p>
-          </div>
-        </div>
-
-        <div class="tech-stack">
-          <span class="pill">IT Governance</span>
-          <span class="pill">Healthcare Strategy</span>
-          <span class="pill">Risk Awareness</span>
-          <span class="pill">Business Alignment</span>
-        </div>
-
-        <div class="project-links">
-          <a href="https://github.com/isaacadjei-healthit">
-            View Repository →
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="impact">
-    <h2 class="section-title">What This Portfolio Demonstrates</h2>
-    <p class="section-intro">
-      This portfolio is designed to show more than completed projects. It shows how I define problems, build solutions, communicate outcomes, and connect technical work to leadership value.
-    </p>
-
-    <div class="impact-grid">
-      <div class="impact-card">
-        <h3>Health IT Specialization</h3>
-        <p>Focused on healthcare data, clinical systems, operational reporting, workflow improvement, and information system design.</p>
-      </div>
-
-      <div class="impact-card">
-        <h3>Project Storytelling</h3>
-        <p>Each project explains the problem, why it mattered, the solution, workflow, outcomes, and leadership impact.</p>
-      </div>
-
-      <div class="impact-card">
-        <h3>Technical Execution</h3>
-        <p>Demonstrates SQL, database design, dashboards, analytics, documentation, GitHub, and portfolio deployment.</p>
-      </div>
-
-      <div class="impact-card">
-        <h3>Leadership Value</h3>
-        <p>Connects technical work to decision-making, planning, process improvement, reporting, and stakeholder communication.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact-section">
-    <h2 class="section-title">Let’s Connect</h2>
-    <p class="section-intro">
-      I am actively building experience in Health IT, healthcare analytics, clinical informatics, and technology-driven operational improvement. I welcome opportunities to collaborate, network, and contribute to healthcare and information systems initiatives.
-    </p>
-
-    <div class="contact-enhanced">
-      <div class="contact-card">
-        <h3>Professional Interests</h3>
-        <ul>
-          <li>Health Information Technology</li>
-          <li>Clinical Informatics</li>
-          <li>Healthcare Analytics &amp; Reporting</li>
-          <li>Healthcare Project Management</li>
-          <li>Operational Readiness &amp; Process Improvement</li>
-          <li>SQL, Power BI, and Data Visualization</li>
-        </ul>
-      </div>
-
-      <div class="contact-card">
-        <h3>Connect With Me</h3>
-        <p>
-          I am open to Health IT, Clinical Informatics, Healthcare Analytics, and Project Management opportunities where I can apply technical, operational, and leadership experience to improve healthcare workflows.
-        </p>
-
-        <div class="contact-links">
-          <a href="mailto:izaak.adjei@gmail.com">izaak.adjei@gmail.com</a>
-          <a href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank" rel="noopener">LinkedIn Profile</a>
-          <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener">GitHub Portfolio</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>
-      © 2026 Isaac K. Adjei | Health IT Portfolio |
-      <a href="https://github.com/isaacadjei-healthit">GitHub</a>
-    </p>
-  </footer>
+    </footer>
+  </div>
 
   <script>
     function calculateWaterUse() {
@@ -1277,7 +1860,6 @@
         <div class="water-result-detail">That equals approximately ${Math.round(totalLiters).toLocaleString()} liters for ${soldiers.toLocaleString()} soldiers over ${days.toLocaleString()} day${days === 1 ? "" : "s"} at ${rate} gallons per soldier per day.</div>
       `;
     }
-
 
     const patientFlowData = [
       { visitType: "Emergency", department: "Emergency Department", status: "Discharged", los: 1.2, wait: 42 },
@@ -1339,7 +1921,6 @@
               <span>${department}</span>
               <span>${count}</span>
             </div>
-
             <div class="bar-track">
               <div class="bar-fill" style="width:${width}%"></div>
             </div>
@@ -1349,7 +1930,7 @@
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <p class="dashboard-note">
+          <p class="module-note">
             No visits match the selected filters.
           </p>
         `;
@@ -1410,7 +1991,6 @@
               <span>${eventType}</span>
               <span>${count}</span>
             </div>
-
             <div class="bar-track">
               <div class="bar-fill" style="width:${width}%"></div>
             </div>
@@ -1420,7 +2000,7 @@
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <p class="dashboard-note">
+          <p class="module-note">
             No cases match the selected filters.
           </p>
         `;
@@ -1447,8 +2027,5 @@
       }
     });
   </script>
-
 </body>
 </html>
-
-<!-- force GitHub Pages refresh -->
