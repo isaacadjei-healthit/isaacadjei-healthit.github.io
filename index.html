@@ -2316,7 +2316,24 @@
       }
     }
 
-  </style>
+  
+
+    /* Mobile/tablet hero order fix: show profile card above headline text */
+    @media (max-width: 980px) {
+      .hero-inner {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero-visual {
+        order: 1 !important;
+      }
+
+      .hero-copy {
+        order: 2 !important;
+      }
+    }
+</style>
 </head>
 
 <body>
