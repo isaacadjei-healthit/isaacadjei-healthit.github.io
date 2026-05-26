@@ -1937,6 +1937,385 @@
       }
     }
 
+
+
+    /* MOBILE OPTIMIZATION PATCH: preserves desktop layout, improves phone readability and stacking. */
+    @media (max-width: 760px) {
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        line-height: 1.6;
+      }
+
+      .site-shell {
+        overflow-x: hidden;
+      }
+
+      .top-nav {
+        width: calc(100% - 20px) !important;
+        margin: 10px auto 0 !important;
+        left: auto !important;
+        right: auto !important;
+        border-radius: 18px !important;
+      }
+
+      .nav-inner {
+        padding: 14px !important;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        align-items: start !important;
+      }
+
+      .brand-text strong {
+        font-size: 0.95rem !important;
+        letter-spacing: 0.5px !important;
+      }
+
+      .brand-text small {
+        font-size: 0.76rem !important;
+        line-height: 1.35 !important;
+      }
+
+      .nav-links,
+      .nav-buttons {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+      }
+
+      .nav-links a,
+      .nav-buttons a {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 10px 8px !important;
+        font-size: 0.78rem !important;
+        border-radius: 12px !important;
+      }
+
+      .hero {
+        padding: 34px 5% 38px !important;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        align-items: start !important;
+      }
+
+      .eyebrow {
+        font-size: 0.68rem !important;
+        padding: 7px 10px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.35rem, 12vw, 3.35rem) !important;
+        line-height: 0.98 !important;
+        letter-spacing: -1.8px !important;
+        margin-bottom: 14px !important;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 12px !important;
+      }
+
+      .hero-description {
+        font-size: 0.96rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 20px !important;
+      }
+
+      .hero-tags {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        margin-top: 16px !important;
+      }
+
+      .mini-tag {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 12px 14px !important;
+        font-size: 0.88rem !important;
+      }
+
+      .hero-visual {
+        min-height: auto !important;
+        width: 100% !important;
+      }
+
+      .profile-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important;
+        border-radius: 24px !important;
+      }
+
+      .final-profile-layout,
+      .profile-card-grid.final-profile-layout {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+          "photo"
+          "title"
+          "metrics"
+          "callouts" !important;
+        gap: 16px !important;
+      }
+
+      .profile-photo-area,
+      .profile-card-grid .profile-pic-wrap,
+      .profile-pic-wrap {
+        width: 150px !important;
+        height: 150px !important;
+        margin: 0 auto !important;
+      }
+
+      .profile-title-area {
+        text-align: center !important;
+        align-self: start !important;
+      }
+
+      .profile-title-area h2,
+      .profile-card-grid .profile-title h2,
+      .profile-title h2 {
+        font-size: 2rem !important;
+        line-height: 1.08 !important;
+        margin-bottom: 8px !important;
+        letter-spacing: -0.6px !important;
+      }
+
+      .profile-title-area p,
+      .profile-card-grid .profile-title p,
+      .profile-title p {
+        max-width: 100% !important;
+        font-size: 0.98rem !important;
+        line-height: 1.45 !important;
+        margin: 0 auto !important;
+      }
+
+      .profile-metrics-area,
+      .profile-card-grid .profile-metrics,
+      .profile-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+      }
+
+      .profile-metrics-area .profile-metric,
+      .profile-card-grid .profile-metric,
+      .profile-metric {
+        min-height: 104px !important;
+        padding: 15px 12px !important;
+        border-radius: 16px !important;
+        text-align: center !important;
+      }
+
+      .profile-metric strong {
+        font-size: 1.7rem !important;
+        margin-bottom: 5px !important;
+      }
+
+      .profile-metric span {
+        font-size: 0.78rem !important;
+        line-height: 1.25 !important;
+      }
+
+      .profile-callouts-area,
+      .profile-card-grid .hero-callouts,
+      .hero-callouts {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+
+      .profile-callouts-area .hero-callout,
+      .profile-card-grid .hero-callout,
+      .hero-callout {
+        min-height: auto !important;
+        padding: 16px !important;
+        border-radius: 16px !important;
+        text-align: center !important;
+      }
+
+      .hero-callout strong {
+        font-size: 0.95rem !important;
+        margin-bottom: 6px !important;
+      }
+
+      .hero-callout small {
+        font-size: 0.84rem !important;
+        line-height: 1.5 !important;
+      }
+
+      section {
+        padding: 44px 5% !important;
+      }
+
+      .section-header {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        margin-bottom: 22px !important;
+      }
+
+      .section-title {
+        font-size: clamp(1.85rem, 9vw, 2.35rem) !important;
+        line-height: 1.08 !important;
+        letter-spacing: -1px !important;
+      }
+
+      .section-intro {
+        font-size: 0.96rem !important;
+        line-height: 1.65 !important;
+      }
+
+      .analytics-strip {
+        padding: 0 5% 34px !important;
+      }
+
+      .strip-inner,
+      .impact-grid,
+      .competencies-grid,
+      .about-grid,
+      .contact-enhanced,
+      .case-grid,
+      .dashboard-kpis,
+      .dashboard-controls,
+      .water-calculator-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .project-hero,
+      .project-hero.visual-right,
+      .featured-card {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+      }
+
+      .project-summary,
+      .case-study-body,
+      .about-card,
+      .focus-card,
+      .contact-card,
+      .module-card {
+        padding: 20px !important;
+        border-radius: 20px !important;
+      }
+
+      .project-summary h3 {
+        font-size: 1.55rem !important;
+        line-height: 1.12 !important;
+      }
+
+      .project-actions,
+      .cta-group,
+      .water-calculator-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+
+      .btn,
+      .water-calc-button {
+        width: 100% !important;
+        justify-content: center !important;
+        min-height: 46px !important;
+      }
+
+      .project-visual,
+      .visual-right .project-visual {
+        padding: 18px !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-top: 1px solid var(--line) !important;
+      }
+
+      .visual-frame img,
+      .screenshot-card img {
+        height: 210px !important;
+      }
+
+      .screenshot-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+      }
+
+      .screenshot-card,
+      .screenshot-card.featured-shot {
+        grid-column: auto !important;
+        width: 100% !important;
+      }
+
+      .kpi-card {
+        padding: 16px !important;
+      }
+
+      .kpi-card span {
+        font-size: 1.55rem !important;
+      }
+
+      footer {
+        padding: 28px 5% !important;
+        font-size: 0.85rem !important;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .nav-links,
+      .nav-buttons {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero {
+        padding-left: 4.5% !important;
+        padding-right: 4.5% !important;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.1rem, 13vw, 2.85rem) !important;
+      }
+
+      .profile-panel {
+        padding: 16px !important;
+      }
+
+      .profile-photo-area,
+      .profile-card-grid .profile-pic-wrap,
+      .profile-pic-wrap {
+        width: 132px !important;
+        height: 132px !important;
+      }
+
+      .profile-metrics-area,
+      .profile-card-grid .profile-metrics,
+      .profile-metrics {
+        grid-template-columns: 1fr !important;
+      }
+
+      .profile-metrics-area .profile-metric,
+      .profile-card-grid .profile-metric,
+      .profile-metric {
+        min-height: 86px !important;
+      }
+
+      .hero-tags {
+        gap: 8px !important;
+      }
+
+      .visual-frame img,
+      .screenshot-card img {
+        height: 185px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -2199,7 +2578,7 @@
             <h2 class="section-title">Detailed case studies with screenshots and outcomes.</h2>
           </div>
           <p class="section-intro">
-            Real-world Health IT, analytics, and operational improvement projects built around measurable impact.
+            A Maven-style project showcase built around visual evidence, problem-solving, tools used, and leadership value.
           </p>
         </div>
 
