@@ -282,6 +282,98 @@
       color: var(--royal-blue);
     }
 
+    .water-use-calculator-card {
+      margin: 4px 0 28px;
+      padding: 24px;
+      border-radius: 16px;
+      background: #fbfcfe;
+      border: 1px solid var(--light-slate);
+      box-shadow: 0 8px 22px rgba(7, 26, 47, 0.05);
+    }
+
+    .water-use-calculator-card h4 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .water-calculator-note {
+      color: var(--slate);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      max-width: 850px;
+    }
+
+    .water-calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .water-calculator-field label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .water-calculator-field input,
+    .water-calculator-field select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--navy);
+      font: inherit;
+    }
+
+    .water-calculator-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .water-calc-button {
+      border: none;
+      border-radius: 10px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 11px 18px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .water-calc-button:hover {
+      transform: translateY(-2px);
+      background: var(--royal-blue);
+    }
+
+    .water-result-card {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 14px;
+      background: var(--white);
+      border-left: 5px solid var(--muted-teal);
+      color: var(--navy);
+    }
+
+    .water-result-main {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .water-result-detail {
+      color: var(--slate);
+      font-size: 0.95rem;
+    }
+
     .impact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -358,6 +450,10 @@
 
       .project-card {
         padding: 26px;
+      }
+
+      .water-use-calculator-card {
+        padding: 20px;
       }
     }
   </style>
@@ -616,6 +712,44 @@
           <span class="pill">Logistics Analytics</span>
           <span class="pill">Leadership Reporting</span>
           <span class="pill">Planning Model</span>
+          <span class="pill">Interactive Calculator</span>
+        </div>
+
+        <div class="water-use-calculator-card">
+          <h4>Water Use Calculator</h4>
+          <p class="water-calculator-note">
+            Estimate total water requirements by adjusting the number of soldiers, mission duration, and environmental condition.
+          </p>
+
+          <div class="water-calculator-grid">
+            <div class="water-calculator-field">
+              <label for="waterSoldiers">Number of Soldiers</label>
+              <input type="number" id="waterSoldiers" value="600" min="1" />
+            </div>
+
+            <div class="water-calculator-field">
+              <label for="waterDays">Number of Days</label>
+              <input type="number" id="waterDays" value="3" min="1" />
+            </div>
+
+            <div class="water-calculator-field">
+              <label for="waterCondition">Environmental Condition</label>
+              <select id="waterCondition">
+                <option value="1.5">Moderate Weather - 1.5 gallons/person/day</option>
+                <option value="2">Hot Weather - 2 gallons/person/day</option>
+                <option value="3">Extreme Heat/High Activity - 3 gallons/person/day</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="water-calculator-actions">
+            <button type="button" class="water-calc-button" onclick="calculateWaterUse()">Calculate Requirement</button>
+          </div>
+
+          <div class="water-result-card" id="waterResult">
+            <div class="water-result-main">Estimated requirement: 2,700 gallons</div>
+            <div class="water-result-detail">That equals approximately 10,221 liters for 600 soldiers over 3 days at 1.5 gallons per soldier per day.</div>
+          </div>
         </div>
 
         <div class="project-links">
@@ -713,6 +847,22 @@
       <a href="https://github.com/isaacadjei-healthit">GitHub</a>
     </p>
   </footer>
+
+  <script>
+    function calculateWaterUse() {
+      const soldiers = Number(document.getElementById("waterSoldiers").value) || 0;
+      const days = Number(document.getElementById("waterDays").value) || 0;
+      const rate = Number(document.getElementById("waterCondition").value) || 0;
+
+      const totalGallons = soldiers * days * rate;
+      const totalLiters = totalGallons * 3.78541;
+
+      document.getElementById("waterResult").innerHTML = `
+        <div class="water-result-main">Estimated requirement: ${totalGallons.toLocaleString()} gallons</div>
+        <div class="water-result-detail">That equals approximately ${Math.round(totalLiters).toLocaleString()} liters for ${soldiers.toLocaleString()} soldiers over ${days.toLocaleString()} day${days === 1 ? "" : "s"} at ${rate} gallons per soldier per day.</div>
+      `;
+    }
+  </script>
 
 </body>
 </html>
