@@ -1446,17 +1446,21 @@
 
     .hero-callouts {
       width: min(550px, 100%);
-      margin-left: 42px;
+      margin-left: 0;
+      margin-top: 18px;
       grid-template-columns: repeat(2, 1fr);
-      transform: translateY(-168px);
+      transform: none;
+      align-items: stretch;
     }
 
     .hero-callout {
-      border-radius: 15px;
-      min-height: 150px;
-      background: rgba(255,255,255,0.48);
-      border-color: rgba(255,255,255,0.78);
+      border-radius: 18px;
+      min-height: 132px;
+      background: rgba(255,255,255,0.64);
+      border-color: rgba(255,255,255,0.82);
       box-shadow: 0 14px 35px rgba(6,21,86,0.10);
+      position: relative;
+      z-index: 1;
     }
 
     .hero-callout strong { font-size: 1rem; }
@@ -1664,7 +1668,7 @@
         <a class="brand" href="#top" aria-label="Isaac K. Adjei Portfolio Home">
           <span class="brand-text">
             <strong>ISAAC K. ADJEI</strong>
-            <small>Health IT &amp; Operational Analytics</small>
+            <small>Health IT, Project Management &amp; Operational Analytics</small>
           </span>
         </a>
 
