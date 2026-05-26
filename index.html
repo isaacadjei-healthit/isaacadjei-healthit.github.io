@@ -733,6 +733,67 @@
           <span class="pill">Patient Flow</span>
         </div>
 
+
+
+        <div class="interactive-dashboard patient-flow-dashboard">
+          <h4>Live Patient Flow Optimization Dashboard</h4>
+
+          <p class="dashboard-note">
+            Explore simulated hospital patient flow metrics by visit type and department. The dashboard updates length of stay, wait time, discharge rate, and visit distribution in real time.
+          </p>
+
+          <div class="dashboard-controls">
+            <label>
+              Visit Type
+              <select id="pfVisitTypeFilter">
+                <option value="All">All Visit Types</option>
+                <option value="Emergency">Emergency</option>
+                <option value="Inpatient">Inpatient</option>
+                <option value="Outpatient">Outpatient</option>
+                <option value="Observation">Observation</option>
+              </select>
+            </label>
+
+            <label>
+              Department
+              <select id="pfDepartmentFilter">
+                <option value="All">All Departments</option>
+                <option value="Emergency Department">Emergency Department</option>
+                <option value="Medical-Surgical">Medical-Surgical</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Orthopedics">Orthopedics</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="dashboard-kpis">
+            <div class="kpi-card">
+              <span id="pfTotalVisits">0</span>
+              <small>Total Visits</small>
+            </div>
+
+            <div class="kpi-card">
+              <span id="pfAvgLOS">0</span>
+              <small>Avg. Length of Stay</small>
+            </div>
+
+            <div class="kpi-card">
+              <span id="pfAvgWait">0</span>
+              <small>Avg. Wait Time</small>
+            </div>
+
+            <div class="kpi-card">
+              <span id="pfDischargeRate">0%</span>
+              <small>Discharge Rate</small>
+            </div>
+          </div>
+
+          <div class="dashboard-bars">
+            <h5>Visits by Department</h5>
+            <div id="pfDepartmentBars"></div>
+          </div>
+        </div>
+
         <div class="screenshots-title">Project Screenshots</div>
 
         <div class="screenshot-grid">
@@ -1105,6 +1166,84 @@
       `;
     }
 
+
+    const patientFlowData = [
+      { visitType: "Emergency", department: "Emergency Department", status: "Discharged", los: 1.2, wait: 42 },
+      { visitType: "Emergency", department: "Emergency Department", status: "Admitted", los: 2.4, wait: 68 },
+      { visitType: "Inpatient", department: "Medical-Surgical", status: "Discharged", los: 4.6, wait: 95 },
+      { visitType: "Inpatient", department: "Cardiology", status: "Transferred", los: 5.1, wait: 110 },
+      { visitType: "Outpatient", department: "Orthopedics", status: "Discharged", los: 0.5, wait: 24 },
+      { visitType: "Outpatient", department: "Cardiology", status: "Discharged", los: 0.7, wait: 31 },
+      { visitType: "Observation", department: "Medical-Surgical", status: "Discharged", los: 1.8, wait: 53 },
+      { visitType: "Observation", department: "Emergency Department", status: "Admitted", los: 2.1, wait: 75 },
+      { visitType: "Inpatient", department: "Orthopedics", status: "Discharged", los: 3.9, wait: 84 },
+      { visitType: "Emergency", department: "Cardiology", status: "Transferred", los: 2.8, wait: 88 },
+      { visitType: "Outpatient", department: "Medical-Surgical", status: "Discharged", los: 0.6, wait: 29 },
+      { visitType: "Observation", department: "Orthopedics", status: "Discharged", los: 1.5, wait: 47 }
+    ];
+
+    function updatePatientFlowDashboard() {
+      const visitTypeFilter = document.getElementById("pfVisitTypeFilter").value;
+      const departmentFilter = document.getElementById("pfDepartmentFilter").value;
+
+      const filtered = patientFlowData.filter(item => {
+        const visitTypeMatch = visitTypeFilter === "All" || item.visitType === visitTypeFilter;
+        const departmentMatch = departmentFilter === "All" || item.department === departmentFilter;
+        return visitTypeMatch && departmentMatch;
+      });
+
+      const totalVisits = filtered.length;
+      const avgLOS = totalVisits
+        ? filtered.reduce((sum, item) => sum + item.los, 0) / totalVisits
+        : 0;
+      const avgWait = totalVisits
+        ? filtered.reduce((sum, item) => sum + item.wait, 0) / totalVisits
+        : 0;
+      const discharged = filtered.filter(item => item.status === "Discharged").length;
+      const dischargeRate = totalVisits ? Math.round((discharged / totalVisits) * 100) : 0;
+
+      document.getElementById("pfTotalVisits").textContent = totalVisits;
+      document.getElementById("pfAvgLOS").textContent = `${avgLOS.toFixed(1)} days`;
+      document.getElementById("pfAvgWait").textContent = `${Math.round(avgWait)} min`;
+      document.getElementById("pfDischargeRate").textContent = `${dischargeRate}%`;
+
+      const departmentCounts = {};
+
+      filtered.forEach(item => {
+        departmentCounts[item.department] =
+          (departmentCounts[item.department] || 0) + 1;
+      });
+
+      const maxCount = Math.max(...Object.values(departmentCounts), 1);
+      const container = document.getElementById("pfDepartmentBars");
+      container.innerHTML = "";
+
+      Object.entries(departmentCounts).forEach(([department, count]) => {
+        const width = (count / maxCount) * 100;
+
+        container.innerHTML += `
+          <div class="bar-row">
+            <div class="bar-label">
+              <span>${department}</span>
+              <span>${count}</span>
+            </div>
+
+            <div class="bar-track">
+              <div class="bar-fill" style="width:${width}%"></div>
+            </div>
+          </div>
+        `;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <p class="dashboard-note">
+            No visits match the selected filters.
+          </p>
+        `;
+      }
+    }
+
     const patientMovementData = [
       { unit: "HHC", severity: "Low", eventType: "Sick Call", outcome: "RTD" },
       { unit: "HHC", severity: "Moderate", eventType: "Injury", outcome: "Follow-Up" },
@@ -1177,6 +1316,15 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      const visitTypeFilter = document.getElementById("pfVisitTypeFilter");
+      const departmentFilter = document.getElementById("pfDepartmentFilter");
+
+      if (visitTypeFilter && departmentFilter) {
+        visitTypeFilter.addEventListener("change", updatePatientFlowDashboard);
+        departmentFilter.addEventListener("change", updatePatientFlowDashboard);
+        updatePatientFlowDashboard();
+      }
+
       const unitFilter = document.getElementById("pmUnitFilter");
       const severityFilter = document.getElementById("pmSeverityFilter");
 
