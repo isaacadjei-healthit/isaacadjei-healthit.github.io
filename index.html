@@ -1222,6 +1222,438 @@
         height: 220px;
       }
     }
+
+
+    /* Preferred-layout refresh: glass navbar, hero profile panel, compact featured cards */
+    :root {
+      --ink: #061556;
+      --blue: #256eff;
+      --blue-2: #60a5fa;
+      --line: rgba(255,255,255,0.66);
+      --soft-bg: #eef6ff;
+      --shadow-sm: 0 10px 24px rgba(6, 21, 86, 0.08);
+      --shadow-md: 0 22px 55px rgba(6, 21, 86, 0.16);
+      --max-width: 1520px;
+    }
+
+    body {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 85% 18%, rgba(73, 137, 255, 0.34), transparent 28%),
+        radial-gradient(circle at 8% 75%, rgba(39, 126, 255, 0.22), transparent 32%),
+        linear-gradient(135deg, #eaf7ff 0%, #dcecff 45%, #f8fbff 100%);
+    }
+
+    .top-nav {
+      position: relative;
+      top: auto;
+      z-index: 20;
+      width: calc(100% - 40px);
+      margin: 8px auto 0;
+      background: rgba(255,255,255,0.50);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.78);
+      border-radius: 24px;
+      box-shadow: 0 18px 54px rgba(53, 111, 203, 0.14);
+    }
+
+    .nav-inner {
+      max-width: none;
+      width: 100%;
+      padding: 14px 34px;
+    }
+
+    .brand-mark { display: none; }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .brand-text strong {
+      font-size: 1.55rem;
+      letter-spacing: -0.7px;
+      color: var(--ink);
+    }
+
+    .brand-text small {
+      margin-top: 5px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #11307f;
+      letter-spacing: 0;
+    }
+
+    .nav-buttons {
+      gap: 14px;
+    }
+
+    .nav-buttons a {
+      min-height: 52px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(255,255,255,0.82);
+      box-shadow: 0 10px 22px rgba(6, 21, 86, 0.08);
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .nav-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      font-weight: 950;
+      color: var(--ink);
+    }
+
+    .hero {
+      margin-top: -96px;
+      padding: 140px 3.5% 22px;
+      min-height: 690px;
+      border-bottom: 0;
+      background:
+        radial-gradient(circle at 98% 55%, rgba(37,110,255,0.30), transparent 30%),
+        radial-gradient(circle at 0% 58%, rgba(80,168,255,0.24), transparent 36%),
+        linear-gradient(135deg, rgba(239,250,255,0.92), rgba(214,232,255,0.88) 55%, rgba(248,251,255,0.94));
+    }
+
+    .hero::before {
+      opacity: 0.95;
+      background:
+        radial-gradient(circle at 3% 25%, rgba(255,255,255,0.95) 0 2px, transparent 3px),
+        radial-gradient(circle at 92% 56%, rgba(255,255,255,0.95) 0 2px, transparent 3px),
+        repeating-radial-gradient(ellipse at 0% 72%, rgba(37,110,255,0.22) 0 1px, transparent 2px 12px),
+        repeating-radial-gradient(ellipse at 100% 65%, rgba(37,110,255,0.18) 0 1px, transparent 2px 13px);
+      background-size: auto, auto, 660px 310px, 660px 310px;
+      background-repeat: no-repeat;
+      mask-image: none;
+    }
+
+    .hero-inner {
+      max-width: 1320px;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 58px;
+      min-height: 540px;
+    }
+
+    .eyebrow { display: none; }
+
+    .hero h1 {
+      max-width: 660px;
+      font-size: clamp(3.1rem, 5.2vw, 5rem);
+      line-height: 1.01;
+      letter-spacing: -4px;
+      margin-bottom: 34px;
+    }
+
+    .hero h1 span {
+      display: block;
+      background: linear-gradient(180deg, #256eff, #1d5ee7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle,
+    .hero-description {
+      max-width: 640px;
+      color: #082970;
+      font-size: 1.12rem;
+      line-height: 1.65;
+    }
+
+    .hero-description { margin-bottom: 84px; }
+
+    .mini-tag {
+      background: rgba(255,255,255,0.66);
+      border-color: rgba(255,255,255,0.90);
+      box-shadow: 0 10px 22px rgba(6,21,86,0.08);
+      color: var(--ink);
+      padding: 11px 20px;
+      font-size: 0.80rem;
+    }
+
+    .hero-visual {
+      min-height: 540px;
+      align-content: center;
+    }
+
+    .profile-panel {
+      width: min(630px, 100%);
+      border-radius: 26px;
+      padding: 34px 40px 28px;
+      background: rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: 0 26px 65px rgba(6,21,86,0.15);
+    }
+
+    .profile-top {
+      display: grid;
+      grid-template-columns: 225px 1fr;
+      align-items: center;
+      gap: 34px;
+      margin-bottom: 22px;
+    }
+
+    .profile-pic-wrap {
+      width: 225px;
+      height: 225px;
+      border: 3px solid rgba(255,255,255,0.78);
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.28), 0 18px 46px rgba(37,110,255,0.20);
+    }
+
+    .profile-title h2 {
+      font-size: clamp(2rem, 2.3vw, 2.65rem);
+      line-height: 1.05;
+      letter-spacing: -1.4px;
+    }
+
+    .profile-title p {
+      margin-top: 12px;
+      color: #123385;
+      font-size: 1.22rem;
+      line-height: 1.42;
+      max-width: 330px;
+    }
+
+    .profile-metrics {
+      margin-left: 265px;
+      grid-template-columns: repeat(2, minmax(130px, 1fr));
+    }
+
+    .profile-metric {
+      border-radius: 15px;
+      padding: 17px 20px;
+      min-height: 104px;
+      background: rgba(255,255,255,0.48);
+      border-color: rgba(255,255,255,0.78);
+    }
+
+    .profile-metric strong {
+      font-size: 1.85rem;
+    }
+
+    .profile-metric span {
+      color: var(--ink);
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+
+    .hero-callouts {
+      width: min(550px, 100%);
+      margin-left: 42px;
+      grid-template-columns: repeat(2, 1fr);
+      transform: translateY(-168px);
+    }
+
+    .hero-callout {
+      border-radius: 15px;
+      min-height: 150px;
+      background: rgba(255,255,255,0.48);
+      border-color: rgba(255,255,255,0.78);
+      box-shadow: 0 14px 35px rgba(6,21,86,0.10);
+    }
+
+    .hero-callout strong { font-size: 1rem; }
+    .hero-callout small { color: #082970; font-size: 0.95rem; }
+
+    .analytics-strip { display: none; }
+
+    .featured-showcase {
+      padding: 22px 3.5% 46px;
+      background: rgba(255,255,255,0.80);
+      border-top: 1px solid rgba(255,255,255,0.85);
+      box-shadow: inset 0 24px 60px rgba(37,110,255,0.06);
+    }
+
+    .featured-inner {
+      max-width: 1420px;
+      margin: 0 auto;
+    }
+
+    .featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 22px;
+      margin-bottom: 18px;
+    }
+
+    .featured-header h2 {
+      color: var(--ink);
+      font-size: 1.55rem;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .featured-header p {
+      color: #123385;
+      font-weight: 650;
+      margin-top: 4px;
+      font-size: 0.93rem;
+    }
+
+    .view-all {
+      color: #1263ff;
+      font-weight: 900;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      white-space: nowrap;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 18px;
+      min-height: 230px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(224,235,255,0.95);
+      box-shadow: 0 16px 40px rgba(6,21,86,0.08);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 55px rgba(6,21,86,0.13);
+    }
+
+    .featured-image {
+      display: grid;
+      place-items: center;
+      min-height: 190px;
+      border-radius: 9px;
+      overflow: hidden;
+      background: linear-gradient(135deg,#dbeafe,#f8fbff);
+      text-decoration: none;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 190px;
+      object-fit: cover;
+      object-position: top;
+      filter: saturate(1.02);
+    }
+
+    .featured-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .featured-copy h3 {
+      color: var(--ink);
+      font-size: 1.02rem;
+      line-height: 1.22;
+      letter-spacing: -0.2px;
+    }
+
+    .featured-copy p {
+      color: #123385;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .featured-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .featured-tags span {
+      padding: 8px 11px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(206,224,255,0.95);
+      color: var(--ink);
+      font-size: 0.73rem;
+      font-weight: 900;
+    }
+
+    .featured-btn {
+      margin-top: auto;
+      align-self: center;
+      min-width: 132px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #2f7bff, #1763ef);
+      box-shadow: 0 12px 24px rgba(37,110,255,0.26);
+      color: white;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .water-preview {
+      width: 100%;
+      min-height: 190px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 18px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 70% 20%, rgba(37,110,255,0.20), transparent 35%),
+        linear-gradient(135deg,#eaf3ff,#ffffff);
+    }
+
+    .water-preview strong { font-size: 2.4rem; line-height: 1; color: #1763ef; }
+    .water-preview span { font-weight: 950; }
+    .water-preview small { color: #123385; font-weight: 700; }
+
+    .detailed-projects {
+      background: #f8fbff;
+    }
+
+    @media (max-width: 1120px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .profile-metrics { margin-left: 0; }
+      .hero-callouts { transform: none; margin-left: 0; }
+    }
+
+    @media (max-width: 980px) {
+      .hero { margin-top: 0; padding-top: 50px; }
+      .nav-inner { align-items: flex-start; }
+      .profile-top { grid-template-columns: 1fr; }
+      .profile-metrics { margin-left: 0; }
+      .featured-card { grid-template-columns: 0.9fr 1.1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .top-nav { width: calc(100% - 24px); border-radius: 18px; }
+      .nav-inner { padding: 18px; }
+      .nav-buttons a { width: 100%; justify-content: center; }
+      .hero h1 { letter-spacing: -2px; }
+      .hero-description { margin-bottom: 32px; }
+      .profile-pic-wrap { width: 165px; height: 165px; }
+      .profile-metrics, .hero-callouts { grid-template-columns: 1fr; }
+      .featured-header { align-items: flex-start; flex-direction: column; }
+      .featured-card { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 
@@ -1230,16 +1662,17 @@
     <nav class="top-nav">
       <div class="nav-inner">
         <a class="brand" href="#top" aria-label="Isaac K. Adjei Portfolio Home">
-          <span class="brand-mark">IA</span>
-          <span>Isaac K. Adjei</span>
+          <span class="brand-text">
+            <strong>ISAAC K. ADJEI</strong>
+            <small>Health IT &amp; Operational Analytics</small>
+          </span>
         </a>
 
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#competencies">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#impact">Impact</a>
-          <a href="#contact">Contact</a>
+        <div class="nav-links nav-buttons">
+          <a href="#projects"><span class="nav-icon">▦</span>Explore Projects</a>
+          <a href="Isaac-Adjei-Resume.pdf"><span class="nav-icon">▤</span>View Resume</a>
+          <a href="https://github.com/isaacadjei-healthit" target="_blank" rel="noopener"><span class="nav-icon">●</span>GitHub</a>
+          <a href="https://www.linkedin.com/in/isaacadjei-healthit/" target="_blank" rel="noopener"><span class="nav-icon">in</span>LinkedIn</a>
         </div>
       </div>
     </nav>
@@ -1258,13 +1691,6 @@
             I build practical Health IT and healthcare analytics solutions that transform operational data into clearer workflows, stronger decision-making, and measurable leadership value.
           </p>
 
-          <div class="cta-group">
-            <a href="#projects" class="btn btn-primary">Explore Projects</a>
-            <a href="Isaac-Adjei-Resume.pdf" class="btn btn-secondary">View Resume</a>
-            <a href="https://github.com/isaacadjei-healthit" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/in/isaacadjei-healthit/" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-
           <div class="hero-tags">
             <span class="mini-tag">SQL</span>
             <span class="mini-tag">Power BI</span>
@@ -1282,7 +1708,7 @@
               </div>
               <div class="profile-title">
                 <h2>Isaac K. Adjei</h2>
-                <p>Health IT & Operational Analytics</p>
+                <p>Health IT, Project Management &amp; Operational Analytics</p>
               </div>
             </div>
 
@@ -1320,6 +1746,59 @@
         </div>
       </div>
     </header>
+
+    <section id="projects" class="featured-showcase">
+      <div class="featured-inner">
+        <div class="featured-header">
+          <div>
+            <h2>Featured Projects</h2>
+            <p>Real-world Health IT and operational analytics solutions with measurable impact.</p>
+          </div>
+          <a class="view-all" href="#case-studies">View all projects <span>→</span></a>
+        </div>
+
+        <div class="featured-grid">
+          <article class="featured-card">
+            <a class="featured-image" href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization" target="_blank" rel="noopener">
+              <img src="images/combined-patient-flow-view.png" alt="Patient flow and capacity dashboard preview" />
+            </a>
+            <div class="featured-copy">
+              <h3>Patient Flow &amp; Capacity Dashboard</h3>
+              <p>Monitors patient volume, LOS, and capacity to optimize throughput and reduce delays.</p>
+              <div class="featured-tags"><span>SQL</span><span>Power BI</span><span>Healthcare Analytics</span></div>
+              <a class="featured-btn" href="https://github.com/isaacadjei-healthit/healthcare-patient-flow-optimization" target="_blank" rel="noopener">View Project <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <a class="featured-image" href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard" target="_blank" rel="noopener">
+              <img src="images/patient-movement-trends.png" alt="Patient movement tracker dashboard preview" />
+            </a>
+            <div class="featured-copy">
+              <h3>Operational Patient Movement Analytics</h3>
+              <p>Tracks medical cases, severity, unit trends, outcomes, and leadership-ready readiness reporting.</p>
+              <div class="featured-tags"><span>Excel</span><span>Dashboarding</span><span>Operational Reporting</span></div>
+              <a class="featured-btn" href="https://github.com/isaacadjei-healthit/patient-movement-tracker-dashboard" target="_blank" rel="noopener">View Project <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="featured-card">
+            <a class="featured-image" href="https://github.com/isaacadjei-healthit/military-water-consumption-dashboard" target="_blank" rel="noopener">
+              <div class="water-preview">
+                <strong>2,700</strong><span>Estimated gallons</span>
+                <small>600 soldiers • 3 days • moderate weather</small>
+              </div>
+            </a>
+            <div class="featured-copy">
+              <h3>Water Consumption Readiness Tool</h3>
+              <p>Forecasts hydration requirements for personnel planning, logistics readiness, and field operations.</p>
+              <div class="featured-tags"><span>Logistics</span><span>Calculator</span><span>Readiness</span></div>
+              <a class="featured-btn" href="#water-calculator">Use Tool <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <div class="analytics-strip">
       <div class="strip-inner">
@@ -1428,12 +1907,12 @@
       </div>
     </section>
 
-    <section id="projects" class="projects-section">
+    <section id="case-studies" class="projects-section detailed-projects">
       <div class="section-inner">
         <div class="section-header">
           <div>
             <div class="section-kicker">Featured Projects</div>
-            <h2 class="section-title">Analytics case studies with screenshots and outcomes.</h2>
+            <h2 class="section-title">Detailed case studies with screenshots and outcomes.</h2>
           </div>
           <p class="section-intro">
             A Maven-style project showcase built around visual evidence, problem-solving, tools used, and leadership value.
